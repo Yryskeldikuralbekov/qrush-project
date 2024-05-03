@@ -56,6 +56,21 @@ export const NewsSectionHomePage = () => {
     18
   );
   const filterThirdtext = useFilteredNestedData(filteredData, 'next_text', 19);
+  const filterFirstsubtitle = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    13
+  );
+  const filterSecondsubtitle = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    16
+  );
+  const filterThirdsubtitle = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    17
+  );
   const studioData = {
     background: ImageURL + filteredNestedData[0]?.background,
     firstImg: ImageURL + filteredImg[0]?.background,
@@ -75,27 +90,23 @@ export const NewsSectionHomePage = () => {
     {
       bgImage: studioData.secondImg,
       title: filterFirsttext[0]?.text,
-      subtitle:
-        'Всем привет, фоточки прилетели! ищите себя на фото с QrushFest. Ссылка в шапке профиля ',
+      subtitle: filterFirstsubtitle[0]?.text,
       image: null,
       date: null,
     },
     {
       bgImage: studioData.thirdImg,
       title: filterSecondttext[0]?.text,
-      subtitle:
-        'Всем привет, фоточки прилетели! ищите себя на фото с QrushFest. Ссылка в шапке профиля',
+      subtitle: filterSecondsubtitle[0]?.text,
       image: null,
       date: null,
     },
     {
       bgImage: studioData.fourthImg,
       title: filterThirdtext[0]?.text,
-      subtitle:
-        'Всем привет, фоточки прилетели! ищите себя на фото с QrushFest. Ссылка в шапке профиля ',
+      subtitle: filterThirdsubtitle[0]?.text,
     },
   ];
-  console.log(filteredData);
   const isMobile = useMediaQuery('(max-width: 576px)');
   return (
     <section

@@ -14,7 +14,7 @@ export const CardNewsHomePage = ({ item }) => {
           {item.image && (
             <img
               src={item.image}
-              className='[inline-flex box-shadow:0_0_20px_rgba(255,_255,_255,_0.8)]'
+              className='[inline-flex box-shadow:0_0_20px_rgba(255,_255,_255,_0.8)] h-[20px] w-auto'
               alt='Q-rush logo'
             />
           )}
