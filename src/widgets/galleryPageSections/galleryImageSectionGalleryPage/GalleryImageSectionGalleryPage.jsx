@@ -1,31 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ImageModal } from '../../../shared';
-import firstGalleryImg from '../../../shared/img/first_gallery_home_page.png';
-import secondGalleryImg from '../../../shared/img/second_gallery_home_page.png';
-import thirdGalleryImg from '../../../shared/img/third_gallery_home_page.png';
-import fourthGalleryImg from '../../../shared/img/fourth_gallery_home_page.png';
 
-const GalleryImage = ({ image, onClick }) => (
-  <div onClick={onClick} className='w-full'>
-    <img
-      src={image}
-      alt='gallery_image'
-      className='w-full h-full border-[2px] border-solid border-gray-500 rounded-[20px] xl:rounded-[20px] tablet:rounded-[10px]'
-    />
-  </div>
-);
+import { useZustandStore } from '../../../app/store/store';
+const GalleryImage = ({ image, onClick }) => {
+  const urlForImages = import.meta.env.VITE_IMG_URL;
+  return (
+    <div onClick={onClick} className='w-full h-full'>
+      <img
+        src={`${image.image}`} // Объединяем базовый URL с путем к изображению
+        alt='gallery_image'
+        className='w-[100%] h-[100%] object-cover border-[1px] border-solid border-gray-500 rounded-[60px] xl:rounded-[65px] tablet:rounded-[55px]'
+      />
+    </div>
+  );
+};
 
-const GalleryImageWrapper = ({ image, onClick }) => (
-  <GalleryImage image={image} onClick={onClick} />
-);
+const GalleryImageWrapper = ({ image, onClick }) => {
+  console.log(image.image);
+  return (
+    <div>
+      <GalleryImage image={image} onClick={onClick} />
+    </div>
+  );
+};
 
 export const GalleryImageSectionGalleryPage = () => {
-  const galleryImages = [
-    firstGalleryImg,
-    secondGalleryImg,
-    thirdGalleryImg,
-    fourthGalleryImg,
-  ];
+  const { getGalleryImage, galleryImages } = useZustandStore();
+  console.log(galleryImages);
+  useEffect(() => {
+    getGalleryImage();
+  }, []);
 
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -41,12 +45,12 @@ export const GalleryImageSectionGalleryPage = () => {
     <section className='bg-center max-w-full'>
       <section>
         <section className='max-w-[90%] xl:container items-center mx-auto'>
-          <section className='grid grid-cols-2 xl:grid-cols-2 gap-4 mt-[4vh]'>
+          <section className='grid grid-cols-2 xl:grid-cols-2 gap-5 mt-[4vh]'>
             {galleryImages.map((image, index) => (
               <GalleryImageWrapper
                 key={index}
                 image={image}
-                onClick={() => handleOpenModal(image)}
+                onClick={() => handleOpenModal(image.image)}
               />
             ))}
           </section>
