@@ -56,7 +56,7 @@ export const SectionGroup = props => {
             {title}
           </h2>
           <div className='flex justify-end'>
-            <ViewAllLink linkAddress={linkAddress} />
+            <ViewAllLink text={button} linkAddress={linkAddress} />
           </div>
         </div>
         {!isMobileAndTablet ? (
