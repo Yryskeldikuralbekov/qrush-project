@@ -9,7 +9,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
 
   const closeModal = () => {
     setShowModal(false);
-    handleCloseModal(); // Закрываем модальное окно и вызываем функцию, переданную из родительского компонента
+    handleCloseModal();
   };
 
   return (
