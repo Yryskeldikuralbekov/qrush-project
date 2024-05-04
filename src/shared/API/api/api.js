@@ -45,4 +45,10 @@ export const QRUSHAPI = {
   getGallery() {
     return instance.get('v1/content/gallery/');
   },
+  getGalleryImages() {
+    return instance.get('v1/content/gallery/');
+  },
+  getVideos() {
+    return instance.get('/v1/content/video/');
+  },
 };
