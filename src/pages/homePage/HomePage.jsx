@@ -18,7 +18,14 @@ import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData'
 
 export const HomePage = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
-  const { videos, getVideos, homePageData, getHomePage } = useZustandStore();
+  const {
+    videos,
+    getVideos,
+    homePageData,
+    getHomePage,
+    galleryData,
+    getGallery,
+  } = useZustandStore();
   const isMobileAndTablet = useMediaQuery('(max-width: 1026px)');
   const secondFilteredVideoData = useFilteredData(homePageData, 6);
   const filteredGalleryData = useFilteredData(homePageData, 7);
@@ -32,6 +39,13 @@ export const HomePage = () => {
     'background',
     11
   );
+
+  const filteredGalleryImageData = useFilteredData(galleryData, 1);
+  const secondFilteredGalleryImageData = useFilteredData(galleryData, 2);
+  const thirdFilteredGalleryImageData = useFilteredData(galleryData, 3);
+  const fourthFilteredGalleryImageData = useFilteredData(galleryData, 4);
+  const fifthFilteredGalleryImageData = useFilteredData(galleryData, 5);
+  const sixthFilteredGalleryImageData = useFilteredData(galleryData, 6);
   const videoProps = {
     src: filteredVideoDataThird[0]?.video,
     secondSrc: filteredVideoDataSecond[0]?.video,
@@ -44,10 +58,17 @@ export const HomePage = () => {
   const gallerySectionProps = {
     title: filteredGalleryData[0]?.title,
     button: filteredGalleryData[0]?.description,
+    firstImage: filteredGalleryImageData[0]?.image,
+    secondImage: secondFilteredGalleryImageData[0]?.image,
+    thirdImage: thirdFilteredGalleryImageData[0]?.image,
+    fourthImage: fourthFilteredGalleryImageData[0]?.image,
+    fifthImage: fifthFilteredGalleryImageData[0]?.image,
+    sixthImage: sixthFilteredGalleryImageData[0]?.image,
   };
   useEffect(() => {
     getVideos();
     getHomePage();
+    getGallery();
   }, []);
   return (
     <>
