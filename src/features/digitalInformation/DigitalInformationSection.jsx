@@ -1,9 +1,41 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import CountUp from 'react-countup';
+import { useZustandStore } from '../../app/store/store';
+import { useFilteredData } from '../../shared/hooks/useFilteredData';
+import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData';
 
 export const DigitalInformationSection = () => {
+  const { homePageData, getHomePage } = useZustandStore();
   const [hasAppeared, setHasAppeared] = useState(false);
   const ref = useRef(null);
+  const filteredData = useFilteredData(homePageData, 3);
+  console.log(filteredData);
+  const filteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    2
+  );
+  const secondFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    3
+  );
+  console.log(secondFilteredNestedData);
+  const thirdFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    4
+  );
+  const fourthFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    5
+  );
+  const fifthFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    6
+  );
 
   const handleScroll = useCallback(() => {
     if (ref.current) {
@@ -31,7 +63,10 @@ export const DigitalInformationSection = () => {
       clearTimeout(timeoutId);
     };
   }, [delayedHandleScroll, timeoutId]);
-
+  useEffect(() => {
+    getHomePage();
+  }, []);
+  console.log(filteredData[0]?.description);
   return (
     <section className='pt-[28px] sm:pt-[70px] pb-[16px] sm:pb-[126px] xl:pt-[126px] flex justify-center items-center'>
       <section
@@ -39,7 +74,7 @@ export const DigitalInformationSection = () => {
         className='px-[16px] sm:px-10 max-w-full sm:max-w-[90%] xl:container mx-auto flex justify-center flex-col items-center align-middle'
       >
         <h4 className='text-[#F5F5F5] font-[Montserrat] text-[26px] sm:text-[50px] not-italic font-medium leading-[normal]'>
-          За все время
+          {filteredData[0]?.title}
         </h4>
         <section className='flex flex-wrap justify-between sm:justify-between gap-x-[10px] xl:gap-x-[110px] lg:gap-x-[70px] tablet:gap-x-[50px] md:gap-x-[90px] items-center mt-[25px] sm:mt-[60px]'>
           <div className='inline-flex flex-col w-[50%] sm:w-auto'>
@@ -49,7 +84,7 @@ export const DigitalInformationSection = () => {
               separator=''
               redraw={true}
               start={hasAppeared ? null : 0}
-              end={hasAppeared ? 1500 : 0}
+              end={hasAppeared ? filteredData[0]?.description : 0}
               suffix='+'
             >
               {({ countUpRef }) => (
@@ -57,12 +92,12 @@ export const DigitalInformationSection = () => {
                   ref={countUpRef}
                   className='font-[Montserrat] text-[20px] sm:text-[60px] md:text-[80px] inline-block text-center xl:text-[88px] lg:text-[85px] not-italic font-semibold leading-5 xl:leading-[50px]  text-[#F93822]'
                 >
-                  1500
+                  {filteredData[0]?.description}
                 </h5>
               )}
             </CountUp>
             <p className='text-center text-[#F5F5F5] font-[Montserrat] text-[12px] sm:text-[18px] md:text-[23px] xl:[27px] lg:text-[25px] mt-0 sm:mt-[30px] not-italic font-medium leading-5 sm:leading-[34px]'>
-              Записей проведено
+              {filteredNestedData[0]?.text}
             </p>
           </div>
           <div className='inline-flex flex-col'>
@@ -73,19 +108,19 @@ export const DigitalInformationSection = () => {
               suffix='+'
               redraw={true}
               start={hasAppeared ? null : 0}
-              end={hasAppeared ? 3000 : 0}
+              end={hasAppeared ? secondFilteredNestedData[0]?.text : 0}
             >
               {({ countUpRef }) => (
                 <h5
                   ref={countUpRef}
                   className='font-[Montserrat] text-[20px] sm:text-[60px] md:text-[80px] inline-block  text-center  xl:text-[88px] lg:text-[85px] not-italic font-semibold leading-5 xl:leading-[50px]  text-[#F93822]'
                 >
-                  3000
+                  {secondFilteredNestedData[0]?.text}
                 </h5>
               )}
             </CountUp>
             <p className='text-center text-[#F5F5F5] font-[Montserrat] text-[12px] sm:text-[18px]  md:text-[23px] xl:[27px] lg:text-[25px]   mt-0 sm:mt-[30px] not-italic font-medium leading-5 sm:leading-[34px]'>
-              Репетиций проведено
+              {thirdFilteredNestedData[0]?.text}
             </p>
           </div>
           <div className='inline-flex flex-col mx-auto mt-[20px] sm:mt-16 tablet:mt-0'>
@@ -95,7 +130,7 @@ export const DigitalInformationSection = () => {
               separator=''
               redraw={true}
               start={hasAppeared ? null : 0}
-              end={hasAppeared ? 1000 : 0}
+              end={hasAppeared ? fourthFilteredNestedData[0]?.text : 0}
               suffix='+'
             >
               {({ countUpRef }) => (
@@ -103,13 +138,13 @@ export const DigitalInformationSection = () => {
                   ref={countUpRef}
                   className='font-[Montserrat] text-[20px] sm:text-[60px] md:text-[80px] inline-block  text-center  xl:text-[88px] lg:text-[85px] not-italic font-semibold leading-5 xl:leading-[50px]  text-[#F93822]'
                 >
-                  1000
+                  {fourthFilteredNestedData[0]?.text}
                 </h5>
               )}
             </CountUp>
 
             <p className='text-center text-[#F5F5F5]   font-[Montserrat] text-[12px] sm:text-[18px]  md:text-[23px] xl:[27px] lg:text-[25px]   mt-0 sm:mt-[30px] not-italic font-medium leading-5 sm:leading-[34px]'>
-              Уроков проведено
+              {fifthFilteredNestedData[0]?.text}
             </p>
           </div>
         </section>

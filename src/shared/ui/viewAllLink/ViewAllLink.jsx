@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '../../utils/scrollToTop';
 
-const ViewAllLink = ({ linkAddress }) => {
+const ViewAllLink = ({ linkAddress, text }) => {
   return (
     <Link
       className='flex justify-normal items-center'
@@ -14,7 +14,7 @@ const ViewAllLink = ({ linkAddress }) => {
         className='font-[Montserrat] text-[17px] sm:text-[30px] not-italic text-#F5F5F5 font-medium leading-
         [normal] transition-colors duration-300 hover:text-[#F93822]'
       >
-        смотреть все
+        {text}
       </button>
       <svg
         className='ml-2'

@@ -1,23 +1,65 @@
+import { useEffect } from 'react';
 import { SectionGroup } from '../../../features';
-import firstStudio from '../../../shared/img/first_studio_main_page.jpg';
-import secondStudio from '../../../shared/img/second_studio_main_page.jpg';
-import thirdStudio from '../../../shared/img/third_studio_main_page.jpg';
-import servicesBg from '../../../shared/img/bg_services_home_page.jpg';
+
 import { useMediaQuery } from '../../../shared';
 import { SectionGroupMobile } from '../../../features/sectionGroups/sectionGroupMobile/SectionGroupMobile';
+import { useZustandStore } from '../../../app/store/store';
+import { useFilteredData } from '../../../shared/hooks/useFilteredData';
+import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedData';
 
 export const ServicesSectionHomePage = () => {
+  const { homePageData, getHomePage } = useZustandStore();
+  const ImageURL = import.meta.env.VITE_IMG_URL;
+  useEffect(() => {
+    getHomePage();
+  }, []);
+  const filteredData = useFilteredData(homePageData, 4);
+  console.log(filteredData);
+  const filteredNestedData = useFilteredNestedData(
+    filteredData,
+    'background',
+    7
+  );
+  console.log(filteredData);
+  const filteredImg = useFilteredNestedData(filteredData, 'background', 8);
+  const filteredImgSecond = useFilteredNestedData(
+    filteredData,
+    'background',
+    9
+  );
+  const filteredImgThird = useFilteredNestedData(
+    filteredData,
+    'background',
+    10
+  );
+  const filteredText = useFilteredNestedData(filteredData, 'next_text', 8);
+  const filteredTextSecond = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    9
+  );
+  const filteredTextThird = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    10
+  );
+  const filteredTextFourth = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    11
+  );
   const isTabletAndMobile = useMediaQuery('(max-width: 1024px)');
   const studioData = {
-    background: servicesBg,
+    background: ImageURL + filteredNestedData[0]?.background,
     linkAddress: '/services',
-    title: 'Услуги',
-    firstImg: firstStudio,
-    secondImg: secondStudio,
-    thirdImg: thirdStudio,
-    firstSubTitle: 'Репетиционная База',
-    secondSubTitle: 'Студия Звукозаписи',
-    thirdSubTitle: 'Музыкальные Курсы',
+    title: filteredData[0]?.title,
+    firstImg: ImageURL + filteredImg[0]?.background,
+    secondImg: ImageURL + filteredImgSecond[0]?.background,
+    thirdImg: ImageURL + filteredImgThird[0]?.background,
+    firstSubTitle: filteredText[0]?.text,
+    secondSubTitle: filteredTextSecond[0]?.text,
+    thirdSubTitle: filteredTextThird[0]?.text,
+    button: filteredTextFourth[0]?.text,
   };
   return (
     <>

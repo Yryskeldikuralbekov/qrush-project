@@ -1,26 +1,68 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import serviceBg from '../../../shared/img/servicesImg/About.png';
-import rectangl from '../../../shared/img/servicesImg/Rectangle_53.jpg';
-import rectangl2 from '../../../shared/img/third_studio_main_page.jpg';
-import rectangl3 from '../../../shared/img/first_studio_main_page.jpg';
 import { Button, scrollToTop } from '../../../shared';
+import { useZustandStore } from '../../../app/store/store';
+import { useFilteredData } from '../../../shared/hooks/useFilteredData';
+import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedData';
 
 export const ServiceLinks = () => {
+  const { homePageData, getHomePage } = useZustandStore();
+  const ImageURL = import.meta.env.VITE_IMG_URL;
+  useEffect(() => {
+    getHomePage();
+  }, []);
+  const filteredData = useFilteredData(homePageData, 4);
+  const filteredNestedData = useFilteredNestedData(
+    filteredData,
+    'background',
+    7
+  );
+  const filteredImg = useFilteredNestedData(filteredData, 'background', 8);
+  const filteredImgSecond = useFilteredNestedData(
+    filteredData,
+    'background',
+    9
+  );
+  const filteredImgThird = useFilteredNestedData(
+    filteredData,
+    'background',
+    10
+  );
+  const filteredText = useFilteredNestedData(filteredData, 'next_text', 8);
+  const filteredTextSecond = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    9
+  );
+  const filteredTextThird = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    10
+  );
+  const studioData = {
+    background: ImageURL + filteredNestedData[0]?.background,
+    title: filteredData[0]?.title,
+    firstImg: ImageURL + filteredImg[0]?.background,
+    secondImg: ImageURL + filteredImgSecond[0]?.background,
+    thirdImg: ImageURL + filteredImgThird[0]?.background,
+    firstSubTitle: filteredText[0]?.text,
+    secondSubTitle: filteredTextSecond[0]?.text,
+    thirdSubTitle: filteredTextThird[0]?.text,
+  };
   const arrayLinks = [
     {
-      img: rectangl,
-      title: 'Студия Звукозаписи',
+      img: studioData.secondImg,
+      title: studioData.secondSubTitle,
       links: '/sound-recording',
     },
     {
-      img: rectangl2,
-      title: 'Музыкальные Курсы',
+      img: studioData.thirdImg,
+      title: studioData.thirdSubTitle,
       links: '/music-courses',
     },
     {
-      img: rectangl3,
-      title: 'Репетиционная База',
+      img: studioData.firstImg,
+      title: studioData.firstSubTitle,
       links: '/rehearsal-cost',
     },
   ];
@@ -28,12 +70,12 @@ export const ServiceLinks = () => {
     <section className='relative w-full h-[600px] sm:h-[1200px] tablet:h-[1100px] lg:h-[1250px] text-[#F5F5F5]'>
       <img
         className='absolute z-[-1] w-full h-[100%] object-cover'
-        src={serviceBg}
+        src={studioData.background}
         alt='Задний-фон'
       />
       <div className='mx-auto pt-[145px] sm:pt-[134px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[665px] tablet:w-[1000px] tablet:pt-[250px] xl:w-[1720px] lg:w-[1200px]'>
         <h2 className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] xl:mb-[100px] lg:text-[90px]'>
-          Услуги
+          {studioData.title}
         </h2>
         <section className='tablet:flex tablet:justify-between tablet:gap-[20px]'>
           {arrayLinks &&

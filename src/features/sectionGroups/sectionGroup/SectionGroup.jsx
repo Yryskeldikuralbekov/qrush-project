@@ -18,6 +18,7 @@ export const SectionGroup = props => {
     firstImg,
     secondImg,
     background,
+    button,
   } = props;
 
   const dataArr = [
@@ -26,18 +27,21 @@ export const SectionGroup = props => {
       description: firstDescription,
       img: firstImg,
       href: '/rehearsal-cost',
+      button: button,
     },
     {
       title: secondSubTitle,
       description: secondDescription,
       img: secondImg,
       href: '/sound-recording',
+      button: button,
     },
     {
       title: thirdSubTitle,
       description: thirdDescription,
       img: thirdImg,
       href: '/music-courses',
+      button: button,
     },
   ];
 
@@ -52,7 +56,7 @@ export const SectionGroup = props => {
             {title}
           </h2>
           <div className='flex justify-end'>
-            <ViewAllLink linkAddress={linkAddress} />
+            <ViewAllLink text={button} linkAddress={linkAddress} />
           </div>
         </div>
         {!isMobileAndTablet ? (

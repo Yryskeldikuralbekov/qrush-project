@@ -15,6 +15,7 @@ export const SectionGroupMobile = props => {
     firstImg,
     secondImg,
     background,
+    button,
   } = props;
 
   const dataArr = [
@@ -59,7 +60,7 @@ export const SectionGroupMobile = props => {
           className='flex justify-center mt-[20px] sm:mt-[100px]'
           onClick={scrollToTop}
         >
-          <Button variant='moreInfoButton'>Подробнее</Button>
+          <Button variant='moreInfoButton'>{button}</Button>
         </Link>
       </section>
     </section>

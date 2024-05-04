@@ -4,10 +4,10 @@ import { useZustandStore } from '../../../app/store/store';
 
 export const AllNewsCardSection = () => {
   const { getNewsPage, newsData } = useZustandStore();
+  console.log(newsData);
   useEffect(() => {
     getNewsPage();
   }, []);
-  const baseUrlImg = import.meta.env.VITE_IMG_URL;
   return (
     <section className='w-[90%] xl:w-[1720px] mx-auto text-[#fff] font-montserrat'>
       <div className='w-full my-[90px] pt-[150px] sm:pt-[156px] tablet:pt-[190px]'>
@@ -17,14 +17,15 @@ export const AllNewsCardSection = () => {
       </div>
       <div className='w-full tablet:grid tablet:grid-cols-2 tablet:gap-[20px]'>
         {newsData &&
-          newsData?.map(el => (
-            <div className='mb-[80px]' key={el.id}>
+          newsData?.map((element, index) => (
+            <div className='mb-[80px]' key={index}>
               <NewsCard
-                img={`${baseUrlImg}${el.image}`}
-                title={el.title}
-                description={el.description}
-                warning={el.warning}
-                date={el.created_et}
+                key={element.id}
+                img={element.image}
+                title={element.title}
+                description={element.description}
+                warning={element.warning}
+                date={element.created_et}
               />
             </div>
           ))}

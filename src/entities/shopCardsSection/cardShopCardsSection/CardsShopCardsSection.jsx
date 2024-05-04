@@ -1,7 +1,6 @@
 import { Button, useMediaQuery } from '../../../shared';
 export const CardsShopCardsSection = ({ card }) => {
   const isMobile = useMediaQuery('(min-width: 450px) and (max-width: 575px)');
-  const urlForImage = import.meta.env.VITE_IMG_URL;
   return (
     <div
       className={`tablet:mt-[100px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[662px] sm:h-[1086px] md:h-[1438px] tablet:h-[460px] lg:h-[660px] xl:h-[860px] relative ${isMobile ? 'max-w-[90%] h-[858px] mx-auto' : ''}`}
@@ -13,7 +12,7 @@ export const CardsShopCardsSection = ({ card }) => {
         <div>
           <img
             className={`w-[340px] h-[343px] mx-auto border-[0.50px] border-[solid] border-[#e2ded3] rounded-[16px] sm:w-[518px] sm:h-[504px] md:w-[691px] md:h-[681px] tablet:w-[500px] tablet:h-[460px] lg:w-[680px] lg:h-[660px] xl:w-[805px] xl:h-[860px] ${isMobile ? 'w-[405px] h-[395px]' : ''}`}
-            src={urlForImage + card.image}
+            src={card.image}
             alt='cardImg'
           />
         </div>

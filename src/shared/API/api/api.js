@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const instance = axios.create({
+export const instance = axios.create({
   baseURL: 'http://13.48.44.67/api/',
 });
 
@@ -23,8 +23,8 @@ export const QRUSHAPI = {
   getSoundRecordingPage() {
     return instance.get('v2/srs/sound_recording_studio/');
   },
-  getTrustUsMainSection() {
-    return instance.get('v1/pages/trust_us/');
+  getPages() {
+    return instance.get('v1/pages/pages');
   },
   getTrustUsCelebrities() {
     return instance.get('v1/content/trust_us/');
@@ -38,8 +38,12 @@ export const QRUSHAPI = {
   getAboutUsArtist() {
     return instance.get('v1/content/team/');
   },
-  getAboutUsTeam() {
-    return instance.get('v1/pages/about_us/');
+
+  getVideos() {
+    return instance.get('v1/content/video/');
+  },
+  getGallery() {
+    return instance.get('v1/content/gallery/');
   },
   getGalleryImages() {
     return instance.get('v1/content/gallery/');

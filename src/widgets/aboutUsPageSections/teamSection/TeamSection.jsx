@@ -1,39 +1,42 @@
 import { useEffect } from 'react';
 import { useZustandStore } from '../../../app/store/store';
+import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 import { CardTeamSection } from './cardTeamSection/CardTeamSection';
 
 export const Team = () => {
-  const { aboutUsArtist, getAboutUsArtist, aboutUsTeam, getAboutUsTeam } =
+  const { aboutUsArtist, getAboutUsArtist, getPages, aboutUs } =
     useZustandStore();
+  const filteredData = useFilteredData(aboutUs, 2);
+  const filteredData2 = useFilteredData(aboutUs, 2);
   useEffect(() => {
     getAboutUsArtist();
-    getAboutUsTeam();
+    getPages();
   }, []);
   const urlForBgImage = import.meta.env.VITE_IMG_URL;
-  const urlBg = urlForBgImage + aboutUsTeam[1]?.background[0]?.background;
+  const urlBg = urlForBgImage + filteredData2[0]?.background[0].image;
   return (
     <section
       style={{
         backgroundImage: `url(${urlBg})`,
       }}
-      className='bg-cover bg-no-repeat flex min-h-[1159px]'
+      className='bg-cover bg-no-repeat '
     >
-      <div className='tablet:max-w-[99%] flex flex-col justify-center text-center tablet:text-left items-center gap-y-12 lg:max-w-[1500px] mx-auto'>
+      <div className='tablet:max-w-[90%] flex flex-col justify-start text-center tablet:text-left items-center gap-y-12  mx-auto'>
         <h2
-          className='text-left pt-[3%] sm:text-6xl sm:font-bold sm:text-[#E2DED3] xl:text-left text-3xl xl:text-7xl text-[#F5F5F5]
+          className='flex text-left pt-[3%] sm:text-6xl sm:font-bold sm:text-[#E2DED3] xl:text-left text-3xl xl:text-7xl text-[#F5F5F5]
                 xl:pt-16 xl:font-medium xl:leading-[122px]'
         >
-          {aboutUsTeam[1]?.title}
+          {filteredData[0]?.title}
         </h2>
-        <p className='max-w-full sm:max-w-full text-dm sm:text-2xl sm:text-center xl:text-left font-medium leading-6 sm:leading-10 text-slate-100 xl:max-w-11/12 px-[3%]'>
-          {aboutUsTeam[1]?.description}
+        <p className='w-full text-dm sm:text-2xl sm:text-center xl:text-left font-medium leading-6 sm:leading-10 text-slate-100 '>
+          {filteredData[0]?.description}
         </p>
-        <ul className='flex flex-wrap gap-6 sm:flex-wrap sm:gap-y-36 items-center text-center xl:flex-row lg:max-w-[1700px] mx-auto tablet:max-w-[1700px] lg:pl-0 lg:pr-0 xl:pl-0 xl:pr-0 lg:flex-row lg:gap-x-28 lg:ml-[-100px] xl:mr-[-100px] lg:mr-0 lg:max-w-11/12 xl:gap-0 justify-center lg:justify-center'>
-          {aboutUsArtist?.map(item => (
-            <CardTeamSection key={item.id} item={item} />
-          ))}
-        </ul>
       </div>
+      <ul className='flex flex-wrap sm:flex-wrap items-center mb-[32px] md:mb-[170px] mt-[24px] md:mt-[47px] tablet:mt-[78px] text-center xl:flex-row  mx-auto gap-y-[32px] md:gap-[80px] tablet:gap-x-[29px] tablet:gap-y-[100px] tablet:max-w-[99%] lg:flex-row justify-center lg:justify-center'>
+        {aboutUsArtist?.map(item => (
+          <CardTeamSection key={item.id} item={item} />
+        ))}
+      </ul>
     </section>
   );
 };

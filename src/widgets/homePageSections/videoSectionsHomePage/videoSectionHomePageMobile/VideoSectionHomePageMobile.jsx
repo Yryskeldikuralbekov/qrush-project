@@ -4,19 +4,26 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import ViewAllLink from '../../../../shared/ui/viewAllLink/ViewAllLink';
 
-export const VideoSectionHomePageMobile = () => {
+export const VideoSectionHomePageMobile = ({
+  src,
+  secondSrc,
+  thirdSrc,
+  fourthSrc,
+  title,
+  button,
+}) => {
   const srcArr = [
     {
-      src: 'https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20',
+      src: src,
     },
     {
-      src: 'https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20',
+      src: secondSrc,
     },
     {
-      src: 'https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20',
+      src: thirdSrc,
     },
     {
-      src: 'https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20',
+      src: fourthSrc,
     },
   ];
   return (
@@ -24,10 +31,10 @@ export const VideoSectionHomePageMobile = () => {
       <section className='mx-auto max-w-[90%] xl:container'>
         <div className='mb-[20px] sm:mb-0 pt-[50px] sm:pt-0 flex sm:block justify-between sm:justify-normal'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[100px] not-italic font-medium leading-[normal]'>
-            Видео
+            {title}
           </h2>
           <div className='flex justify-end mb-[40px]'>
-            <ViewAllLink linkAddress={'news'} />
+            <ViewAllLink text={button} linkAddress={'news'} />
           </div>
         </div>
         <div className='px-[18px] sm:px-0 h-[170px] sm:h-[334px] mb-[25px]'>

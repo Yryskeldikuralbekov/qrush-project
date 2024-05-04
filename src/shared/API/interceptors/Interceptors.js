@@ -1,9 +1,12 @@
 import axios from 'axios';
+import i18n from '../../../i18n';
 
 axios.interceptors.request.use(
-  request => {
-    console.log('Starting Request:', request);
-    return request;
+  config => {
+    console.log('Starting Request:', config);
+    const locale = i18n.language;
+    config.headers['Accept-Language'] = locale;
+    return config;
   },
   error => {
     console.error('Request Error:', error);
@@ -21,4 +24,5 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
 export default axios;

@@ -1,33 +1,27 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
-import blueGuitar from '../../shared/img/shop/blueGuitar.png';
-import drumStickBg from '../../shared/img/shop/drumSticksBg.jpg';
 import qrushShop from '../../shared/img/shop/qrushShop.png';
 import { useMediaQuery, Input } from '../../shared';
-import blackGuitar from '../../shared/img/shop/blackGuitar.png';
-import secondDrumStickBg from '../../shared/img/shop/secondDrumStickBg.png';
-import promark from '../../shared/img/shop/promark.png';
-import heartFire from '../../shared/img/shop/heartFire.png';
 import searchEngine from '../../shared/img/shop/searchEngine.svg';
 import xmark from '../../shared/img/shop/xmark1.svg';
 
 import { useZustandStore } from '../../app/store/store';
 import { ShopCardsSection } from '../../entities/shopCardsSection/ShopCardsSection';
+import { useFilteredData } from '../../shared/hooks/useFilteredData';
 
 export const BgQrushShop = () => {
-  const { getShopCards, shopCards } = useZustandStore();
+  const { getShopCards, getPages, shopCards, shopBg } = useZustandStore();
+  const filteredData = useFilteredData(shopBg, 7);
   useEffect(() => {
     getShopCards();
+    getPages();
   }, []);
-  const bgImages1 = [
-    blueGuitar,
-    drumStickBg,
-    promark,
-    blackGuitar,
-    secondDrumStickBg,
-    heartFire,
-  ];
+  const urlForImg = import.meta.env.VITE_IMG_URL;
+  const bgImages1 =
+    filteredData && filteredData[0]?.background
+      ? filteredData[0]?.background.map(item => urlForImg + item.image)
+      : [];
   const [indexQrushShop, setIndexQrushShop] = useState(0);
   const isChangingBg = false;
   const timeoutId = null;
@@ -66,7 +60,7 @@ export const BgQrushShop = () => {
     <section>
       <div className='max-w-[1920px] mx-auto flex justify-center items-center bg-[#000] '>
         <motion.div
-          className={`bg-cover bg-center w-[100%] h-[464px] sm:h-[650px] md:h-[804px] tablet:h-[980px] lg:h-[1300px] xl:h-[1560px] bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
+          className={`bg-cover bg-center w-[100%] h-[464px] sm:h-[650px] md:h-[768px] tablet:h-[760px] lg:h-[860px] xl:h-[960px] bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
           style={{
             backgroundImage: `url(${bgImages1[indexQrushShop]})`,
             transition: 'background-image 1s ease-in-out',

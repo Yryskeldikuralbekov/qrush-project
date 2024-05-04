@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { t } from 'i18next';
 import { useState } from 'react';
+
 import logo from '../../shared/img/rush1.svg';
 import { Button, scrollToTop, useMediaQuery } from '../../shared';
 
 const locales = {
-  ru: { title: 'RU' },
-  en: { title: 'EN' },
-  kg: { title: 'KG' },
+  ru: { title: 'Ru' },
+  en: { title: 'En' },
+  kg: { title: 'Kg' },
 };
 export const Header = () => {
   const isMobileAndTablet = useMediaQuery('( max-width: 1026px)');
@@ -48,6 +49,7 @@ export const Header = () => {
       link: t('header.headerLink.linkTitle7'),
     });
   }
+
   return (
     <header
       className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[100px]  w-full flex items-center justify-center  top-0 backdrop-blur-50 fixed `}
@@ -63,7 +65,7 @@ export const Header = () => {
           </Link>
           {isMobileAndTablet ? (
             <div className='flex flex-row items-center gap-[20px]'>
-              <ul className='uppercase flex gap-2 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
+              <ul className='uppercase text-nowrap flex gap-2 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
                 {Object.keys(locales).map(locale => (
                   <li key={locale}>
                     <button
@@ -131,7 +133,7 @@ export const Header = () => {
             </div>
           ) : (
             <>
-              <ul className='flex flex-row justify-around items-center text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
+              <ul className='flex flex-row justify-around text-nowrap items-center text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
                 {headerLinks.map((routes, index) => (
                   <li key={index}>
                     <Link onClick={scrollToTop} to={routes.route}>

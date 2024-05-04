@@ -2,16 +2,24 @@ import React from 'react';
 
 import ViewAllLink from '../../../../shared/ui/viewAllLink/ViewAllLink';
 
-export const VideoSectionHomePage = () => {
+export const VideoSectionHomePage = ({
+  src,
+  secondSrc,
+  thirdSrc,
+  fourthSrc,
+  fifthSrc,
+  title,
+  button,
+}) => {
   return (
     <section className='pb-[70px] xl:pb-[150px] pt-0 sm:pt-[9%]'>
       <section className='mx-auto max-w-[90%] xl:container'>
         <div className='mb-[20px]  sm:mb-0 pt-[50px] sm:pt-0 flex sm:block justify-between sm:justify-normal'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[100px] not-italic font-medium leading-[normal]'>
-            Видео
+            {title}
           </h2>
           <div className='flex justify-end mb-0 sm:mb-[40px]'>
-            <ViewAllLink linkAddress={'gallery'} />
+            <ViewAllLink text={button} linkAddress={'gallery'} />
           </div>
         </div>
         <section className='grid grid-rows-[48%_50%] grid-cols-4 gap-2 sm:gap-5'>
@@ -19,7 +27,7 @@ export const VideoSectionHomePage = () => {
             <iframe
               loading='lazy'
               className='w-full h-full'
-              src='https://www.youtube.com/embed/sgFsJuVcm18?si=RfOrOjLdPGVbfuRe&amp;start=2'
+              src={src}
               title='YouTube video player'
               // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -30,7 +38,7 @@ export const VideoSectionHomePage = () => {
             <iframe
               loading='lazy'
               className='w-full h-full'
-              src='https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20'
+              src={secondSrc}
               title='YouTube video player'
               // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -40,7 +48,7 @@ export const VideoSectionHomePage = () => {
             <iframe
               loading='lazy'
               className='w-full h-full'
-              src='https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20'
+              src={thirdSrc}
               title='YouTube video player'
               // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -50,7 +58,7 @@ export const VideoSectionHomePage = () => {
             <iframe
               loading='lazy'
               className='w-full h-full'
-              src='https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20'
+              src={fourthSrc}
               title='YouTube video player'
               // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -60,7 +68,7 @@ export const VideoSectionHomePage = () => {
             <iframe
               loading='lazy'
               className='w-full h-full'
-              src='https://www.youtube.com/embed/sXFiaJr9los?si=sr7IZhPiA0xw_2am&amp;start=20'
+              src={fifthSrc}
               title='YouTube video player'
               // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

@@ -5,7 +5,9 @@
       "upperTitle": "Discover the art of recording with Q-Rush. Create a sound that will be heard and remembered!"
     }
   },
-
+  "button": {
+    "more": "More details"
+  },
   "header": {
     "headerLink": {
       "linkTitle1": "About Us",
