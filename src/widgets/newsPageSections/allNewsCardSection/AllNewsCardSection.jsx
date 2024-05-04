@@ -10,12 +10,12 @@ export const AllNewsCardSection = () => {
   }, []);
   return (
     <section className='w-[90%] xl:w-[1720px] mx-auto text-[#fff] font-montserrat'>
-      <div className='w-full my-[90px] pt-[150px] sm:pt-[156px] tablet:pt-[190px]'>
-        <h2 className='text-[60px] sm:text-[56px] font-[600] tablet:text-[80px] text-[#fff] tablet:font-[700]'>
+      <div className='w-full mt-[90px] mb-[30px] pt-[150px] sm:pt-[150px] tablet:pt-[00px]'>
+        <h2 className='text-[60px] sm:text-[56px] font-[600] tablet:text-[50px] text-[#fff] tablet:font-[700]'>
           ВСЕ НОВОСТИ
         </h2>
       </div>
-      <div className='w-full tablet:grid tablet:grid-cols-2 tablet:gap-[20px]'>
+      <div className='w-full tablet:grid tablet:grid-cols-3 tablet:gap-[20px]'>
         {newsData &&
           newsData?.map((element, index) => (
             <div className='mb-[80px]' key={index}>

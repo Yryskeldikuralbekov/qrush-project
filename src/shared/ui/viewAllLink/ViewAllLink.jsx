@@ -11,7 +11,7 @@ const ViewAllLink = ({ linkAddress, text }) => {
       onClick={scrollToTop}
     >
       <button
-        className='font-[Montserrat] text-[17px] sm:text-[30px] not-italic text-#F5F5F5 font-medium leading-
+        className='font-[Montserrat] text-[17px] sm:text-[25px] not-italic text-#F5F5F5 font-medium leading-
         [normal] transition-colors duration-300 hover:text-[#F93822]'
       >
         {text}

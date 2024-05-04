@@ -52,7 +52,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[100px]  w-full flex items-center justify-center  top-0 backdrop-blur-50 fixed `}
+      className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[80px]  w-full flex justify-center  top-0 backdrop-blur-30 fixed `}
     >
       <section className='bg-cover bg-no-repeat bg-center container '>
         <nav className=' mx-auto flex justify-between items-center container '>
@@ -133,7 +133,7 @@ export const Header = () => {
             </div>
           ) : (
             <>
-              <ul className='flex flex-row justify-around text-nowrap items-center text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
+              <ul className='flex flex-row justify-around text-nowrap text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
                 {headerLinks.map((routes, index) => (
                   <li key={index}>
                     <Link onClick={scrollToTop} to={routes.route}>
