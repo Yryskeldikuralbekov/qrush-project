@@ -47,12 +47,12 @@ export const SectionGroup = props => {
 
   return (
     <section
-      className='h-[336px] sm:h-[736px] xl:h-[1174px]  lg:h-[900px] bg-cover bg-no-repeat bg-center'
+      className='h-[336px] sm:h-[736px] xl:h-[1174px]  lg:h-[650px] bg-cover bg-no-repeat bg-center'
       style={{ backgroundImage: `url(${background})` }}
     >
       <section className='mx-auto max-w-full sm:max-w-[90%]  xl:container'>
-        <div className='flex sm:block px-4 sm:px-0  justify-between sm:justify-end pt-[30px] sm:pt-0'>
-          <h2 className='text-[#F5F5F5] font-[Montserrat] text-[20px] sm:text-[64px] lg:text-[100px] not-italic font-medium pt-0 sm:pt-[60px] xl:pt-[100px] leading-[normal]'>
+        <div className='flex px-4 sm:px-0  justify-between items-end pt-[0px] sm:pt-0'>
+          <h2 className='text-[#F5F5F5] font-[Montserrat] text-[20px] sm:text-[64px] lg:text-[70px] not-italic font-medium pt-0 sm:pt-[60px] xl:pt-[100px] leading-[normal]'>
             {title}
           </h2>
           <div className='flex justify-end'>

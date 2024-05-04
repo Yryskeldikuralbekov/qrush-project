@@ -11,7 +11,7 @@ export const AccordionSection = () => {
 
   return (
     <section className='relative text-[#FFFFFF]'>
-      <div className='font-[600] sm:font-normal w-full pb-[80px] pt-[200px] mx-[16px] max-w-[600px] xl:max-w-[1300px] lg:max-w-[900px] sm:mx-auto'>
+      <div className='font-[600] sm:font-normal w-full pb-[80px] pt-[150px] mx-[16px] max-w-[600px] xl:max-w-[1300px] lg:max-w-[900px] sm:mx-auto'>
         <h2 className='text-[48px] sm:text-[50px] w-[360px] lg:w-full lg:text-center text-left'>
           Часто задаваемые вопросы
         </h2>

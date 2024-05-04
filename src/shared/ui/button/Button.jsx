@@ -18,7 +18,7 @@ export const Button = ({
     moreInfoButton:
       'flex px-[24px] sm:px-[50px] py-[10px] sm:py-[20px] justify-center w-[248px] sm:w-[490px] h-[50px] sm:h-[100px] items-center gap-[10px] flex-shrink-0 rounded-[40px] text-[#E2DED3] bg-[var(--orange-600,_#FE0002)] font-[Montserrat] text-[20px] sm:text-[40px] not-italic font-medium leading-[normal]',
     serviceButton:
-      'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[12px] py-[10.5px] px-[30px] tablet:text-[28px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[26px] xl:text-[30px] text-[#F5F5F5] lg:py-[18px] xl:py-[14px] lg:px-[60px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
+      'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[12px] py-[10.5px] px-[30px] tablet:text-[28px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[18px] xl:text-[30px] text-[#F5F5F5] lg:py-[5px] xl:py-[14px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
   };
 
   const classNames = [variant && styles[variant], className];

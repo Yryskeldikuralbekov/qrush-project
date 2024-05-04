@@ -12,13 +12,13 @@ export const VideoSectionHomePage = ({
   button,
 }) => {
   return (
-    <section className='pb-[70px] xl:pb-[150px] pt-0 sm:pt-[9%]'>
+    <section className='pb-[70px] xl:pb-[150px] -mt-[250px]'>
       <section className='mx-auto max-w-[90%] xl:container'>
-        <div className='mb-[20px]  sm:mb-0 pt-[50px] sm:pt-0 flex sm:block justify-between sm:justify-normal'>
-          <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[100px] not-italic font-medium leading-[normal]'>
+        <div className='mb-[20px]  sm:mb-[40px] pt-[50px] sm:pt-0 flex justify-between items-end'>
+          <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[70px] not-italic font-medium leading-[normal]'>
             {title}
           </h2>
-          <div className='flex justify-end mb-0 sm:mb-[40px]'>
+          <div className='flex justify-end mb-0 sm:mb-[10px]'>
             <ViewAllLink text={button} linkAddress={'gallery'} />
           </div>
         </div>
