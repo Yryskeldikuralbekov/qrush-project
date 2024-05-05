@@ -13,10 +13,10 @@ export const TrustUsSectionHomePage = () => {
   const { homePageData, getHomePage, celebrities, getTrustUsCelebrities } =
     useZustandStore();
 
-  const filteredCelebrities = useFilteredData(celebrities, 1);
+  const filteredCelebrities = useFilteredData(celebrities, 8);
 
   const secondFilteredCelebrities = useFilteredData(celebrities, 2);
-  const thirdFilteredCelebrities = useFilteredData(celebrities, 3);
+  const thirdFilteredCelebrities = useFilteredData(celebrities, 9);
   const filteredData = useFilteredData(homePageData, 8);
   const filteredNestedData = useFilteredNestedData(
     filteredData,

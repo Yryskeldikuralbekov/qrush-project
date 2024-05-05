@@ -7,12 +7,12 @@ export const MusicCoursesItem = ({ item }) => {
   return (
     <div>
       <div className='mx-[20px] text-center sm:mt-[30px] tablet:mt-[100px]'>
-        <p className='text-[18px] font-[500] pb-[22px] md:pb-[38px] xl:text-[25px] lg:text-[23px] tablet:text-[20px]'>
+        <h4 className='text-[18px] font-[500] pb-[22px] md:pb-[38px] xl:text-[25px] lg:text-[23px] tablet:text-[20px]'>
           {item.title}
-        </p>
-        <p className='text-[14px] sm:text-[18px] font-[500] pb-[10px] md:pb-[25px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[25px] lg:text-[23px] tablet:text-[20px]'>
+        </h4>
+        <h5 className='text-[14px] sm:text-[18px] font-[500] pb-[10px] md:pb-[25px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[25px] lg:text-[23px] tablet:text-[20px]'>
           {item.desc}
-        </p>
+        </h5>
       </div>
 
       <div className='ml-[20px] sm:mx-auto w-[95%] xl:w-[1820px]'>

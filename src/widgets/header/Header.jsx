@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { t } from 'i18next';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import logo from '../../shared/img/rush1.svg';
 import { Button, scrollToTop, useMediaQuery } from '../../shared';
@@ -9,13 +9,13 @@ import { Button, scrollToTop, useMediaQuery } from '../../shared';
 const locales = {
   ru: { title: 'Ru' },
   en: { title: 'En' },
-  kg: { title: 'Kg' },
+  ky: { title: 'KG' },
 };
 export const Header = () => {
   const isMobileAndTablet = useMediaQuery('( max-width: 1026px)');
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-
+  const windowRef = useRef(window);
   const genericHamburgerLine = `h-[2px] w-8 my-[4.9px] rounded-full bg-white transition ease transform duration-300`;
   const headerLinks = [
     {
@@ -39,17 +39,20 @@ export const Header = () => {
       link: t('header.headerLink.linkTitle5'),
     },
     {
-      route: '/faq',
-      link: t('header.headerLink.linkTitle6'),
+      route: '/shop',
+      link: t('header.headerLink.linkTitle7'),
     },
   ];
   if (isMobileAndTablet) {
     headerLinks.push({
-      route: '/shop',
-      link: t('header.headerLink.linkTitle7'),
+      route: '/faq',
+      link: t('header.headerLink.linkTitle6'),
     });
   }
-
+  const handleCLick = locale => {
+    i18n.changeLanguage(locale);
+    windowRef.current.location.reload();
+  };
   return (
     <header
       className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[80px]  w-full flex justify-center  top-0 backdrop-blur-30 fixed `}
@@ -79,7 +82,7 @@ export const Header = () => {
                           i18n.resolvedLanguage === locale ? 'bold' : 'normal',
                       }}
                       type='submit'
-                      onClick={() => i18n.changeLanguage(locale)}
+                      onClick={() => handleCLick(locale)}
                     >
                       {locales[locale].title}
                     </button>
@@ -153,7 +156,7 @@ export const Header = () => {
                             : 'text-gray-500'
                         }`}
                         type='submit'
-                        onClick={() => i18n.changeLanguage(locale)}
+                        onClick={() => handleCLick(locale)}
                       >
                         {locales[locale].title}
                       </button>
