@@ -6,3 +6,4 @@ export { FormFeedback } from './formFeedback/FormFeedback';
 export { DigitalInformationSection } from './digitalInformation/DigitalInformationSection';
 export { ModalWindow } from './modalWindow/ModalWindow';
 export { BgQrushShop } from './bgQrushShop/BgQrushShop';
+export { ModalNewsWindow } from './modalNewsWindow/ModalNewsWindow';

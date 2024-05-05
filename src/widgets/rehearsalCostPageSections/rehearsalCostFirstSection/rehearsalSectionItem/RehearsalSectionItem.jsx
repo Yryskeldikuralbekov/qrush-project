@@ -16,14 +16,14 @@ export const RehearsalSectionItem = ({ item, length }) => {
   return (
     <div>
       <div className='mx-[20px] mt-[40px] sm:mx-auto sm:mt-[80px] tablet:mt-[100px] text-center'>
-        <p className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] tablet:text-[20px]'>
+        <h4 className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] tablet:text-[20px]'>
           {item.title}
-        </p>
-        <p className='text-[14px] sm:text-[24px] font-[500] pb-[10px] sm:pb-[30px] tablet:pb-[100px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[32px] lg:text-[23px] tablet:text-[20px]'>
+        </h4>
+        <h5 className='text-[14px] sm:text-[24px] font-[500] pb-[10px] sm:pb-[30px] tablet:pb-[60px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[32px] lg:text-[23px] tablet:text-[20px]'>
           {item.id === 1
             ? `К вашим услугам есть ${length} комнаты для репетиций`
             : ''}
-        </p>
+        </h5>
       </div>
       <section className='ml-[20px] w-[90%] sm:mx-auto sm:w-[95%] xl:w-[1820px]'>
         <SwiperPhotoItem arrayImg={arrayImg} />

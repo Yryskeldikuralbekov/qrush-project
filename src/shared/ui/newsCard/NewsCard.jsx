@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../button/Button';
+import { ModalNewsWindow } from '../../../features';
 export const NewsCard = ({ img, title, description, warning, date }) => {
+  const [open, setOpen] = useState(true);
+
   const formatDate = dateString => {
     const date = new Date(dateString);
     const day = date.getDate();
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
     return `${day < 10 ? '0' : ''}${day}.${month < 10 ? '0' : ''}${month}.${year}`;
+  };
+
+  const setOpenWindow = () => {
+    setOpen(true);
   };
 
   const formattedDate = formatDate(date);
@@ -33,6 +40,7 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
             {formattedDate}
           </p>
           <Button
+            onClick={setOpenWindow}
             className={'absolute bottom-[20px] right-4'}
             variant='serviceButton'
           >
@@ -40,6 +48,15 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
           </Button>
         </div>
       </div>
+      <ModalNewsWindow
+        openNewsModal={open}
+        setOpenNewsModal={setOpen}
+        img={img}
+        title={title}
+        description={description}
+        warning={warning}
+        date={formattedDate}
+      />
     </section>
   );
 };

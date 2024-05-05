@@ -17,10 +17,10 @@ export const SoundRecordingSection = () => {
           alt='studioRecording'
         />
       </div>
-      <div className='mx-[20px] pt-[140px] sm:w-[700px] text-[#fff] sm:pt-[145px] sm:mx-[50px] tablet:top-[0px] absolute lg:left-[100px] lg:top-[200px] lg:z-10'>
-        <h3 className='w-[100px] md:w-full text-[32px] tablet:text-[60px] lg:text-[80px] tablet:w-[300px] lg:w-full font-[500] mb-[24px]'>
-          <p>{soundRecordingData.service_name}</p>
-        </h3>
+      <div className='mx-[20px] pt-[140px] sm:w-[700px] text-[#fff] sm:pt-[145px] tablet:pt-[0px] sm:mx-[50px] tablet:top-[0px] absolute lg:left-[100px] lg:top-[200px] lg:z-10'>
+        <h1 className='w-[100px] md:w-full text-[32px] tablet:text-[60px] lg:text-[70px] tablet:w-[500px] lg:w-full font-[500] mb-[24px]'>
+          {soundRecordingData.service_name}
+        </h1>
         {soundRecordingData.description &&
           soundRecordingData.description?.map(el => (
             <ul key={el.id}>
