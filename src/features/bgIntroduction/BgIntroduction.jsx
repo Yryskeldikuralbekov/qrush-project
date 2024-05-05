@@ -14,19 +14,21 @@ export const BgIntroduction = () => {
     'background',
     selectedBackgroundId
   );
-
   useEffect(() => {
     getHomePage();
-
-    const intervalId = setInterval(() => {
-      setSelectedBackgroundId(prevId => {
-        const nextId = (prevId % filteredData[0]?.background?.length) + 1;
-        return nextId;
-      });
-    }, 4000);
-
-    return () => clearInterval(intervalId);
   }, []);
+  useEffect(() => {
+    if (filteredData.length > 0) {
+      const intervalId = setInterval(() => {
+        setSelectedBackgroundId(prevId => {
+          const nextId = (prevId % filteredData[0]?.background?.length) + 1;
+          return nextId;
+        });
+      }, 4000);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [filteredData]);
 
   const backgroundImageUrl = ImageURL + filteredBackgroundData[0]?.background;
   return (

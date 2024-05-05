@@ -1,9 +1,32 @@
 import axios from 'axios';
+import i18n from '../../../i18n';
 
 export const instance = axios.create({
   baseURL: 'http://13.48.44.67/api/',
 });
+instance.interceptors.request.use(
+  config => {
+    console.log('Starting Request:', config);
+    const locale = i18n.language;
+    config.headers['Accept-Language'] = locale;
+    return config;
+  },
+  error => {
+    console.error('Request Error:', error);
+    return Promise.reject(error);
+  }
+);
 
+instance.interceptors.response.use(
+  response => {
+    console.log('Response:', response);
+    return response;
+  },
+  error => {
+    console.error('Response Error:', error);
+    return Promise.reject(error);
+  }
+);
 export const QRUSHAPI = {
   getHomePage() {
     return instance.get('v1/pages/main/');
