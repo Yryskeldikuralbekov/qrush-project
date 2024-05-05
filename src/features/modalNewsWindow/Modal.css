@@ -9,6 +9,7 @@
 }
 
 .scaleEnter {
+    transform: translate(0);
     animation: scaleIn 0.5s ease-out;
 }
 

@@ -18,10 +18,10 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
     <>
       {showModal && (
         <div
-          className='msx-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+          className='max-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
           onClick={closeModal}
         >
-          <div className='w-[80vw] h-[80vh]'>
+          <div className='w-[80vw] h-[80vh] scaleEnter'>
             <img
               src={imageUrl}
               alt='Modal'
