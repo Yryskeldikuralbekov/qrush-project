@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NewsCard } from '../../../shared';
 import { useZustandStore } from '../../../app/store/store';
+import { ModalNewsWindow } from '../../../features/modalNewsWindow/ModalNewsWindow';
 
 export const AllNewsCardSection = () => {
+  const [open, setOpen] = useState(false);
   const { getNewsPage, newsData } = useZustandStore();
   console.log(newsData);
   useEffect(() => {
@@ -11,7 +13,10 @@ export const AllNewsCardSection = () => {
   return (
     <section className='w-[90%] xl:w-[1720px] mx-auto text-[#fff] font-montserrat'>
       <div className='w-full mt-[90px] mb-[30px] pt-[150px] sm:pt-[150px] tablet:pt-[00px]'>
-        <h2 className='text-[60px] sm:text-[56px] font-[600] tablet:text-[50px] text-[#fff] tablet:font-[700]'>
+        <h2
+          onClick={() => setOpen(true)}
+          className='text-[60px] sm:text-[56px] font-[600] tablet:text-[50px] text-[#fff] tablet:font-[700]'
+        >
           ВСЕ НОВОСТИ
         </h2>
       </div>
@@ -30,6 +35,7 @@ export const AllNewsCardSection = () => {
             </div>
           ))}
       </div>
+      <ModalNewsWindow open={open} setOpen={setOpen} />
     </section>
   );
 };

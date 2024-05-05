@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+const portal = document.getElementById('portal');
 
 export const ImageModal = ({ imageUrl, handleCloseModal }) => {
   const [showModal, setShowModal] = useState(false);
@@ -12,14 +14,14 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
     handleCloseModal();
   };
 
-  return (
+  return ReactDOM.createPortal(
     <>
       {showModal && (
         <div
-          className='msx-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+          className='max-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
           onClick={closeModal}
         >
-          <div className='w-[80vw] h-[80vh]'>
+          <div className='w-[80vw] h-[80vh] scaleEnter'>
             <img
               src={imageUrl}
               alt='Modal'
@@ -28,6 +30,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
           </div>
         </div>
       )}
-    </>
+    </>,
+    portal
   );
 };
