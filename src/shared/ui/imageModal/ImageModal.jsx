@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+const portal = document.getElementById('portal');
 
 export const ImageModal = ({ imageUrl, handleCloseModal }) => {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +14,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
     handleCloseModal();
   };
 
-  return (
+  return ReactDOM.createPortal(
     <>
       {showModal && (
         <div
@@ -28,6 +30,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
           </div>
         </div>
       )}
-    </>
+    </>,
+    portal
   );
 };

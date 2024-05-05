@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import './Modal.css';
 const portal = document.getElementById('portal');
 
 export const ModalNewsWindow = ({
@@ -17,21 +18,23 @@ export const ModalNewsWindow = ({
     >
       <div
         onClick={event => event.stopPropagation()}
-        className={`${openNewsModal ? 'absolute h-[700px] rounded-[30px] left-[50%] translate-x-[-50%] z-10 w-[70%] flex justify-between bg-gradient-to-t from-[#160503] from-0% via-black to-[#160503] text-center opacity-1' : 'hidden opacity-0'}`}
+        className={`${openNewsModal ? 'scaleEnter absolute lg:h-[70vh] rounded-[30px] left-[50%] translate-x-[-50%] z-10 lg:w-[80%] w-[90%] lg:flex lg:justify-between bg-gradient-to-t from-[#160503] from-0% via-black to-[#160503] text-center opacity-1 transform transition-all duration-500 scale-100' : 'transform hidden opacity-0 scale-150'}`}
       >
-        <div className='w-[40%]'>
+        <div className='w-[70%] lg:w-[40%] mx-auto'>
           <img
-            className='w-[100%] h-[90%] mx-[50px] my-[30px] rounded-[30px] object-cover'
+            className='w-[100%] h-[90%] pt-[20px] lg:mx-[50px] lg:my-[15px] rounded-[30px] object-cover'
             src={img}
-            alt='imgNew'
+            alt='News'
           />
         </div>
-        <div className='w-[55%] text-[#FFF] mx-auto'>
-          <p className='text-center text-[18px] font-[500] pt-[110px] w-[618px] mx-auto xl:text-[30px] xl:w-[918px] xl:pt-[98px] lg:text-[23px] pb-[20px]'>
+        <div className='w-full lg:w-[55%] text-[#FFF] mx-auto mt-[50px] tablet:pl-[80px]'>
+          <p className='text-left w-full md:w-[80%] px-[20px] text-[14px] md:text-[20px] tablet:text-[22px] pb-[20px]'>
             {title}
           </p>
-          <p className='pl-[80px] text-[24px]'>{description}</p>
-          <p className='pl-[80px] text-[24px]'>{warning}</p>
+          <p className='w-full md:w-[80%] text-[14px] md:text-[16px] tablet:text-[18px] px-[20px] text-left pb-[80px]'>
+            {description}
+          </p>
+          <p className='pl-[80px] text-[24px] text-center'>{warning}</p>
           <p className='absolute bottom-[20px] text-[24px] right-[40px]'>
             {date}
           </p>

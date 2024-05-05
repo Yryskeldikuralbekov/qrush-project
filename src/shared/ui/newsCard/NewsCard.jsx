@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../button/Button';
 import { ModalNewsWindow } from '../../../features';
 export const NewsCard = ({ img, title, description, warning, date }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const formatDate = dateString => {
     const date = new Date(dateString);
