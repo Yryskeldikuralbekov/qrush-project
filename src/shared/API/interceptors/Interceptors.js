@@ -7,6 +7,7 @@ axios.interceptors.request.use(
     const locale = i18n.language;
     config.headers['Accept-Language'] = locale;
     return config;
+    console.log(locale);
   },
   error => {
     console.error('Request Error:', error);
