@@ -20,7 +20,9 @@ export const Button = ({
     serviceButton:
       'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[12px] py-[10.5px] px-[30px] md:text-[24px] sm:text-[28px] tablet:text-[12px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[12px] xl:text-[16px] text-[#F5F5F5] lg:py-[5px] xl:py-[14px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
     listButton:
-      'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[12px] py-[10.5px] px-[30px] md:text-[24px] sm:text-[28px] tablet:text-[12px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[12px] xl:text-[16px] text-[#F5F5F5] lg:py-[5px] xl:py-[14px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
+      'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[12px] py-[10.5px] px-[30px] md:text-[24px] sm:text-[28px] tablet:text-[12px] lg:rounded-[50px] bg-[#808080] font-normal lg:text-[12px] xl:text-[16px] text-[#F5F5F5] lg:py-[5px] xl:py-[14px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
+    rehearsalButton:
+      'sm:w-auto sm:h-auto text-center font-[500] rounded-[500px] text-[12px] py-[10.5px] px-[30px] md:text-[24px] sm:text-[28px] tablet:text-[12px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[15px] xl:text-[16px] text-[#F5F5F5] lg:py-[10px] xl:py-[14px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
   };
 
   const classNames = [variant && styles[variant], className];
