@@ -31,17 +31,25 @@ export const RehearsalSectionItem = ({ item, length }) => {
         <SwiperPhotoItem arrayImg={arrayImg} />
       </section>
       <div className='mt-[5px] sm:mt-[50px] text-right sm:mb-[39px] sm:text-right tablet:text-center mr-[14px]'>
-        <Button variant='serviceButton'>
-          <a
-            target='_blank'
-            href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
-            rel='noreferrer'
-          >
-            Забронировать
-          </a>
+        {' '}
+        <Button onClick={changeList} variant='listButton'>
+          <h3 className='flex items-center text-[20px] font-[600] sm:text-[30px] xl:text-[30px] lg:text-[15px] tablet:text-[22px]'>
+            {item.list_tech}
+            <img
+              className={
+                openList
+                  ? 'w-[20px] h-[20px] rotate-[0deg] transition-all ml-[10px]'
+                  : !openList
+                    ? 'w-[20px] h-[20px] rotate-[-90deg] transition-all ml-[10px]'
+                    : ''
+              }
+              src={arrow}
+              alt='arrow'
+            />
+          </h3>
         </Button>
       </div>
-      <div className='w-[365px] sm:w-[560px] text-left mx-[20px] md:w-[700px] tablet:w-full tablet:mx-auto mt-[27px] md:mt-[30px] tablet:mt-[100px] md:text-center'>
+      <div className='w-[365px] sm:w-[560px] text-left mx-[20px] md:w-[700px] tablet:w-full tablet:mx-auto mt-[27px] md:mt-[30px] tablet:mt-[50px] md:text-center'>
         <p
           id={item.id}
           className='text-left tablet:text-center mx-auto sm:mx-0 tablet:mx-auto text-[20px] sm:text-[30px] md:w-[425px] font-[500] xl:text-[25px] xl:w-[1000px] lg:text-[23px] lg:w-[900px] tablet:text-[20px] tablet:w-[600px] tablet:mb-[40px]'
@@ -50,21 +58,14 @@ export const RehearsalSectionItem = ({ item, length }) => {
         </p>
 
         <div className='hidden tablet:block'>
-          <Button onClick={changeList} variant='listButton'>
-            <h3 className='flex items-center text-[20px] font-[600] sm:text-[30px] xl:text-[30px] lg:text-[25px] tablet:text-[22px]'>
-              {item.list_tech}
-              <img
-                className={
-                  openList
-                    ? 'w-[20px] h-[20px] rotate-[0deg] transition-all ml-[10px]'
-                    : !openList
-                      ? 'w-[20px] h-[20px] rotate-[-90deg] transition-all ml-[10px]'
-                      : ''
-                }
-                src={arrow}
-                alt='arrow'
-              />
-            </h3>
+          <Button variant='rehearsalButton'>
+            <a
+              target='_blank'
+              href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
+              rel='noreferrer'
+            >
+              Забронировать
+            </a>
           </Button>
         </div>
 

@@ -23,7 +23,7 @@ export const AllNewsCardSection = () => {
       <div className='w-full tablet:grid tablet:grid-cols-3 tablet:gap-[20px]'>
         {newsData &&
           newsData?.map((element, index) => (
-            <div className='mb-[80px]' key={index}>
+            <div className='mb-[75px]' key={index}>
               <NewsCard
                 key={element.id}
                 img={element.image}
