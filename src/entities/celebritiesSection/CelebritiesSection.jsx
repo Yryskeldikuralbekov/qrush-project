@@ -5,7 +5,7 @@ export const CelebritiesSection = ({ celebrities }) => {
   const isMobile2 = useMediaQuery('(min-width: 700px) and (max-width: 767px)');
   return (
     <section>
-      <ul className='max-w-[90%] xl:container mx-auto flex justify-between flex-wrap text-[#e2ded3] md:gap-x-[20px] gap-y-[36px] md:gap-y-[87px] tablet:gap-y-[100px] mt-[60px] md:mt-[22px] mb-[28px] md:mb-[150px] tablet:mb-[200px] '>
+      <ul className='max-w-[90%] xl:container mx-auto flex justify-between flex-wrap text-[#e2ded3] md:gap-x-[20px] gap-y-[36px] md:gap-y-[87px] tablet:gap-y-[100px] mt-[60px] md:mt-[22px] mb-[28px] md:mb-[150px] tablet:mb-[150px] '>
         {celebrities &&
           celebrities?.map(celeb => (
             <li

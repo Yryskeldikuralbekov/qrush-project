@@ -31,7 +31,7 @@ export const ModalNewsWindow = ({
           <p className='text-left w-full md:w-[80%] px-[20px] text-[14px] md:text-[20px] tablet:text-[22px] pb-[20px]'>
             {title}
           </p>
-          <p className='w-full md:w-[100%] text-[14px] md:text-[20px] tablet:text-[18px] px-[20px] text-center pb-[80px]'>
+          <p className='w-full md:w-[100%] text-[14px] md:text-[20px] tablet:text-[18px] px-[20px] text-left pb-[80px]'>
             {description}
           </p>
           <p className='pl-[80px] text-[24px] text-center'>{warning}</p>

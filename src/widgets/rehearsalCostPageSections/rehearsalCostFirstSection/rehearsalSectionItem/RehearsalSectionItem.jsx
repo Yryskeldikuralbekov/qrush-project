@@ -49,7 +49,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
           </h3>
         </Button>
       </div>
-      <div className='w-[365px] sm:w-[560px] text-left mx-[20px] md:w-[700px] tablet:w-full tablet:mx-auto mt-[27px] md:mt-[30px] tablet:mt-[100px] md:text-center'>
+      <div className='w-[365px] sm:w-[560px] text-left mx-[20px] md:w-[700px] tablet:w-full tablet:mx-auto mt-[27px] md:mt-[30px] tablet:mt-[50px] md:text-center'>
         <p
           id={item.id}
           className='text-left tablet:text-center mx-auto sm:mx-0 tablet:mx-auto text-[20px] sm:text-[30px] md:w-[425px] font-[500] xl:text-[25px] xl:w-[1000px] lg:text-[23px] lg:w-[900px] tablet:text-[20px] tablet:w-[600px] tablet:mb-[40px]'
