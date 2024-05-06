@@ -10,7 +10,7 @@ export const PreviewSectionTrustUs = () => {
 
   return (
     <section>
-      <div className='bg-cover bg-no-repeat bg-center  bg-[#000] '>
+      <div className='bg-cover bg-no-repeat bg-center bg-[#000] '>
         <CelebritiesSection celebrities={celebrities} />
       </div>
     </section>
