@@ -10,13 +10,13 @@ export const CardsShopCardsSection = ({ card }) => {
       >
         <div>
           <img
-            className={`w-[340px] h-[343px] mx-auto border-[0.50px] border-[solid] border-[#e2ded3] rounded-[16px] sm:w-[440px] sm:h-[440px] md:w-[640px] md:h-[630px] tablet:w-[405px] tablet:h-[360px] lg:w-[505px] lg:h-[460px] xl:w-[805px] xl:h-[860px] `}
+            className={`w-[343px] h-[340px] mx-auto border-[0.50px] border-[solid] border-[#e2ded3] rounded-[16px] sm:w-[440px] sm:h-[440px] md:w-[640px] md:h-[630px] tablet:w-[405px] tablet:h-[360px] lg:w-[505px] lg:h-[460px] xl:w-[805px] xl:h-[860px] `}
             src={card.image}
             alt='cardImg'
           />
         </div>
         <div
-          className={`w-[340px] h-[343px] flex justify-center flex-col items-center rounded-[16px] px-[8px] sm:w-[440px] sm:h-[440px] md:w-[640px] md:h-[630px] tablet:px-0 tablet:border-0  tablet:w-[405px] tablet:h-[348px] xl:w-[705px] xl:h-[548px] lg:w-[550px] lg:h-[448px]`}
+          className={`w-[343px] h-[340px] flex justify-center flex-col items-center rounded-[16px] px-[8px] sm:w-[440px] sm:h-[440px] md:w-[640px] md:h-[630px] tablet:px-0 tablet:border-0  tablet:w-[405px] tablet:h-[348px] xl:w-[705px] xl:h-[548px] lg:w-[550px] lg:h-[448px]`}
         >
           <div
             className={`w-[278px] h-[258px] sm:w-[378px] sm:h-[300px] md:w-[438px] md:h-[380px] mx-auto tablet:w-[405px] tablet:h-[705px] lg:w-[550px] xl:w-[705px]`}
@@ -39,7 +39,7 @@ export const CardsShopCardsSection = ({ card }) => {
               className={`w-[278px] mx-auto font-montserrat sm:w-[424px] md:w-[344px] md:h-[45px] tablet:w-[434px] lg:w-[490px] xl:w-[634px] flex justify-between flex-col tablet:flex-row items-center tablet:mt-[10px] lg:mt-[30px] xl:mt-[87px] gap-x-[3px] mt-[15px]`}
             >
               <p
-                className={`font-semibold text-[#d9d9d9] opacity-70 text-[14px] sm:text-[16px] md:text-[19px] md:font-semibold mt-[8px] md:mt-[15px] tablet:text-[21px] lg:text-[24px] xl:text-[30px] tablet:mt-[40px]`}
+                className={`font-semibold text-[#d9d9d9] opacity-70 text-[14px] sm:text-[16px] md:text-[27px] mt-[8px] md:mt-[15px] tablet:text-[21px] lg:text-[24px] xl:text-[30px] tablet:mt-[40px]`}
               >
                 Цена: {card.price} сом
               </p>
