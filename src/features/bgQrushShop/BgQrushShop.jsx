@@ -73,7 +73,7 @@ export const BgQrushShop = () => {
                 arrayImg?.map((img, index) => (
                   <img
                     key={index}
-                    className='w-[100%] h-[50px] sm:h-[80px] md:h-[120px] lg:h-[160px] xl:h-[240px] '
+                    className='w-[100%] h-[70px] sm:h-[80px] md:h-[94px] tablet:h-[125px] lg:h-[160px] xl:h-[240px] '
                     src={img}
                     alt={`qrushShop${index + 1}`}
                   />
