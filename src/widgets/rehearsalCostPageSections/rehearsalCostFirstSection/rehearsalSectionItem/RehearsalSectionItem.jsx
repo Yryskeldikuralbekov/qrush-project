@@ -17,7 +17,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
   const arrayEquipment = item.tech_name;
   return (
     <div>
-      <div className='mx-[20px] mt-[40px] sm:mx-auto sm:mt-[80px] tablet:mt-[100px] text-center'>
+      <div className='mx-[20px] mt-[30px] sm:mx-auto text-center'>
         <h4 className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] tablet:text-[20px]'>
           {item.title}
         </h4>
@@ -27,11 +27,14 @@ export const RehearsalSectionItem = ({ item, length }) => {
             : ''}
         </h5>
       </div>
-      <section className='ml-[20px] w-[90%] sm:mx-auto sm:w-[95%] xl:w-[1820px]'>
+
+      <section
+        id={item.id}
+        className='ml-[20px] w-[90%] sm:mx-auto sm:w-[95%] xl:w-[1820px]'
+      >
         <SwiperPhotoItem arrayImg={arrayImg} />
       </section>
-      <div className='mt-[5px] sm:mt-[50px] text-right sm:mb-[39px] sm:text-right tablet:text-center mr-[14px]'>
-        {' '}
+      <div className='hidden tablet:block mt-[5px] sm:mt-[50px] text-right sm:mb-[39px] sm:text-right tablet:text-center mr-[14px]'>
         <Button onClick={changeList} variant='listButton'>
           <h3 className='flex items-center text-[20px] font-[600] sm:text-[30px] xl:text-[30px] lg:text-[15px] tablet:text-[22px]'>
             {item.list_tech}
@@ -50,25 +53,6 @@ export const RehearsalSectionItem = ({ item, length }) => {
         </Button>
       </div>
       <div className='w-[365px] sm:w-[560px] text-left mx-[20px] md:w-[700px] tablet:w-full tablet:mx-auto mt-[27px] md:mt-[30px] tablet:mt-[50px] md:text-center'>
-        <p
-          id={item.id}
-          className='text-left tablet:text-center mx-auto sm:mx-0 tablet:mx-auto text-[20px] sm:text-[30px] md:w-[425px] font-[500] xl:text-[25px] xl:w-[1000px] lg:text-[23px] lg:w-[900px] tablet:text-[20px] tablet:w-[600px] tablet:mb-[40px]'
-        >
-          {item.desc1}
-        </p>
-
-        <div className='hidden tablet:block'>
-          <Button variant='rehearsalButton'>
-            <a
-              target='_blank'
-              href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
-              rel='noreferrer'
-            >
-              Забронировать
-            </a>
-          </Button>
-        </div>
-
         <h3 className='tablet:hidden mt-[27px] mb-[20px] sm:mt-[38px] sm:mb-[32px] text-[20px] font-[600] sm:text-[30px] sm:text-left tablet:text-center xl:text-[30px] lg:text-[25px] tablet:text-[22px]'>
           {item.list_tech}
         </h3>
@@ -79,7 +63,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               key={item.id}
-              className='sm:w-[95%] xl:w-[1570px] tablet:mx-auto tablet:grid tablet:grid-cols-3 tablet:gap-x-[70px] lg:gap-x-[200px]'
+              className='tablet:mb-[40px] sm:w-[95%] xl:w-[1570px] tablet:mx-auto tablet:grid tablet:grid-cols-3 tablet:gap-x-[70px] lg:gap-x-[200px]'
             >
               {arrayEquipment &&
                 arrayEquipment?.map(item => (
@@ -107,6 +91,21 @@ export const RehearsalSectionItem = ({ item, length }) => {
         >
           {openList ? <a href={`#${item.id}`}>Скрыть</a> : 'Полный список'}
         </p>
+        <p className='text-left tablet:text-center mx-auto sm:mx-0 tablet:mx-auto text-[20px] sm:text-[30px] md:w-[425px] font-[500] xl:text-[25px] xl:w-[1000px] lg:text-[23px] lg:w-[900px] tablet:text-[20px] tablet:w-[600px] tablet:mb-[40px]'>
+          {item.desc1}
+        </p>
+
+        <div className='hidden tablet:block'>
+          <Button variant='rehearsalButton'>
+            <a
+              target='_blank'
+              href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
+              rel='noreferrer'
+            >
+              Забронировать
+            </a>
+          </Button>
+        </div>
       </div>
     </div>
   );

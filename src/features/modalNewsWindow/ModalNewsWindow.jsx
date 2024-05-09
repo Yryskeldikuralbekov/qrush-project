@@ -18,16 +18,16 @@ export const ModalNewsWindow = ({
     >
       <div
         onClick={event => event.stopPropagation()}
-        className={`${openNewsModal ? 'scaleEnter absolute lg:h-[70vh] rounded-[30px] top-[15%] sm:top-[5%] md:top-[10%] lg:top-[20%] left-[5%] lg:left-[10%] z-10 lg:w-[80%] w-[90%] lg:flex lg:justify-between bg-gradient-to-t from-[#160503] from-0% via-black to-[#160503] text-center opacity-1 transform transition-all duration-500 scale-100' : 'transform hidden opacity-0 scale-150'}`}
+        className={`${openNewsModal ? 'scaleEnter absolute tablet:h-[50vh] lg:h-[60vh] rounded-[30px] top-[15%] sm:top-[25%] md:top-[20%] lg:top-[20%] left-[5%] lg:left-[10%] z-10 lg:w-[80%] w-[90%] tablet:flex tablet:justify-between tablet:items-center bg-gradient-to-t from-[#160503] from-0% via-black to-[#160503] text-center opacity-1 transform transition-all duration-500' : 'transform hidden opacity-0'}`}
       >
-        <div className='w-[70%] lg:w-[40%] mx-auto'>
+        <div className='w-[70%] md:w-[100%] tablet:w-[60%] lg:w-[30%] mx-auto'>
           <img
-            className='w-[100%] md:w-[40%] lg:w-[100%] md:mx-auto h-[90%] pt-[20px] lg:mx-[50px] lg:my-[15px] rounded-[30px] object-cover'
+            className='w-[100%] md:w-[40%] my-[40px] tablet:mt-0 tablet:pl-[20px] tablet:w-[100%] md:mx-auto h-[90%] rounded-[30px] object-cover'
             src={img}
             alt='News'
           />
         </div>
-        <div className='w-full lg:w-[55%] text-[#FFF] mx-auto mt-[50px] tablet:pl-[30px]'>
+        <div className='w-full lg:w-[55%] text-[#FFF] mx-auto'>
           <p className='text-left w-full md:w-[80%] px-[20px] text-[14px] md:text-[20px] tablet:text-[22px] pb-[20px]'>
             {title}
           </p>

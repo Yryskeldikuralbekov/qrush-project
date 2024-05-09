@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from '../button/Button';
 import { ModalNewsWindow } from '../../../features';
 export const NewsCard = ({ img, title, description, warning, date }) => {
   const [open, setOpen] = useState(false);
@@ -22,24 +21,24 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
 
   const formattedDate = formatDate(date);
   return (
-    <section className='w-[100%]'>
-      <div className='relative w-[100%] rounded-[20px] mb-[20px]'>
+    <section className='w-[100%] pb-[5px] tablet:pb-0'>
+      <div className='relative w-[100%] rounded-[20px] tablet:mb-[20px]'>
         <img
           className='object-cover object-bottom rounded-[20px] w-full h-full'
           src={img}
           alt='newImg'
         />
-        <div className='relative w-full h-[160px] py-[20px]'>
+        <div className='relative w-full mb-[90px] sm:mb-[50px] md:mb-[30px] tablet:mb-[0px] py-[20px]'>
           <ul className='px-[2px]'>
-            <div className='relative '>
-              <h2 className='sm:text-[30px] text-[#fff] md:text-[38px] tablet:text-[14px] lg:text-[20px] xl:text-[30px] font-[600]'>
+            <div className='relative'>
+              <h2 className='text-[24px] text-[#fff] md:text-[38px] tablet:text-[18px] lg:text-[20px] xl:text-[24px] font-[600] tablet:mb-[20px]'>
                 {title}
               </h2>
             </div>
             <p className='text-[#F93822] sm:text-[26px] md:w-[90%] md:text-[34px] tablet:text-[24px] lg:text-[20px] xl:text-[40px] mt-[50px] font-[600] w-[90%]'>
               {warning}
             </p>
-            <h5 className='absolute top-[100px] left-0'>
+            <h5 className='absolute top-[140px] sm:top-[100px] md:top-[140px] text-[24px] tablet:text-[18px] tablet:top-[100px] left-0'>
               {formattedDescriptionWithEllipsis}
               <span
                 onClick={setOpenWindow}
@@ -49,13 +48,13 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
               </span>
             </h5>
           </ul>
-          <p className='text-[#fff] sm:text-[24px] md:text-[] tablet:text-[24px] lg:text-[15px] xl:text-[40px] absolute italic left-0 -bottom-[45px]'>
+          <p className='text-[#fff] text-[30px] tablet:text-[24px] lg:text-[24px] xl:text-[24px] absolute italic left-0 -bottom-[135px] sm:-bottom-[85px] md:-bottom-[65px] tablet:-bottom-[75px] lg:-bottom-[45px]'>
             {formattedDate}
           </p>
           <p
             onClick={setOpenWindow}
             className={
-              'absolute -bottom-[45px] right-4 text-[#F93822] cursor-pointer'
+              'absolute -bottom-[135px] sm:-bottom-[85px] md:-bottom-[65px] tablet:-bottom-[75px] lg:-bottom-[45px] right-4 text-[#F93822] cursor-pointer text-[34px] tablet:text-[24px] lg:text-[28px]'
             }
           >
             Еще...
