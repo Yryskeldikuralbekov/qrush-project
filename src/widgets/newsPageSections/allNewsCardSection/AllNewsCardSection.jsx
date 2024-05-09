@@ -29,7 +29,7 @@ export const AllNewsCardSection = () => {
                 img={element.image}
                 title={element.title}
                 description={element.description}
-                warning={element.warning}
+                warning={element.admin_bron}
                 date={element.created_et}
               />
             </div>
