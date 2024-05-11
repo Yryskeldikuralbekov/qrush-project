@@ -6,7 +6,6 @@ export const instance = axios.create({
 });
 instance.interceptors.request.use(
   config => {
-    console.log('Starting Request:', config);
     const locale = i18n.language;
     config.headers['Accept-Language'] = locale;
     return config;
@@ -19,7 +18,6 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   response => {
-    console.log('Response:', response);
     return response;
   },
   error => {

@@ -9,32 +9,30 @@ export const DigitalInformationSection = () => {
   const [hasAppeared, setHasAppeared] = useState(false);
   const ref = useRef(null);
   const filteredData = useFilteredData(homePageData, 3);
-  console.log(filteredData);
   const filteredNestedData = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    2
-  );
-  const secondFilteredNestedData = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    3
-  );
-  console.log(secondFilteredNestedData);
-  const thirdFilteredNestedData = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    4
-  );
-  const fourthFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
     5
   );
-  const fifthFilteredNestedData = useFilteredNestedData(
+  const secondFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
     6
+  );
+  const thirdFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    7
+  );
+  const fourthFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    8
+  );
+  const fifthFilteredNestedData = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    9
   );
 
   const handleScroll = useCallback(() => {
@@ -66,7 +64,6 @@ export const DigitalInformationSection = () => {
   useEffect(() => {
     getHomePage();
   }, []);
-  console.log(filteredData[0]?.description);
   return (
     <section className='pt-[28px] sm:pt-[70px] pb-[16px] sm:pb-[126px] xl:pt-[126px] flex justify-center items-center'>
       <section

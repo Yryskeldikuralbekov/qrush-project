@@ -8,13 +8,12 @@ export const AboutUsSectionHomePage = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
   const { getHomePage, homePageData } = useZustandStore();
   const filteredData = useFilteredData(homePageData, 2);
-  const filteredText = useFilteredNestedData(filteredData, 'next_text', 1);
+  const filteredText = useFilteredNestedData(filteredData, 'next_text', 4);
   const secondFilteredText = useFilteredNestedData(
     filteredData,
     'next_text',
-    7
+    3
   );
-  console.log(filteredText);
   useEffect(() => {
     getHomePage();
   }, []);
@@ -31,10 +30,10 @@ export const AboutUsSectionHomePage = () => {
             <span className='text-[#F93822] mr-[10px]'>
               {secondFilteredText[0]?.text}
             </span>
-            {filteredData[0]?.title}
+            {filteredData[0]?.description}
           </h3>
           <h3 className='font-[Montserrat] text-[#F5F5F5] text-center px-[14px] pt-[19px] sm:pt-[30px] text-[13px] sm:text-[25px] not-italic font-medium leading-[normal]'>
-            {filteredData[0]?.description}
+            {filteredData[0]?.title}
           </h3>
           <a
             target='_blank'

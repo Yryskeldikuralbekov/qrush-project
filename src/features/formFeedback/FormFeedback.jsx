@@ -27,7 +27,6 @@ export const FormFeedback = () => {
     try {
       const response = await axios.post(url, params);
       if (response.status === 200) {
-        console.log('Сообщение успешно отправлено!');
         setOpen(true);
         reset();
       } else {
