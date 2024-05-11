@@ -2,7 +2,7 @@ import axios from 'axios';
 import i18n from '../../../i18n';
 
 export const instance = axios.create({
-  baseURL: 'http://13.48.44.67/api/',
+  baseURL: 'https://qrush.pp.ua/api/',
 });
 instance.interceptors.request.use(
   config => {
