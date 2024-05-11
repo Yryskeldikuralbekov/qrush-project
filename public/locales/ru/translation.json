@@ -310,5 +310,12 @@
       "minLengthPrefix": "Minimum ",
       "minLengthSuffix": " characters"
     }
+  },
+  "newsPage": {
+    "title": "Все новости"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "К вашим услугам есть",
+    "secondDescriptionBase": "комнаты для репетиций"
   }
 }

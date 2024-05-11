@@ -13,28 +13,28 @@ export const DigitalInformationSection = () => {
   const filteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
-    2
+    5
   );
   const secondFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
-    3
+    6
   );
   console.log(secondFilteredNestedData);
   const thirdFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
-    4
+    7
   );
   const fourthFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
-    5
+    8
   );
   const fifthFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
-    6
+    9
   );
 
   const handleScroll = useCallback(() => {

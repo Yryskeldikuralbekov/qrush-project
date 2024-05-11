@@ -7,6 +7,7 @@ export const useZustandStore = create(set => ({
   soundRecordingData: [],
   newsData: [],
   trustUs: [],
+  pages: [],
   shopBg: [],
   celebrities: [],
   adverts: [],
@@ -66,6 +67,7 @@ export const useZustandStore = create(set => ({
       set({ trustUs: response.data });
       set({ shopBg: response.data });
       set({ aboutUs: response.data });
+      set({ pages: response.data });
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
     }

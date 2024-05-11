@@ -19,8 +19,8 @@ export const MusicCoursesItem = ({ item }) => {
         <SwiperPhotoItem arrayImg={arrayImg} />
       </div>
       <div className='text-left mb-[40px] mx-[20px] md:w-full sm:mx-auto mt-[27px] md:mt-[50px] tablet:mt-[100px] md:text-center'>
-        <div className='sm:w-[90%] sm:mx-auto lg:flex lg:justify-between text-left xl:w-[1570px] lg:w-[1270px]'>
-          <section className='w-[100%] tablet:grid tablet:grid-cols-2 tablet:gap-[200px]'>
+        <div className='w-[90%] sm:mx-auto lg:flex lg:justify-between text-left'>
+          <section className='w-[100%] tablet:grid tablet:grid-cols-2 tablet:gap-[80px] lg:gap-[100px]'>
             {arrayMusicCourses &&
               arrayMusicCourses?.map(el => (
                 <div

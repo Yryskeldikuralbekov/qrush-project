@@ -18,35 +18,31 @@ export const ServicesSectionHomePage = () => {
   const filteredNestedData = useFilteredNestedData(
     filteredData,
     'background',
-    7
+    10
   );
   console.log(filteredData);
-  const filteredImg = useFilteredNestedData(filteredData, 'background', 8);
+  const filteredImg = useFilteredNestedData(filteredData, 'background', 7);
   const filteredImgSecond = useFilteredNestedData(
     filteredData,
     'background',
-    9
+    8
   );
-  const filteredImgThird = useFilteredNestedData(
-    filteredData,
-    'background',
-    10
-  );
-  const filteredText = useFilteredNestedData(filteredData, 'next_text', 8);
+  const filteredImgThird = useFilteredNestedData(filteredData, 'background', 9);
+  const filteredText = useFilteredNestedData(filteredData, 'next_text', 10);
   const filteredTextSecond = useFilteredNestedData(
     filteredData,
     'next_text',
-    9
+    11
   );
   const filteredTextThird = useFilteredNestedData(
     filteredData,
     'next_text',
-    10
+    12
   );
   const filteredTextFourth = useFilteredNestedData(
     filteredData,
     'next_text',
-    11
+    13
   );
   const isTabletAndMobile = useMediaQuery('(max-width: 1024px)');
   const studioData = {

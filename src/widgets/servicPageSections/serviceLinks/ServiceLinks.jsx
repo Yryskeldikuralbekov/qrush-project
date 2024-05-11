@@ -15,29 +15,30 @@ export const ServiceLinks = () => {
   const filteredNestedData = useFilteredNestedData(
     filteredData,
     'background',
-    7
+    10
   );
   const filteredImg = useFilteredNestedData(filteredData, 'background', 8);
   const filteredImgSecond = useFilteredNestedData(
     filteredData,
     'background',
-    9
+    8
   );
-  const filteredImgThird = useFilteredNestedData(
-    filteredData,
-    'background',
-    10
-  );
-  const filteredText = useFilteredNestedData(filteredData, 'next_text', 8);
+  const filteredImgThird = useFilteredNestedData(filteredData, 'background', 9);
+  const filteredText = useFilteredNestedData(filteredData, 'next_text', 10);
   const filteredTextSecond = useFilteredNestedData(
     filteredData,
     'next_text',
-    9
+    11
   );
   const filteredTextThird = useFilteredNestedData(
     filteredData,
     'next_text',
-    10
+    12
+  );
+  const filteredTextFourth = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    13
   );
   const studioData = {
     background: ImageURL + filteredNestedData[0]?.background,
@@ -54,16 +55,19 @@ export const ServiceLinks = () => {
       img: studioData.secondImg,
       title: studioData.secondSubTitle,
       links: '/sound-recording',
+      button: filteredTextFourth[0]?.text,
     },
     {
       img: studioData.thirdImg,
       title: studioData.thirdSubTitle,
       links: '/music-courses',
+      button: filteredTextFourth[0]?.text,
     },
     {
       img: studioData.firstImg,
       title: studioData.firstSubTitle,
       links: '/rehearsal-cost',
+      button: filteredTextFourth[0]?.text,
     },
   ];
   return (
@@ -95,7 +99,7 @@ export const ServiceLinks = () => {
                   </h2>
                   <Link to={item.links}>
                     <Button onClick={scrollToTop} variant='serviceButton'>
-                      Подробнее
+                      {item.button}
                     </Button>
                   </Link>
                 </div>

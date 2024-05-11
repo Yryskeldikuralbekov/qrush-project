@@ -33,42 +33,42 @@ export const GallerySectionHomePage = ({
             <img
               src={firstImage}
               alt='first_gallery_image'
-              className='w-full h-full rounded-3xl'
+              className='w-full h-full rounded-3xl object-cover'
             />
           </div>
           <div className='row-start-3 row-end-4 col-start-1 col-end-2 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
               src={secondImage}
               alt='second_gallery_image'
-              className='w-full h-full rounded-3xl'
+              className='w-full h-full rounded-3xl object-cover'
             />
           </div>
           <div className='row-start-3 row-end-4 col-start-2 col-end-3 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
               src={thirdImage}
               alt='third_gallery_image'
-              className='w-full h-full rounded-3xl'
+              className='w-full h-full rounded-3xl object-cover'
             />
           </div>
           <div className='col-start-3 col-end-4 row-start-1 row-end-2 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
               src={fourthImage}
               alt='fourth_gallery_image'
-              className='w-full h-full rounded-3xl'
+              className='w-full h-full rounded-3xl object-cover'
             />
           </div>
           <div className='col-start-4 col-end-5 row-start-1 row-end-2 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
               src={fifthImage}
               alt='fifth_gallery_image'
-              className='w-full h-full rounded-3xl'
+              className='w-full h-full rounded-3xl object-cover'
             />
           </div>
           <div className='col-start-3 col-end-5 row-start-2 row-end-4 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
               src={sixthImage}
               alt='sixth_gallery_image'
-              className='w-full h-full rounded-3xl'
+              className='w-full h-full rounded-3xl object-cover'
             />
           </div>
         </section>
