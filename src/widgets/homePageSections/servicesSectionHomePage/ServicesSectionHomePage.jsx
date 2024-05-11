@@ -14,13 +14,11 @@ export const ServicesSectionHomePage = () => {
     getHomePage();
   }, []);
   const filteredData = useFilteredData(homePageData, 4);
-  console.log(filteredData);
   const filteredNestedData = useFilteredNestedData(
     filteredData,
     'background',
     10
   );
-  console.log(filteredData);
   const filteredImg = useFilteredNestedData(filteredData, 'background', 7);
   const filteredImgSecond = useFilteredNestedData(
     filteredData,

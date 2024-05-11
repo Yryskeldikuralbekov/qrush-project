@@ -14,7 +14,6 @@ export const AboutUsSectionHomePage = () => {
     'next_text',
     3
   );
-  console.log(filteredText);
   useEffect(() => {
     getHomePage();
   }, []);

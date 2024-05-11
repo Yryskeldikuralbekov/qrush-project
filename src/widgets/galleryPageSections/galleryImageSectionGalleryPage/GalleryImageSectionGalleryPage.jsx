@@ -16,7 +16,6 @@ const GalleryImage = ({ image, onClick }) => {
 };
 
 const GalleryImageWrapper = ({ image, onClick }) => {
-  console.log(image.image);
   return (
     <div>
       <GalleryImage image={image} onClick={onClick} />
@@ -26,7 +25,6 @@ const GalleryImageWrapper = ({ image, onClick }) => {
 
 export const GalleryImageSectionGalleryPage = () => {
   const { getGalleryImage, galleryImages } = useZustandStore();
-  console.log(galleryImages);
   useEffect(() => {
     getGalleryImage();
   }, []);

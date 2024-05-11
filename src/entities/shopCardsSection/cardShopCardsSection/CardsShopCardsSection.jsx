@@ -29,11 +29,12 @@ export const CardsShopCardsSection = ({ card }) => {
             <ul
               className={`text-[12px] sm:text-[14px] md:text-[23px] list-disc font-medium mt-[8px] md:mt-[15px] tablet:text-[18px] lg:text-[24px] xl:text-[30px] tablet:mt-[10px] ml-[24px] md:ml-[30px] tablet:ml-[36px]`}
             >
-              {card.product_description.map(description => (
-                <li key={description.id}>
-                  <p>{description.description}</p>
-                </li>
-              ))}
+              {card.product_description &&
+                card.product_description?.map(description => (
+                  <li key={description.id}>
+                    <p>{description.description}</p>
+                  </li>
+                ))}
             </ul>
             <div
               className={`w-[278px] mx-auto font-montserrat sm:w-[424px] md:w-[344px] md:h-[45px] tablet:w-[434px] lg:w-[490px] xl:w-[634px] flex justify-between flex-col tablet:flex-row items-center tablet:mt-[10px] lg:mt-[30px] xl:mt-[87px] gap-x-[3px] mt-[15px]`}

@@ -9,7 +9,6 @@ export const DigitalInformationSection = () => {
   const [hasAppeared, setHasAppeared] = useState(false);
   const ref = useRef(null);
   const filteredData = useFilteredData(homePageData, 3);
-  console.log(filteredData);
   const filteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
@@ -20,7 +19,6 @@ export const DigitalInformationSection = () => {
     'next_text',
     6
   );
-  console.log(secondFilteredNestedData);
   const thirdFilteredNestedData = useFilteredNestedData(
     filteredData,
     'next_text',
@@ -66,7 +64,6 @@ export const DigitalInformationSection = () => {
   useEffect(() => {
     getHomePage();
   }, []);
-  console.log(filteredData[0]?.description);
   return (
     <section className='pt-[28px] sm:pt-[70px] pb-[16px] sm:pb-[126px] xl:pt-[126px] flex justify-center items-center'>
       <section
