@@ -1,20 +1,24 @@
 import { Advertising, useMediaQuery } from '../../shared';
 import {
-  GalleryFirstSectionGalleryPage,
   GalleryImageSectionGalleryPage,
   GalleryMobileVideoSection,
   GallerySecondSectionGalleryPage,
   GalleryVideoSectionGalleryPage,
   GalleryVideoSliderSectionGalleryPage,
+  GalleryDesktopImageSectionGalleryPage,
 } from '../../widgets';
 
 export const Galery = () => {
   const isMobile = useMediaQuery('(max-width: 1024px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   return (
     <section className='w-full bg-center'>
-      <GalleryFirstSectionGalleryPage />
+      {isDesktop ? (
+        <GalleryDesktopImageSectionGalleryPage />
+      ) : (
+        <GalleryVideoSectionGalleryPage />
+      )}
 
-      <GalleryImageSectionGalleryPage />
       {isMobile ? (
         <GalleryImageSectionGalleryPage />
       ) : (

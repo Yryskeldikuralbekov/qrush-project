@@ -1,14 +1,14 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Mousewheel, Navigation } from 'swiper/modules';
 import 'swiper/css';
+import { useEffect } from 'react';
+import { useZustandStore } from '../../../app/store/store';
 
 export const GalleryVideoSliderSectionGalleryPage = () => {
-  const VideoSlides = [
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-  ];
+  const { getVideos, videos } = useZustandStore();
+  useEffect(() => {
+    getVideos();
+  });
 
   return (
     <section className='bg-center max-w-full'>
@@ -30,7 +30,7 @@ export const GalleryVideoSliderSectionGalleryPage = () => {
             navigation={true}
           >
             <div className=' flex '>
-              {VideoSlides.map((link, index) => (
+              {videos.map((link, index) => (
                 <SwiperSlide
                   key={index}
                   className='bg-cover bg-no-repeat  !flex justify-center items-center flex-col rounded-[30px] border-[1px] border-solid border-gray-500 !w-[705px] !h-[3  50px]'
