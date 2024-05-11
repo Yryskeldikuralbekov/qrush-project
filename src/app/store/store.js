@@ -7,6 +7,7 @@ export const useZustandStore = create(set => ({
   soundRecordingData: [],
   newsData: [],
   trustUs: [],
+  pages: [],
   shopBg: [],
   celebrities: [],
   adverts: [],
@@ -68,6 +69,7 @@ export const useZustandStore = create(set => ({
       set({ trustUs: response.data });
       set({ shopBg: response.data });
       set({ aboutUs: response.data });
+      set({ pages: response.data });
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
     }
@@ -107,7 +109,6 @@ export const useZustandStore = create(set => ({
   getAboutUsArtist: async () => {
     try {
       const response = await QRUSHAPI.getAboutUsArtist();
-      console.log(response);
       set({ aboutUsArtist: response.data });
     } catch (error) {
       console.error('Ошибка при получении артистов', error);
@@ -133,7 +134,6 @@ export const useZustandStore = create(set => ({
   getGalleryImage: async () => {
     try {
       const response = await QRUSHAPI.getGalleryImages();
-      console.log(response.data);
       set({ galleryImages: response.data });
     } catch (error) {
       console.error('Ошибка при получении галереи', error);
@@ -142,7 +142,6 @@ export const useZustandStore = create(set => ({
   getVideos: async () => {
     try {
       const response = await QRUSHAPI.getVideos();
-      console.log(response);
       set({ videos: response.data });
     } catch (error) {
       console.error('error videos', error);

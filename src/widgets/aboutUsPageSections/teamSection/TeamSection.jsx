@@ -13,13 +13,13 @@ export const Team = () => {
     getPages();
   }, []);
   const urlForBgImage = import.meta.env.VITE_IMG_URL;
-  const urlBg = urlForBgImage + filteredData2[0]?.background[0].image;
+  const urlBg = urlForBgImage + filteredData2[0]?.background[0]?.image;
   return (
     <section
       style={{
         backgroundImage: `url(${urlBg})`,
       }}
-      className='bg-cover bg-no-repeat '
+      className='bg-cover bg-no-repeat'
     >
       <div className='container mx-auto'>
         <div className='max-w-[90%] mx-auto tablet:max-w-[99%] flex flex-col justify-center tablet:justify-start text-center tablet:text-left tablet:items-start items-center gap-y-[20px] tablet:gap-y-[10px] md:gap-y-[17px]'>
@@ -29,7 +29,7 @@ export const Team = () => {
           >
             {filteredData[0]?.title}
           </h2>
-          <p className='w-full tablet:max-w-[1140px] tablet:text-left text-base sm:text-[18px] md:text-[32px] tablet:text-[22px] xl:text-[25px] xl:leading-[160%] font-medium leading-[130%] text-slate-100 '>
+          <p className='w-full max-w-[343px] sm:max-w-[411px] md:max-w-[664px] tablet:max-w-[1140px] tablet:text-left text-base sm:text-[18px] md:text-[32px] tablet:text-[22px] xl:text-[25px] xl:leading-[160%] font-medium leading-[130%] text-slate-100 '>
             {filteredData[0]?.description}
           </p>
         </div>

@@ -1,9 +1,5 @@
 import { useEffect } from 'react';
 import { SectionGroup } from '../../../features';
-import firstSinger from '../../../shared/img/ylykmanapo.png';
-import secondSinger from '../../../shared/img/bakr.png';
-import thirdSinger from '../../../shared/img/arsen_bakirovich.png';
-import bgTrustUs from '../../../shared/img/forth_main_bg.jpg';
 import { useZustandStore } from '../../../app/store/store';
 import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedData';
 import { useFilteredData } from '../../../shared/hooks/useFilteredData';
@@ -13,10 +9,10 @@ export const TrustUsSectionHomePage = () => {
   const { homePageData, getHomePage, celebrities, getTrustUsCelebrities } =
     useZustandStore();
 
-  const filteredCelebrities = useFilteredData(celebrities, 8);
+  const filteredCelebrities = useFilteredData(celebrities, 1);
 
   const secondFilteredCelebrities = useFilteredData(celebrities, 2);
-  const thirdFilteredCelebrities = useFilteredData(celebrities, 9);
+  const thirdFilteredCelebrities = useFilteredData(celebrities, 3);
   const filteredData = useFilteredData(homePageData, 8);
   const filteredNestedData = useFilteredNestedData(
     filteredData,

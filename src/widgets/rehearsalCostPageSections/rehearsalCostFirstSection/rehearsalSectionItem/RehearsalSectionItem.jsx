@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
   Button,
   CardRehearsalSection,
@@ -9,6 +10,7 @@ import arrow from '../../../../shared/img/Frame.png';
 
 export const RehearsalSectionItem = ({ item, length }) => {
   const [openList, setOpenList] = useState(false);
+  const { t } = useTranslation();
   const changeList = () => {
     setOpenList(!openList);
   };
@@ -23,7 +25,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
         </h4>
         <h5 className='text-[14px] sm:text-[24px] font-[500] pb-[10px] sm:pb-[30px] tablet:pb-[60px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[32px] lg:text-[23px] tablet:text-[20px]'>
           {item.id === 1
-            ? `К вашим услугам есть ${length} комнаты для репетиций`
+            ? `${t('rehealBase.firstDescriptionBase')} ${length} ${t('rehealBase.secondDescriptionBase')}`
             : ''}
         </h5>
       </div>
@@ -102,7 +104,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
               href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
               rel='noreferrer'
             >
-              Забронировать
+              {t('trustUsPage.fourthSection.buttonInner')}
             </a>
           </Button>
         </div>

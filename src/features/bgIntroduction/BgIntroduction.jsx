@@ -50,7 +50,7 @@ export const BgIntroduction = () => {
         </section>
         <div
           className={
-            'absolute -bottom-[5vh] sm:-bottom-[1vh] tablet:-bottom-0  lg:-bottom-[7vh] left-0   mb-[71px] pl-[20px] sm:pl-[40px] gap-x-[12px] flex mx-0 container'
+            'absolute bottom-0 sm:bottom-0 tablet:bottom-0  lg:bottom-0 left-0 mb-[71px] pl-[20px] sm:pl-[40px] gap-x-[12px] flex mx-0 container'
           }
         >
           {filteredData[0]?.background?.map(bg => (

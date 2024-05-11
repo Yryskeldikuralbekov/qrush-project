@@ -316,5 +316,12 @@
       "minLengthPrefix": "Minimum ",
       "minLengthSuffix": " characters"
     }
+  },
+  "newsPage": {
+    "title": "All news"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "At your service there is",
+    "secondDescriptionBase": "rehearsal rooms"
   }
 }

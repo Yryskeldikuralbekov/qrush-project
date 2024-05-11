@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { t } from 'i18next';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import logo from '../../shared/img/rush1.svg';
 import { Button, scrollToTop, useMediaQuery } from '../../shared';
