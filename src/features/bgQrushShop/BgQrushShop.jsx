@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
+import { useTranslation } from 'react-i18next';
 import qrushShop from '../../shared/img/shop/qrushShop.png';
 import { useMediaQuery, Input } from '../../shared';
 import searchEngine from '../../shared/img/shop/searchEngine.svg';
@@ -11,6 +12,7 @@ import { ShopCardsSection } from '../../entities/shopCardsSection/ShopCardsSecti
 import { useFilteredData } from '../../shared/hooks/useFilteredData';
 
 export const BgQrushShop = () => {
+  const { t } = useTranslation();
   const { getShopCards, getPages, shopCards, shopBg } = useZustandStore();
   const filteredData = useFilteredData(shopBg, 7);
   useEffect(() => {
@@ -60,7 +62,7 @@ export const BgQrushShop = () => {
     <section>
       <div className='max-w-[1920px] mx-auto flex justify-center bg-[#000] '>
         <motion.div
-          className={`bg-cover bg-center w-[100%] h-[100dvh]  bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
+          className={`bg-cover bg-center w-[100%] h-[50dvh] md:h-[80dvh] tablet:h-[100dvh]  bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
           style={{
             backgroundImage: `url(${bgImages1[indexQrushShop]})`,
             transition: 'background-image 1s ease-in-out',
@@ -86,7 +88,7 @@ export const BgQrushShop = () => {
             value={searchTerm}
             onChange={handleSearchChange}
             variant={'filterInput'}
-            placeholder='Поиск'
+            placeholder={t('bgQrushInput.input.search')}
           />
           <div className='absolute top-3 sm:top-3.3 md:top-6 xl:top-8 right-5'>
             {searchTerm === '' ? (
