@@ -69,7 +69,4 @@ export const QRUSHAPI = {
   getGalleryImages() {
     return instance.get('v1/content/gallery/');
   },
-  getVideos() {
-    return instance.get('/v1/content/video/');
-  },
 };
