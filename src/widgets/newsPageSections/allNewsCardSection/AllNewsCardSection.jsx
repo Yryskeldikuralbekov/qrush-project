@@ -21,16 +21,16 @@ export const AllNewsCardSection = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
   return (
     <section
-      className='w-full pb-[50px] mx-auto text-[#fff] font-montserrat bg-no-repeat bg-cover'
+      className='w-full pb-0 tablet:pb-[50px] mx-auto text-[#fff] font-montserrat bg-no-repeat bg-cover'
       style={{
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='w-[90%] xl:w-[1720px] pb-[50px] mx-auto text-[#fff] font-montserrat'>
-        <div className='w-full mt-[90px] mb-[30px] pt-[150px] sm:pt-[150px] tablet:pt-[0px]'>
+      <div className='w-[90%] xl:w-[1720px] pb-0 sm:pb-[20px] tablet:pb-[50px] mx-auto text-[#fff] font-montserrat'>
+        <div className='w-full mt-[90px] mb-[30px] pt-[0px]'>
           <h2
             onClick={() => setOpen(true)}
-            className='text-[60px] sm:text-[56px] font-[600] tablet:text-[50px] text-[#fff] tablet:font-[700]'
+            className='text-[40px] sm:text-[56px] font-[600] tablet:text-[50px] text-[#fff] tablet:font-[700]'
           >
             {FilteredNewsPagesData[0]?.title}
           </h2>

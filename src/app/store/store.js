@@ -20,11 +20,11 @@ export const useZustandStore = create(set => ({
   videos: [],
   aboutUsTeam: [],
   galleryImages: [],
-  videos: [],
   getHomePage: async () => {
     try {
       const response = await QRUSHAPI.getHomePage();
       set({ homePageData: response.data });
+      console.log(QRUSHAPI.getHomePage());
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
     }
@@ -56,6 +56,7 @@ export const useZustandStore = create(set => ({
   getNewsPage: async () => {
     try {
       const response = await QRUSHAPI.getNewsPage();
+
       set({ newsData: response.data });
     } catch (error) {
       console.error('Ошибка при получении страницы', error);

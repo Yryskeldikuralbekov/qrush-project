@@ -18,7 +18,9 @@ export const CardSectionGroup = ({ item }) => {
           {item.title}
           {item.description && <br />}
           {item.description ? (
-            <span className='font-thin text-[20px]'>{item.description}</span>
+            <span className='font-thin text-[12px] text-nowrap sm:text-[14px] lg:text-[20px]'>
+              {item.description}
+            </span>
           ) : null}
         </p>
         {!item.description && (

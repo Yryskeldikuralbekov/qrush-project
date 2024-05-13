@@ -91,7 +91,13 @@ export const RehearsalSectionItem = ({ item, length }) => {
           className='tablet:hidden underline text-[#F93822] text-[24px] md:text-[28px] underline-offset-4 mb-[20px] mt-[20px] text-left'
           onClick={() => changeList()}
         >
-          {openList ? <a href={`#${item.id}`}>Скрыть</a> : 'Полный список'}
+          {openList ? (
+            <a href={`#${item.id}`}>
+              <Button variant='listButton'>{item.list_tech}</Button>
+            </a>
+          ) : (
+            <Button variant='listButton'>{item.list_tech}</Button>
+          )}
         </p>
         <p className='text-left tablet:text-center mx-auto sm:mx-0 tablet:mx-auto text-[20px] sm:text-[30px] md:w-[425px] font-[500] xl:text-[25px] xl:w-[1000px] lg:text-[23px] lg:w-[900px] tablet:text-[20px] tablet:w-[600px] tablet:mb-[40px]'>
           {item.desc1}
