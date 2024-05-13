@@ -316,5 +316,17 @@
       "minLengthPrefix": "Minimum ",
       "minLengthSuffix": " characters"
     }
+  },
+  "shopPage": {
+    "shopPageSection": {
+    "price":"Price",
+    "currency":"som",
+    "buyButton":"Buy"
+    }
+  },
+  "bgQrushInput":{
+    "input":{
+      "search":"Search"
+    }
   }
 }

@@ -314,5 +314,17 @@
       "minLengthPrefix": "Minimum ",
       "minLengthSuffix": " characters"
     }
+  },
+  "shopPage": {
+    "shopPageSection": {
+      "price":"Баасы",
+      "currency":"сом",
+      "buyButton":"Сатып алуу"
+    }
+  },
+  "bgQrushInput":{
+    "input":{
+      "search":"Издөө"
+    }
   }
 }
