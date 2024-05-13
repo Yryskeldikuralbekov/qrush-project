@@ -3,7 +3,6 @@ import { ImageModal } from '../../../shared';
 
 import { useZustandStore } from '../../../app/store/store';
 const GalleryImage = ({ image, onClick }) => {
-  const urlForImages = import.meta.env.VITE_IMG_URL;
   return (
     <div onClick={onClick} className='w-full h-full'>
       <img

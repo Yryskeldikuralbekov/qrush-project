@@ -138,12 +138,4 @@ export const useZustandStore = create(set => ({
       console.error('Ошибка при получении галереи', error);
     }
   },
-  getVideos: async () => {
-    try {
-      const response = await QRUSHAPI.getVideos();
-      set({ videos: response.data });
-    } catch (error) {
-      console.error('error videos', error);
-    }
-  },
 }));
