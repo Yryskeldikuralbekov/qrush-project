@@ -15,29 +15,30 @@ export const ServiceLinks = () => {
   const filteredNestedData = useFilteredNestedData(
     filteredData,
     'background',
-    7
+    10
   );
   const filteredImg = useFilteredNestedData(filteredData, 'background', 8);
   const filteredImgSecond = useFilteredNestedData(
     filteredData,
     'background',
-    9
+    8
   );
-  const filteredImgThird = useFilteredNestedData(
-    filteredData,
-    'background',
-    10
-  );
-  const filteredText = useFilteredNestedData(filteredData, 'next_text', 8);
+  const filteredImgThird = useFilteredNestedData(filteredData, 'background', 9);
+  const filteredText = useFilteredNestedData(filteredData, 'next_text', 10);
   const filteredTextSecond = useFilteredNestedData(
     filteredData,
     'next_text',
-    9
+    11
   );
   const filteredTextThird = useFilteredNestedData(
     filteredData,
     'next_text',
-    10
+    12
+  );
+  const filteredTextFourth = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    13
   );
   const studioData = {
     background: ImageURL + filteredNestedData[0]?.background,
@@ -54,16 +55,19 @@ export const ServiceLinks = () => {
       img: studioData.secondImg,
       title: studioData.secondSubTitle,
       links: '/sound-recording',
+      button: filteredTextFourth[0]?.text,
     },
     {
       img: studioData.thirdImg,
       title: studioData.thirdSubTitle,
       links: '/music-courses',
+      button: filteredTextFourth[0]?.text,
     },
     {
       img: studioData.firstImg,
       title: studioData.firstSubTitle,
       links: '/rehearsal-cost',
+      button: filteredTextFourth[0]?.text,
     },
   ];
   return (
@@ -73,7 +77,7 @@ export const ServiceLinks = () => {
         src={studioData.background}
         alt='Задний-фон'
       />
-      <div className='mx-auto pt-[145px] sm:pt-[134px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[665px] tablet:w-[1000px] tablet:pt-[60px] xl:w-[1720px] lg:w-[1200px]'>
+      <div className='mx-auto pt-[145px] sm:pt-[134px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[565px] tablet:w-[1000px] tablet:pt-[60px] xl:w-[1720px] lg:w-[1200px]'>
         <h2 className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] xl:mb-[100px] lg:text-[70px]'>
           {studioData.title}
         </h2>
@@ -95,7 +99,7 @@ export const ServiceLinks = () => {
                   </h2>
                   <Link to={item.links}>
                     <Button onClick={scrollToTop} variant='serviceButton'>
-                      Подробнее
+                      {item.button}
                     </Button>
                   </Link>
                 </div>

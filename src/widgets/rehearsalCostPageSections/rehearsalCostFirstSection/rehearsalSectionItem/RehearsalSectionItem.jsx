@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
   Button,
   CardRehearsalSection,
@@ -9,6 +10,7 @@ import arrow from '../../../../shared/img/Frame.png';
 
 export const RehearsalSectionItem = ({ item, length }) => {
   const [openList, setOpenList] = useState(false);
+  const { t } = useTranslation();
   const changeList = () => {
     setOpenList(!openList);
   };
@@ -23,7 +25,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
         </h4>
         <h5 className='text-[14px] sm:text-[24px] font-[500] pb-[10px] sm:pb-[30px] tablet:pb-[60px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[32px] lg:text-[23px] tablet:text-[20px]'>
           {item.id === 1
-            ? `К вашим услугам есть ${length} комнаты для репетиций`
+            ? `${t('rehealBase.firstDescriptionBase')} ${length} ${t('rehealBase.secondDescriptionBase')}`
             : ''}
         </h5>
       </div>
@@ -89,7 +91,13 @@ export const RehearsalSectionItem = ({ item, length }) => {
           className='tablet:hidden underline text-[#F93822] text-[24px] md:text-[28px] underline-offset-4 mb-[20px] mt-[20px] text-left'
           onClick={() => changeList()}
         >
-          {openList ? <a href={`#${item.id}`}>Скрыть</a> : 'Полный список'}
+          {openList ? (
+            <a href={`#${item.id}`}>
+              <Button variant='listButton'>{item.list_tech}</Button>
+            </a>
+          ) : (
+            <Button variant='listButton'>{item.list_tech}</Button>
+          )}
         </p>
         <p className='text-left tablet:text-center mx-auto sm:mx-0 tablet:mx-auto text-[20px] sm:text-[30px] md:w-[425px] font-[500] xl:text-[25px] xl:w-[1000px] lg:text-[23px] lg:w-[900px] tablet:text-[20px] tablet:w-[600px] tablet:mb-[40px]'>
           {item.desc1}
@@ -102,7 +110,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
               href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
               rel='noreferrer'
             >
-              Забронировать
+              {t('trustUsPage.fourthSection.buttonInner')}
             </a>
           </Button>
         </div>

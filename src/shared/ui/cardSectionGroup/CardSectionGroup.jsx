@@ -11,14 +11,16 @@ export const CardSectionGroup = ({ item }) => {
           src={item.img}
           alt={`employer`}
           className={
-            'w-full h-[148px] sm:h-[293px] xl:h-[563px] lg:h-[310px] mb-[5px] rounded-[30px] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]'
+            'w-full h-[148px] sm:h-[293px] xl:h-[563px] lg:h-[310px] mb-[5px] rounded-[30px] object-cover [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]'
           }
         />
         <p className='font-bold text-[14px] sm:text-[24px] lg:text-[21px] mb-[5px]  text-center  mt-[5px] sm:mt-[5px] text-[#fff]'>
           {item.title}
           {item.description && <br />}
           {item.description ? (
-            <span className='font-thin text-[20px]'>{item.description}</span>
+            <span className='font-thin text-[12px] text-nowrap sm:text-[14px] lg:text-[20px]'>
+              {item.description}
+            </span>
           ) : null}
         </p>
         {!item.description && (

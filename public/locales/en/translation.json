@@ -317,6 +317,13 @@
       "minLengthSuffix": " characters"
     }
   },
+  "newsPage": {
+    "title": "All news"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "At your service there is",
+    "secondDescriptionBase": "rehearsal rooms"
+  },
   "shopPage": {
     "shopPageSection": {
     "price":"Price",

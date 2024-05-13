@@ -326,5 +326,12 @@
     "input":{
       "search":"Издөө"
     }
+  },
+  "newsPage": {
+    "title": "Бардык жаңылыктар"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "Сиздин кызматыңызда",
+    "secondDescriptionBase": "репетиция бөлмөлөрү бар"
   }
 }

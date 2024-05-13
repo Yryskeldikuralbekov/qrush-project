@@ -1,4 +1,5 @@
 export { GalleryMobileVideoSection } from './galleryPageSections/galleryVideoSliderSectionGalleryPage/GalleryMobileVideoSection';
+export { GalleryDesktopImageSectionGalleryPage } from './galleryPageSections/galleryDesktopImageSectionGalleryPage/GalleryDesktopImageSectionGalleryPage';
 export { AboutUsSectionHomePage } from './homePageSections/aboutsUsSectionHomePage/AboutUsSectionHomePage';
 export { IntroductionSectionHomePage } from './homePageSections/introductionSectionHomePage/IntroductionSectionHomePage';
 export { ServicesSectionHomePage } from './homePageSections/servicesSectionHomePage/ServicesSectionHomePage';
@@ -19,7 +20,6 @@ export { AccordionSection } from './accordionSections/accordionSection/Accordion
 export { ErrorPageSection } from './errorPageSections/errorPageSection/ErrorPageSection';
 export { QrushShopSections } from './qrushShopSections/QrushShopSections';
 
-export { GalleryFirstSectionGalleryPage } from './galleryPageSections/galleryFirstSectionGalleryPage/GalleryFirstSectionGalleryPage';
 export { GallerySecondSectionGalleryPage } from './galleryPageSections/gallerySecondSectionGalleryPage/GallerySecondSectionGalleryPage';
 export { GalleryImageSectionGalleryPage } from './galleryPageSections/galleryImageSectionGalleryPage/GalleryImageSectionGalleryPage';
 export { GalleryVideoSectionGalleryPage } from './galleryPageSections/galleryVideoSectionGalleryPage/GalleryVideoSectionGalleryPage';

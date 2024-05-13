@@ -2,14 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Mousewheel, Navigation } from 'swiper/modules';
 import 'swiper/css';
 
-export const GalleryVideoSliderSectionGalleryPage = () => {
-  const VideoSlides = [
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-    'https://www.youtube.com/embed/8t0vNu2fCCM',
-  ];
-
+export const GalleryVideoSliderSectionGalleryPage = ({ videos }) => {
   return (
     <section className='bg-center max-w-full'>
       <section className='max-w-full xl:container items-center mx-auto h-[450px]'>
@@ -30,24 +23,23 @@ export const GalleryVideoSliderSectionGalleryPage = () => {
             navigation={true}
           >
             <div className=' flex '>
-              {VideoSlides.map((link, index) => (
-                <SwiperSlide
-                  key={index}
-                  className='bg-cover bg-no-repeat  !flex justify-center items-center flex-col rounded-[30px] border-[1px] border-solid border-gray-500 !w-[705px] !h-[3  50px]'
-                >
-                  <iframe
-                    loading='lazy'
-                    className='rounded-[30px] border-[2px] border-solid border-gray-500 '
-                    width='705'
-                    height='350'
-                    src={link}
-                    title='YouTube video player'
-                    frameBorder='0'
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                    // allowfullscreen
-                  ></iframe>
-                </SwiperSlide>
-              ))}
+              {videos &&
+                videos?.map((link, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className='bg-cover bg-no-repeat  !flex justify-center items-center flex-col rounded-[30px] border-[1px] border-solid border-gray-500 !w-[705px] !h-[3  50px]'
+                  >
+                    <iframe
+                      loading='lazy'
+                      className='rounded-[30px] border-[2px] border-solid border-gray-500 '
+                      width='705'
+                      height='350'
+                      src={link.video}
+                      title='YouTube video player'
+                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                    ></iframe>
+                  </SwiperSlide>
+                ))}
             </div>
           </Swiper>
         </div>
