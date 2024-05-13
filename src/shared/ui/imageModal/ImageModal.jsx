@@ -21,7 +21,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
           className='max-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
           onClick={closeModal}
         >
-          <div className='w-[80vw] h-[40vh] sm:h-[50vh] md:h-[40vh] tablet:h-[50vh] lg:h-[80vh] scaleEnter'>
+          <div className='w-[80dvw] h-[20dvh] sm:h-[30dvh] md:h-[40dvh] tablet:h-[50dvh] lg:h-[80dvh] scaleEnter'>
             <img
               src={imageUrl}
               alt='Modal'

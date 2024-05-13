@@ -3,10 +3,6 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect } from 'react';
-// import firstCardBg from '../../../shared/img/first_news_bg.png';
-// import secondCardBg from '../../../shared/img/second_news_bg.jpg';
-// import thirdCardBg from '../../../shared/img/third_news_bg.jpg';
-// import qRush from '../../../shared/img/q_rush_news_section.svg';
 import '../../../app/styles/index.css';
 
 import ViewAllLink from '../../../shared/ui/viewAllLink/ViewAllLink';
@@ -17,10 +13,12 @@ import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedDa
 import { CardNewsHomePage } from './cardNewsHomePage/CardNewsHomePage.';
 
 export const NewsSectionHomePage = () => {
-  const { homePageData, getHomePage } = useZustandStore();
+  const { homePageData, getHomePage, getNewsPage, newsData } =
+    useZustandStore();
   const ImageURL = import.meta.env.VITE_IMG_URL;
   useEffect(() => {
     getHomePage();
+    getNewsPage();
   }, []);
   const filteredData = useFilteredData(homePageData, 5);
   const filteredNestedData = useFilteredNestedData(
@@ -45,31 +43,6 @@ export const NewsSectionHomePage = () => {
     14
   );
   const filterImgCard = useFilteredNestedData(filteredData, 'background', 16);
-  const filtertitle = useFilteredNestedData(filteredData, 'next_text', 14);
-  const filterSubtitle = useFilteredNestedData(filteredData, 'next_text', 15);
-  const filterDate = useFilteredNestedData(filteredData, 'next_text', 16);
-  const filterFirsttext = useFilteredNestedData(filteredData, 'next_text', 17);
-  const filterSecondttext = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    19
-  );
-  const filterThirdtext = useFilteredNestedData(filteredData, 'next_text', 21);
-  const filterFirstsubtitle = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    20
-  );
-  const filterSecondsubtitle = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    20
-  );
-  const filterThirdsubtitle = useFilteredNestedData(
-    filteredData,
-    'next_text',
-    22
-  );
   const filterLinkText = useFilteredNestedData(filteredData, 'next_text', 23);
   const button = filterLinkText[0]?.text;
   const studioData = {
@@ -80,38 +53,11 @@ export const NewsSectionHomePage = () => {
     fourthImg: ImageURL + filteredImgFourth[0]?.background,
     cardImg: ImageURL + filterImgCard[0]?.background,
   };
-  const cards = [
-    {
-      bgImage: studioData.firstImg,
-      title: filtertitle[0]?.text,
-      subtitle: filterSubtitle[0]?.text,
-      image: studioData.cardImg,
-      date: filterDate[0]?.text,
-    },
-    {
-      bgImage: studioData.secondImg,
-      title: filterFirsttext[0]?.text,
-      subtitle: filterFirstsubtitle[0]?.text,
-      image: null,
-      date: null,
-    },
-    {
-      bgImage: studioData.thirdImg,
-      title: filterSecondttext[0]?.text,
-      subtitle: filterSecondsubtitle[0]?.text,
-      image: null,
-      date: null,
-    },
-    {
-      bgImage: studioData.fourthImg,
-      title: filterThirdtext[0]?.text,
-      subtitle: filterThirdsubtitle[0]?.text,
-    },
-  ];
   const isMobile = useMediaQuery('(max-width: 576px)');
+  const isTablet = useMediaQuery('(max-width: 1000px)');
   return (
     <section
-      className='bg-cover bg-no-repeat w-full bg-center '
+      className='bg-cover bg-no-repeat w-full h-[269px] sm:h-[700px] xl:h-[907px] lg:h-[700px]  bg-center '
       style={{ backgroundImage: `url(${studioData.background})` }}
     >
       <div className='mx-auto px-4  sm:px-10 tablet:px-0 tablet:max-w-[90%] xl:container pt-[38px]  pb-[5px]'>
@@ -126,23 +72,24 @@ export const NewsSectionHomePage = () => {
         <Swiper
           modules={[Navigation, Pagination]}
           pagination={{ clickable: true }}
-          spaceBetween={isMobile ? 25 : 30}
-          slidesPerView={isMobile ? 1.2 : 1.6}
+          spaceBetween={isMobile ? 20 : 40}
+          slidesPerView={isMobile ? 1.8 : isTablet ? 1.3 : 1.8}
           navigation={true}
         >
           <ul className='mt-[65px] flex'>
-            {cards.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className='relative bg-cover bg-no-repeat rounded-[30px] border-[1px] border-[solid] border-[#F5F5F5] !w-[310px] sm:!w-[600px] xl:!w-[1060px] lg:!w-[750px] !h-[160px] sm:!h-[370px] xl:!h-[550px]'
-                  style={{
-                    backgroundImage: `url(${item.bgImage})`,
-                  }}
-                >
-                  <CardNewsHomePage item={item} />
-                </div>
-              </SwiperSlide>
-            ))}
+            {newsData &&
+              newsData.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    className='relative bg-cover bg-no-repeat bg-center rounded-[30px] border-[1px] border-[solid] border-[#F5F5F5] !w-full sm:!w-full xl:!w-full lg:!w-full !h-[160px] sm:!h-[370px] xl:!h-[550px]'
+                    style={{
+                      backgroundImage: `url(${item.image})`,
+                    }}
+                  >
+                    <CardNewsHomePage item={item} />
+                  </div>
+                </SwiperSlide>
+              ))}
           </ul>
         </Swiper>
       </div>
