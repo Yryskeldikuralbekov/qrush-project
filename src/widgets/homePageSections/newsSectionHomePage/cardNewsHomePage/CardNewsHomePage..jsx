@@ -25,7 +25,6 @@ export const CardNewsHomePage = ({ item }) => {
       <p className='absolute right-[50%] translate-x-[50%] bottom-[10px] sm:bottom-[40px] text-[#FFF] font-[Montserrat] mt-[100px] text-[12px] sm:text-[20px] not-italic font-semibold leading-[normal]'>
         {item.created_et}
       </p>
-      <div className='absolute bottom-0 left-0 right-0'></div>
     </li>
   );
 };

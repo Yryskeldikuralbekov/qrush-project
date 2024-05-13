@@ -58,7 +58,9 @@ export const Header = () => {
       className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[80px]  w-full flex justify-center  top-0 backdrop-blur-30 fixed `}
     >
       <section className='bg-cover bg-no-repeat bg-center container '>
-        <nav className=' mx-auto flex justify-between items-center container '>
+        <nav
+          className={`${isOpen ? 'bg-black' : null} mx-auto flex justify-between items-center container `}
+        >
           <Link to={'/'} className='mr-[4vw]' onClick={scrollToTop}>
             <img
               src={logo}
@@ -115,7 +117,7 @@ export const Header = () => {
               <div
                 className={`${isOpen ? 'block' : 'hidden'} absolute top-[100px] w-[100%] left-0 right-0 bg-black text-[24px] font-montserrat `}
               >
-                <div className='flex flex-col  text-white p-[20px]'>
+                <ul className='flex flex-col  text-white p-[20px]'>
                   {headerLinks.map((routes, index) => (
                     <li
                       className='list-none p-[10px]'
@@ -131,7 +133,7 @@ export const Header = () => {
                       </Link>
                     </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           ) : (

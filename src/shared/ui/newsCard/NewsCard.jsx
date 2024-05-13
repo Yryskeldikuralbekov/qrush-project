@@ -15,8 +15,8 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
     formatTitle.length > 50 ? `${formatTitle.slice(0, 50)}...` : formatTitle;
   const formattedDescription = description.split('\n').slice(0, 5).join('\n');
   const formattedDescriptionWithEllipsis =
-    formattedDescription.length > 40
-      ? formattedDescription.slice(0, 70)
+    formattedDescription.length > 0
+      ? formattedDescription.slice(0, 64)
       : formattedDescription;
   const setOpenWindow = () => {
     setOpen(true);
@@ -34,14 +34,14 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
           />
         </div>
 
-        <div className='relative h-[220px] w-full mb-[120px] sm:mb-[50px] md:mb-[30px] tablet:mb-[0px] py-[20px]'>
+        <div className='relative h-[100px] lg:h-[220px] w-full mb-[0px] sm:mb-[50px] md:mb-[30px] tablet:mb-[0px] py-[20px]'>
           <ul className='px-[2px]'>
             <div className='relative'>
-              <h2 className='text-[24px] text-[#fff] md:text-[38px] tablet:text-[18px] lg:text-[20px] xl:text-[24px] font-[600] tablet:mb-[20px]'>
+              <h2 className='text-[17px] text-[#fff] md:text-[38px] tablet:text-[18px] lg:text-[20px] xl:text-[24px] font-[600] tablet:mb-[20px]'>
                 {formatTitleWithEllipsis}
               </h2>
             </div>
-            <h5 className='text-[24px] tablet:text-[18px]'>
+            <h5 className='text-[15px] mt-[5px] leading-none tablet:text-[18px]'>
               {formattedDescriptionWithEllipsis}
               <span
                 onClick={setOpenWindow}
@@ -51,17 +51,19 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
               </span>
             </h5>
           </ul>
-          <p className='absolute tablet:bottom-[10px] lg:bottom-[30px] xl:bottom-[15px] text-[#fff] text-[30px] tablet:text-[24px] lg:text-[24px] xl:text-[24px] italic'>
-            {formattedDate}
-          </p>
-          <p
-            onClick={setOpenWindow}
-            className={
-              'absolute right-[0] tablet:bottom-[10px] lg:bottom-[30px] xl:bottom-[15px] text-[#F93822] cursor-pointer text-[34px] tablet:text-[24px] lg:text-[28px]'
-            }
-          >
-            Еще...
-          </p>
+          <div className='flex justify-between mt-[10px] tablet:mt-0'>
+            <p className='flex tablet:absolute -bottom-[15px] tablet:bottom-[10px] lg:bottom-[10px] xl:bottom-[15px] text-[#fff] text-[14px] tablet:text-[17px] lg:text-[20px] xl:text-[23px] italic'>
+              {formattedDate}
+            </p>
+            <p
+              onClick={setOpenWindow}
+              className={
+                'flex tablet:block  tablet:mt-0  tablet:absolute right-[0] -bottom-[15px] tablet:bottom-[10px] lg:bottom-[10px] xl:bottom-[15px] text-[#F93822] cursor-pointer text-[15px] tablet:text-[19px] lg:text-[23px]'
+              }
+            >
+              Еще...
+            </p>
+          </div>
         </div>
       </div>
       <ModalNewsWindow

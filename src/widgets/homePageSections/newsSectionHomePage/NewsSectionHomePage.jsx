@@ -60,7 +60,7 @@ export const NewsSectionHomePage = () => {
       className='bg-cover bg-no-repeat w-full h-[269px] sm:h-[700px] xl:h-[907px] lg:h-[700px]  bg-center '
       style={{ backgroundImage: `url(${studioData.background})` }}
     >
-      <div className='mx-auto px-4  sm:px-10 tablet:px-0 tablet:max-w-[90%] xl:container pt-[38px]  sm:pt-[50px] pb-[66px]'>
+      <div className='mx-auto px-4  sm:px-10 tablet:px-0 tablet:max-w-[90%] xl:container pt-[38px]  pb-[5px]'>
         <div className='mb-[17px]  flex sm:block justify-between sm:justify-normal'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[100px] not-italic font-medium leading-[normal]'>
             {filteredData[0]?.title}

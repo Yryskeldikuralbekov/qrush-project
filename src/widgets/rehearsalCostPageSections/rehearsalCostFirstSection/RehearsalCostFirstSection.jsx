@@ -25,7 +25,7 @@ export const RehearsalCostFirstSection = ({ item }) => {
       }}
     >
       <div className='mx-auto w-none xl:w-[1920px] pt-[140px]'>
-        <h1 className='w-[350px] text-[32px] ml-[16px] sm:w-[355px] sm:text-[40px] font-[600] sm:ml-[15px] tablet:w-[835px] tablet:text-[70px] text-[#fff] tablet:font-[600] tablet:ml-[80px]'>
+        <h1 className='w-[350px] text-[40px] ml-[16px] sm:w-[355px] sm:text-[40px] font-[600] sm:ml-[15px] tablet:w-[835px] tablet:text-[70px] text-[#fff] tablet:font-[600] tablet:ml-[80px]'>
           {item.service_name}
         </h1>
       </div>
