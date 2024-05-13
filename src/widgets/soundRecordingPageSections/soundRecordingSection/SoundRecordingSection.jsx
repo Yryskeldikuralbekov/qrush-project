@@ -27,7 +27,7 @@ export const SoundRecordingSection = () => {
       }}
     >
       <div className='mx-[20px] pt-[100px] sm:w-[700px] text-[#fff] sm:pt-[90px] tablet:pt-[0px] sm:mx-[50px] tablet:top-[90px] absolute lg:left-[100px] lg:top-[100px] lg:z-10'>
-        <h1 className='w-[100px] md:w-full text-[32px] tablet:text-[60px] lg:text-[50px] tablet:w-[500px] lg:w-full font-[500] mb-[24px]'>
+        <h1 className='w-full md:w-full text-[40px] tablet:text-[60px] lg:text-[50px] tablet:w-[500px] lg:w-full font-[500] mb-[24px]'>
           {soundRecordingData.service_name}
         </h1>
         {soundRecordingData.description &&
