@@ -20,7 +20,6 @@ export const useZustandStore = create(set => ({
   videos: [],
   aboutUsTeam: [],
   galleryImages: [],
-  videos: [],
   getHomePage: async () => {
     try {
       const response = await QRUSHAPI.getHomePage();

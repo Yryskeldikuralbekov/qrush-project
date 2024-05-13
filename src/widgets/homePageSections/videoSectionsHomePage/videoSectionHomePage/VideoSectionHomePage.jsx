@@ -3,6 +3,7 @@ import React from 'react';
 import ViewAllLink from '../../../../shared/ui/viewAllLink/ViewAllLink';
 
 export const VideoSectionHomePage = ({
+  bgImg,
   src,
   secondSrc,
   thirdSrc,
@@ -12,7 +13,12 @@ export const VideoSectionHomePage = ({
   button,
 }) => {
   return (
-    <section className='pb-[70px] xl:pb-[150px] -mt-[100px]'>
+    <section
+      className='pb-[70px] xl:pb-[150px] -pt-[100px] bg-cover bg-center'
+      style={{
+        backgroundImage: `url(${bgImg})`,
+      }}
+    >
       <section className='mx-auto max-w-[90%] xl:container'>
         <div className='mb-[20px]  sm:mb-[40px] pt-[50px] sm:pt-0 flex justify-between items-end'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[70px] not-italic font-medium leading-[normal]'>

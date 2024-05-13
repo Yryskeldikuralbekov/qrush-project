@@ -39,6 +39,16 @@ export const HomePage = () => {
     'background',
     11
   );
+  const bgGalleryData = useFilteredNestedData(
+    filteredGalleryData,
+    'background',
+    19
+  );
+  const nestedVideoData = useFilteredNestedData(
+    secondFilteredVideoData,
+    'background',
+    18
+  );
 
   const filteredGalleryImageData = useFilteredData(galleryData, 1);
   const secondFilteredGalleryImageData = useFilteredData(galleryData, 2);
@@ -46,7 +56,9 @@ export const HomePage = () => {
   const fourthFilteredGalleryImageData = useFilteredData(galleryData, 4);
   const fifthFilteredGalleryImageData = useFilteredData(galleryData, 5);
   const sixthFilteredGalleryImageData = useFilteredData(galleryData, 6);
+
   const videoProps = {
+    bgImg: ImageURL + nestedVideoData[0]?.background,
     src: filteredVideoDataThird[0]?.video,
     secondSrc: filteredVideoDataSecond[0]?.video,
     thirdSrc: filteredVideoData[0]?.video,
@@ -56,6 +68,7 @@ export const HomePage = () => {
     button: secondFilteredVideoData[0]?.description,
   };
   const gallerySectionProps = {
+    bgImg: ImageURL + bgGalleryData[0]?.background,
     title: filteredGalleryData[0]?.title,
     button: filteredGalleryData[0]?.description,
     firstImage: filteredGalleryImageData[0]?.image,
