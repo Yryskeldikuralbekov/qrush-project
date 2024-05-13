@@ -77,7 +77,7 @@ export const ServiceLinks = () => {
         src={studioData.background}
         alt='Задний-фон'
       />
-      <div className='mx-auto pt-[145px] sm:pt-[134px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[665px] tablet:w-[1000px] tablet:pt-[60px] xl:w-[1720px] lg:w-[1200px]'>
+      <div className='mx-auto pt-[145px] sm:pt-[134px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[565px] tablet:w-[1000px] tablet:pt-[60px] xl:w-[1720px] lg:w-[1200px]'>
         <h2 className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] xl:mb-[100px] lg:text-[70px]'>
           {studioData.title}
         </h2>
