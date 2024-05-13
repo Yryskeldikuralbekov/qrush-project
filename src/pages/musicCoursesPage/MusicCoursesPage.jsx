@@ -4,13 +4,13 @@ import { Advertising } from '../../shared';
 import { useZustandStore } from '../../app/store/store';
 
 export const MusicCoursesPage = () => {
-  const { getMusicCourcePage, musicCourceData } = useZustandStore();
+  const { getMusicCoursesPage, musicCoursesData } = useZustandStore();
   useEffect(() => {
-    getMusicCourcePage();
+    getMusicCoursesPage();
   }, []);
   return (
     <>
-      {musicCourceData?.map(item => (
+      {musicCoursesData?.map(item => (
         <div key={item.id}>
           <MusicCoursesFirstSection item={item} />
         </div>

@@ -32,7 +32,7 @@ export const QRUSHAPI = {
   getFaqPage() {
     return instance.get('v1/pages/faq/');
   },
-  getMusicCourcePage() {
+  getMusicCoursesPage() {
     return instance.get('v2/mc/music_courses/');
   },
   getRehearsalFirstBasePage() {
