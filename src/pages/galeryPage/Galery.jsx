@@ -27,7 +27,6 @@ export const Galery = () => {
   );
   const isMobile = useMediaQuery('(max-width: 1024px)');
   const isDesktop = useMediaQuery('(min-width: 1024px)');
-  console.log(videos);
   return (
     <section
       className='w-full bg-center bg-no-repeat bg-cover'
