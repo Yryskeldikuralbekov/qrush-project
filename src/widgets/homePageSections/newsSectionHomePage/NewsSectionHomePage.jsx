@@ -114,7 +114,7 @@ export const NewsSectionHomePage = () => {
       className='bg-cover bg-no-repeat w-full bg-center '
       style={{ backgroundImage: `url(${studioData.background})` }}
     >
-      <div className='mx-auto px-4  sm:px-10 tablet:px-0 tablet:max-w-[90%] xl:container pt-[38px]  pb-[10px]'>
+      <div className='mx-auto px-4  sm:px-10 tablet:px-0 tablet:max-w-[90%] xl:container pt-[38px]  pb-[5px]'>
         <div className='mb-[17px]  flex sm:block justify-between sm:justify-normal'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[100px] not-italic font-medium leading-[normal]'>
             {filteredData[0]?.title}
@@ -126,8 +126,8 @@ export const NewsSectionHomePage = () => {
         <Swiper
           modules={[Navigation, Pagination]}
           pagination={{ clickable: true }}
-          spaceBetween={isMobile ? 20 : 30}
-          slidesPerView={1.6}
+          spaceBetween={isMobile ? 25 : 30}
+          slidesPerView={isMobile ? 1.2 : 1.6}
           navigation={true}
         >
           <ul className='mt-[65px] flex'>

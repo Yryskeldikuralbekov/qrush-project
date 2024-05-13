@@ -11,10 +11,9 @@ export const CardNewsHomePage = ({ item }) => {
           </h5>
         </div>
       </div>
-      <p className='absolute right-[50%] translate-x-[50%] bottom-[80px] text-[#FFF] font-[Montserrat] mt-[100px] text-[12px] sm:text-[20px] not-italic font-semibold leading-[normal]'>
+      <p className='absolute right-[50%] translate-x-[50%] bottom-3 sm:bottom-[40px] text-[#FFF] font-[Montserrat] mt-[100px] text-[12px] sm:text-[20px] not-italic font-semibold leading-[normal]'>
         {item.date}
       </p>
-      <div className='absolute bottom-0 left-0 right-0'></div>
     </li>
   );
 };
