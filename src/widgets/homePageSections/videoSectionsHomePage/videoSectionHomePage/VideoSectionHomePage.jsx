@@ -12,7 +12,7 @@ export const VideoSectionHomePage = ({
   button,
 }) => {
   return (
-    <section className='pb-[70px] xl:pb-[150px] -mt-[250px]'>
+    <section className='pb-[70px] xl:pb-[150px] -mt-[100px]'>
       <section className='mx-auto max-w-[90%] xl:container'>
         <div className='mb-[20px]  sm:mb-[40px] pt-[50px] sm:pt-0 flex justify-between items-end'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[70px] not-italic font-medium leading-[normal]'>
@@ -29,7 +29,6 @@ export const VideoSectionHomePage = ({
               className='w-full h-full'
               src={src}
               title='YouTube video player'
-              // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             ></iframe>
           </div>
@@ -40,7 +39,6 @@ export const VideoSectionHomePage = ({
               className='w-full h-full'
               src={secondSrc}
               title='YouTube video player'
-              // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             />
           </div>
@@ -50,7 +48,6 @@ export const VideoSectionHomePage = ({
               className='w-full h-full'
               src={thirdSrc}
               title='YouTube video player'
-              // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             />
           </div>
@@ -60,7 +57,6 @@ export const VideoSectionHomePage = ({
               className='w-full h-full'
               src={fourthSrc}
               title='YouTube video player'
-              // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             />
           </div>
@@ -70,7 +66,6 @@ export const VideoSectionHomePage = ({
               className='w-full h-full'
               src={fifthSrc}
               title='YouTube video player'
-              // frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             />
           </div>

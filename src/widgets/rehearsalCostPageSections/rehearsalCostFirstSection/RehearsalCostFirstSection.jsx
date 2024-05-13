@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useZustandStore } from '../../../app/store/store';
+import { useFilteredData } from '../../../shared/hooks/useFilteredData';
+import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedData';
 import { RehearsalSectionItem } from './rehearsalSectionItem/RehearsalSectionItem';
 
 export const RehearsalCostFirstSection = ({ item }) => {
+  const { getPages, pages } = useZustandStore();
+  useEffect(() => {
+    getPages();
+  }, []);
+  const ImageURL = import.meta.env.VITE_IMG_URL;
+  const FilteredNewsPagesData = useFilteredData(pages, 9);
+  const nestedBackgroundData = useFilteredNestedData(
+    FilteredNewsPagesData,
+    'background',
+    12
+  );
   const length = item.description.length;
   return (
-    <section className='w-full mx-auto font-montserrat text-[#E2DED3] mb-[10px] md:mb-[34px] tablet:mb-[94px] lg:mb-[154px]'>
-      <div className='mx-auto pt-[140px] sm:pt-[140px] tablet:pt-[140px]'>
+    <section
+      className='w-full mx-auto font-montserrat text-[#E2DED3] pb-[10px] md:pb-[34px] tablet:pb-[94px] lg:pb-[154px] bg-no-repeat bg-cover'
+      style={{
+        backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
+      }}
+    >
+      <div className='mx-auto w-none xl:w-[1920px] pt-[140px]'>
         <h1 className='w-[350px] text-[32px] ml-[16px] sm:w-[355px] sm:text-[40px] font-[600] sm:ml-[15px] tablet:w-[835px] tablet:text-[70px] text-[#fff] tablet:font-[600] tablet:ml-[80px]'>
           {item.service_name}
         </h1>

@@ -6,7 +6,6 @@ export const GalleryVideoSectionGalleryPage = () => {
   useEffect(() => {
     getVideos();
   });
-  console.log(videos);
   return (
     <section className='bg-center max-w-full'>
       <div className='max-w-full flex justify-center  mb-[-40px] p-[5%]'>

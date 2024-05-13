@@ -314,5 +314,12 @@
       "minLengthPrefix": "Minimum ",
       "minLengthSuffix": " characters"
     }
+  },
+  "newsPage": {
+    "title": "Бардык жаңылыктар"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "Сиздин кызматыңызда",
+    "secondDescriptionBase": "репетиция бөлмөлөрү бар"
   }
 }

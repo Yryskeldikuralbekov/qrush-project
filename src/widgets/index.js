@@ -7,7 +7,6 @@ export { TrustUsSectionHomePage } from './homePageSections/trustUsSectionHomePag
 export { Footer } from './footer/Footer';
 export { GeeksProSection } from './footer/geeksProSection/GeeksProSection';
 export { Header } from './header/Header';
-export { MainSectionTrustUs } from './trustUsPageSections/mainSectionTrustUs/MainSectionTrustUs';
 export { PreviewSectionTrustUs } from './trustUsPageSections/previewSectionTrustUs/PreviewSectionTrustUs';
 export { NewsSectionHomePage } from './homePageSections/newsSectionHomePage/NewsSectionHomePage';
 export { Team } from './aboutUsPageSections/teamSection/TeamSection';

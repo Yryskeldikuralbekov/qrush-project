@@ -19,7 +19,7 @@ export const CardRehearsalSection = ({ item, openList }) => {
                 exit={{ height: 0, opacity: 0 }}
                 key={item.id}
               >
-                <li>
+                <li className='visible tablet:hidden'>
                   <p>{item.naming}</p>
                 </li>
               </motion.ul>
