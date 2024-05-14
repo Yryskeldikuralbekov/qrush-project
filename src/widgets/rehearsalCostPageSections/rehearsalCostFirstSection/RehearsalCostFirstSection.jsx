@@ -19,7 +19,7 @@ export const RehearsalCostFirstSection = ({ item }) => {
   const length = item.description.length;
   return (
     <section
-      className='w-full mx-auto font-montserrat text-[#E2DED3] pb-[10px] md:pb-[34px] tablet:pb-[94px] lg:pb-[154px] bg-no-repeat bg-cover'
+      className='w-full mx-auto font-montserrat text-[#E2DED3] pb-[30px] md:pb-[44px] tablet:pb-[54px] lg:pb-[74px] bg-no-repeat bg-cover'
       style={{
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}

@@ -23,13 +23,13 @@ export const SectionGroupMobile = props => {
       title: firstSubTitle,
       description: firstDescription,
       img: firstImg,
-      href: '/sound-recording',
+      href: '/rehearsal-cost',
     },
     {
       title: secondSubTitle,
       description: secondDescription,
       img: secondImg,
-      href: '/rehearsal-cost',
+      href: '/sound-recording',
     },
     {
       title: thirdSubTitle,

@@ -47,7 +47,7 @@ export const SectionGroup = props => {
 
   return (
     <section
-      className='h-[336px] sm:h-[736px] xl:h-[1174px]  lg:h-[650px] bg-cover bg-no-repeat bg-center'
+      className='h-[336px] sm:h-[736px] xl:h-[974px]  lg:h-[650px] bg-cover bg-no-repeat bg-center'
       style={{ backgroundImage: `url(${background})` }}
     >
       <section className='mx-auto max-w-full sm:max-w-[90%]  xl:container'>

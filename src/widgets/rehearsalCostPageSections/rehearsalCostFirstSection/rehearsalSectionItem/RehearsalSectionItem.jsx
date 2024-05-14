@@ -18,12 +18,12 @@ export const RehearsalSectionItem = ({ item, length }) => {
   const arrayImg = item.image;
   const arrayEquipment = item.tech_name;
   return (
-    <div>
+    <>
       <div className='mx-[20px] mt-[30px] sm:mx-auto text-center'>
-        <h4 className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] tablet:text-[20px]'>
+        <h4 className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] tablet:text-[20px] pt-[80px]'>
           {item.title}
         </h4>
-        <h5 className='text-[14px] sm:text-[24px] font-[500] pb-[10px] sm:pb-[30px] tablet:pb-[60px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[32px] lg:text-[23px] tablet:text-[20px]'>
+        <h5 className='text-[14px] sm:text-[24px] font-[500] pb-[10px] sm:pb-[30px] tablet:pb-[40px] text-[#FFFFFF] sm:text-[#B4B4B4] xl:text-[32px] lg:text-[23px] tablet:text-[20px]'>
           {item.id === 1
             ? `${t('rehealBase.firstDescriptionBase')} ${length} ${t('rehealBase.secondDescriptionBase')}`
             : ''}
@@ -115,6 +115,6 @@ export const RehearsalSectionItem = ({ item, length }) => {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
