@@ -317,5 +317,17 @@
   "rehealBase":{
     "firstDescriptionBase": "К вашим услугам есть",
     "secondDescriptionBase": "комнаты для репетиций"
+  },
+  "shopPage": {
+    "shopPageSection": {
+    "price":"Цена",
+    "currency":"сом",
+    "buyButton":"Купить"
+    }
+  },
+  "bgQrushInput":{
+    "input":{
+      "search":"Поиск"
+    }
   }
 }

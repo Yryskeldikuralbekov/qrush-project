@@ -315,6 +315,18 @@
       "minLengthSuffix": " characters"
     }
   },
+  "shopPage": {
+    "shopPageSection": {
+      "price":"Баасы",
+      "currency":"сом",
+      "buyButton":"Сатып алуу"
+    }
+  },
+  "bgQrushInput":{
+    "input":{
+      "search":"Издөө"
+    }
+  },
   "newsPage": {
     "title": "Бардык жаңылыктар"
   },

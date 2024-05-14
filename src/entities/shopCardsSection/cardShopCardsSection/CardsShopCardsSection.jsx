@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { Button } from '../../../shared';
 export const CardsShopCardsSection = ({ card }) => {
+  const { t } = useTranslation();
   return (
     <div
-      className={`mt-[90px]  tablet:mt-[100px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[680px] sm:h-[880px] md:h-[1360px] tablet:h-[360px] lg:h-[460px] xl:h-[860px] relative `}
+      className={`mt-[90px] md:mt-[175px] tablet:mt-[100px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[670px] sm:h-[842px] md:h-[1313px] tablet:h-[360px] lg:h-[460px] xl:h-[860px] relative`}
       key={card.id}
     >
       <div
@@ -10,16 +12,16 @@ export const CardsShopCardsSection = ({ card }) => {
       >
         <div>
           <img
-            className={`w-[343px] h-[340px] mx-auto border-[0.50px] border-[solid] border-[#e2ded3] rounded-[16px] sm:w-[440px] sm:h-[440px] md:w-[640px] md:h-[630px] tablet:w-[405px] tablet:h-[360px] lg:w-[505px] lg:h-[460px] xl:w-[805px] xl:h-[860px] `}
+            className={`w-[343px] h-[340px] mx-auto border-[0.50px] border-[solid] border-[#e2ded3] rounded-[16px] sm:w-[440px] sm:h-[440px] md:w-[664px] md:h-[658px] tablet:w-[405px] tablet:h-[360px] lg:w-[505px] lg:h-[460px] xl:w-[805px] xl:h-[860px] `}
             src={card.image}
             alt='cardImg'
           />
         </div>
         <div
-          className={`w-[343px] h-[340px] flex justify-center flex-col items-center rounded-[16px] px-[8px] sm:w-[440px] sm:h-[440px] md:w-[640px] md:h-[630px] tablet:px-0 tablet:border-0  tablet:w-[405px] tablet:h-[348px] xl:w-[705px] xl:h-[548px] lg:w-[550px] lg:h-[448px]`}
+          className={`w-[343px] flex justify-center mt-[38px] md:mt-[78px] tablet:mt-0 rounded-[16px] px-[8px] sm:w-[440px] sm:h-[364px] md:w-[558px] md:h-[577px] tablet:px-0 tablet:border-0  tablet:w-[405px] tablet:h-[348px] xl:w-[705px] xl:h-[548px] lg:w-[550px] lg:h-[448px]`}
         >
           <div
-            className={`w-[278px] h-[258px] sm:w-[378px] sm:h-[300px] md:w-[438px] md:h-[380px] mx-auto tablet:w-[405px] tablet:h-[705px] lg:w-[550px] xl:w-[705px]`}
+            className={`w-[278px] sm:w-[378px] sm:h-[300px] md:w-[438px] md:h-[380px] mx-auto tablet:w-[405px] tablet:h-[705px] lg:w-[550px] xl:w-[705px]`}
           >
             <h2
               className={`w-[220px] sm:w-[350px] md:w-[440px] tablet:w-[405px] lg:w-[505px] xl:w-[645px] font-bold text-[#E2DED3] text-[14px] sm:text-[22px] md:text-[27px] tablet:text-[25px] lg:text-[30px] xl:text-[50px] `}
@@ -42,7 +44,13 @@ export const CardsShopCardsSection = ({ card }) => {
               <p
                 className={`font-semibold text-[#d9d9d9] opacity-70 text-[14px] sm:text-[16px] md:text-[27px] mt-[8px] md:mt-[15px] tablet:text-[21px] lg:text-[24px] xl:text-[30px] tablet:mt-[40px]`}
               >
-                Цена: {card.price} сом
+                {t('shopPage.shopPageSection.price') +
+                  ' ' +
+                  ':' +
+                  '  ' +
+                  card.price +
+                  ' ' +
+                  t('shopPage.shopPageSection.currency')}
               </p>
               <div className='mt-[16px] md:mt-[31px] text-center'>
                 <a
@@ -50,7 +58,9 @@ export const CardsShopCardsSection = ({ card }) => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <Button variant='buyButton'>Купить</Button>
+                  <Button variant='buyButton'>
+                    {t('shopPage.shopPageSection.buyButton')}
+                  </Button>
                 </a>
               </div>
             </div>
