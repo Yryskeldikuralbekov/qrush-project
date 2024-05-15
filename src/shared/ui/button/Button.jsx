@@ -7,7 +7,7 @@ export const Button = ({
 }) => {
   const styles = {
     buyButton:
-      'bg-[#FE0002] w-[247px] h-[50px] text-center flex justify-center items-center sm:w-[340px] sm:h-[55px] py-[10px] px-[24px] md:w-[478px] md:h-[96px] md:py-[19px] md:px-[46px] tablet:w-[200px] lg:w-[250px] xl:w-[344px] tablet:h-[50px] lg:h-[70px] font-montserrat font-medium text-[20px] sm:text-[22px] md:text-[38px] tablet:text-[18px] lg:text-[22px] xl:text-[25px] rounded-[30px] md:rounded-[58px]',
+      'bg-[#FE0002] w-[247px] h-[50px] text-center flex justify-center items-center sm:w-[340px] sm:h-[55px] py-[10px] px-[24px] md:w-[478px] md:h-[96px] md:py-[19px] md:px-[46px] tablet:w-[200px] lg:w-[230px] xl:w-[344px] tablet:h-[50px] lg:h-[60px] xl:h-[70px] font-montserrat font-medium text-[20px] sm:text-[22px] md:text-[38px] tablet:text-[18px] lg:text-[22px] xl:text-[25px] rounded-[30px] md:rounded-[58px]',
     orangeButton:
       'px-[31px] transition-all duration-300 text-center rounded-[20px] lg:px-[65px] py-[7px] bg-[#FE0002] font-normal text-[25px] text-[#F5F5F5] hover:opacity-80',
     customButton:
