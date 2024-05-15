@@ -34,8 +34,8 @@ export const Galery = () => {
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[70px] xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px] sm:text-[16px]'>
-        <h2 className='xl:text-[100px] lg:text-[100px] tablet:text-[40px] sm:text-[42px] text-[40px] font-bold'>
+      <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[100px] tablet:mt-[120px] xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px] sm:text-[16px]'>
+        <h2 className='font-bold text-[40px] md:text-[56px] tablet:text-[60px] xl:text-[80px] lg:text-[70px]'>
           {FilteredNewsPagesData[0]?.title}
         </h2>
       </div>

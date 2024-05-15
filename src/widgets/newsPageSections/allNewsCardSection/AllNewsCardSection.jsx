@@ -27,10 +27,10 @@ export const AllNewsCardSection = () => {
       }}
     >
       <div className='w-[90%] xl:w-[1720px] pb-0 sm:pb-[20px] tablet:pb-[50px] mx-auto text-[#fff] font-montserrat'>
-        <div className='w-full mt-[90px] mb-[30px] pt-[0px]'>
+        <div className='w-full mt-[120px] mb-[30px] pt-[0px]'>
           <h2
             onClick={() => setOpen(true)}
-            className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[80px] xl:mb-[30px] lg:text-[70px] font-bold'
+            className='font-bold text-[40px] md:text-[56px] tablet:text-[60px] xl:text-[80px] lg:text-[70px]'
           >
             {FilteredNewsPagesData[0]?.title}
           </h2>
