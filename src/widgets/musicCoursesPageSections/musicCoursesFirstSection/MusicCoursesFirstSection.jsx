@@ -23,8 +23,8 @@ export const MusicCoursesFirstSection = ({ item }) => {
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='mx-auto w-none xl:w-[1920px] pt-[120px]'>
-        <h1 className='w-[280px] text-[40px] ml-[16px] sm:w-[355px] sm:text-[40px] font-[600] sm:ml-[15px] tablet:w-[835px] tablet:text-[70px] text-[#fff] tablet:font-[600] tablet:ml-[80px]'>
+      <div className='mx-auto max-w-[90%] xl:container pt-[120px]'>
+        <h1 className='w-[280px] text-[40px] sm:w-[355px] sm:text-[40px] font-[600] tablet:w-[835px] tablet:text-[70px] text-[#fff] tablet:font-[600] '>
           {item.service_name}
         </h1>
       </div>

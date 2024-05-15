@@ -25,12 +25,12 @@ export const GallerySectionHomePage = ({
   return (
     <section>
       <section
-        className='xl:container bg-cover bg-center mx-auto'
+        className='bg-cover bg-center mx-auto'
         style={{
           backgroundImage: `url(${bgImg})`,
         }}
       >
-        <div className='mx-auto max-w-[90%] xl:container'>
+        <div className='container'>
           <div className='mb-[20px] sm:mb-[40px] pt-[2%] flex justify-between items-end'>
             <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[70px] not-italic font-medium leading-[normal]'>
               {title}

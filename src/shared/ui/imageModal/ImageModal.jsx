@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+
 const portal = document.getElementById('portal');
 
 export const ImageModal = ({ imageUrl, handleCloseModal }) => {
@@ -11,7 +12,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
 
   const closeModal = () => {
     setShowModal(false);
-    handleCloseModal();
+    setTimeout(() => handleCloseModal(), 300);
   };
 
   const stopPropagation = e => {
@@ -26,7 +27,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
           onClick={closeModal}
         >
           <div
-            className='h-[60dvh] lg:h-[80dvh] scaleEnter'
+            className='h-[30dvh] lg:h-[80dvh] scaleEnter'
             onClick={stopPropagation}
           >
             <img

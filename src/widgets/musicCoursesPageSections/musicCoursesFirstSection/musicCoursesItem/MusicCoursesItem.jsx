@@ -15,7 +15,7 @@ export const MusicCoursesItem = ({ item }) => {
         </h5>
       </div>
 
-      <div className='ml-[20px] sm:mx-auto w-[95%] xl:w-[1820px]'>
+      <div className='ml-[20px] mx-auto max-w-[90%] xl:container'>
         <SwiperPhotoItem arrayImg={arrayImg} />
       </div>
       <div className='text-left mb-[40px] mx-[20px] md:w-full sm:mx-auto mt-[27px] md:mt-[50px] tablet:mt-[100px] md:text-center'>

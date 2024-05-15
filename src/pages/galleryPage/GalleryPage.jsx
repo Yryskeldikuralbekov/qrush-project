@@ -12,7 +12,7 @@ import {
 import { useFilteredData } from '../../shared/hooks/useFilteredData';
 import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData';
 
-export const Galery = () => {
+export const GalleryPage = () => {
   const { getPages, pages, getVideos, videos } = useZustandStore();
   useEffect(() => {
     getPages();

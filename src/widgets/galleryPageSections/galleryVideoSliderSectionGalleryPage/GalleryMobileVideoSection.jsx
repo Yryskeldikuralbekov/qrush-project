@@ -1,7 +1,7 @@
 export const GalleryMobileVideoSection = ({ videos }) => {
   return (
     <section className='bg-center max-w-full mt-[50px] mb-[50px]'>
-      <div className='container grid grid-cols-2 gap-4 items-center mx-auto p-[16px] sm:p-[0px] '>
+      <div className='max-w-[90%] xl:container grid grid-cols-2 gap-4 items-center mx-auto p-[16px] sm:p-[0px] '>
         {videos &&
           videos?.map((link, index) => (
             <iframe
@@ -10,7 +10,7 @@ export const GalleryMobileVideoSection = ({ videos }) => {
               src={link.video}
               title='YouTube video player'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            ></iframe>
+            />
           ))}
       </div>
     </section>

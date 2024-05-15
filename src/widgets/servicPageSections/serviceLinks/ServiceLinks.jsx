@@ -93,7 +93,7 @@ export const ServiceLinks = () => {
                   src={item.img}
                   alt='rectangl'
                 />
-                <div className='mx-[auto] text-center my-[13px] sm:my-[40px] tablet:mt-[20px]'>
+                <div className='mx-[auto] text-center my-[13px] sm:my-[20px]'>
                   <h2 className='text-[11px] mb-[20px] sm:w-[195px] sm:text-[26px] tablet:w-[300px] tablet:text-[22px] lg:font-[500] tablet:mx-auto lg:w-[350px] xl:w-[450px] tablet:mb-[20px]'>
                     {item.title}
                   </h2>

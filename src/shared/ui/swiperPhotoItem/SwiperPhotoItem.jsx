@@ -22,7 +22,7 @@ export const SwiperPhotoItem = ({ arrayImg }) => {
     setSelectedImage(null);
   };
   return (
-    <>
+    <div className='max-w-[90%] mx-auto'>
       <Swiper
         slidesPerView={mobileScreen ? 2 : tabletScreen ? 2.3 : 3.1}
         navigation={true}
@@ -54,6 +54,6 @@ export const SwiperPhotoItem = ({ arrayImg }) => {
           handleCloseModal={handleCloseModal}
         />
       )}
-    </>
+    </div>
   );
 };
