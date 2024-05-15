@@ -14,10 +14,10 @@ export const IntrodactionSectionAboutUs = () => {
       style={{
         backgroundImage: `url(${urlForImg + filteredData[0]?.background[0]?.image})`,
       }}
-      className='bg-cover bg-no-repeat 7xl text-[#F5F5F5] leading-[100px] h-[464px] sm:h-[494px] md:h-[590px] tablet:h-[560px] xl:h-[760px]'
+      className='bg-cover bg-no-repeat 7xl text-[#F5F5F5] leading-[100px] h-[464px] sm:h-[494px] md:h-[590px] tablet:h-[560px] xl:h-[552px]'
     >
       <div className='container mx-auto flex flex-col'>
-        <div className='mx-auto tablet:mx-0 mt-[80px] md:mt-[112px] tablet:mt-[105px] lg:mt-[115px] xl:mt-[80px]'>
+        <div className='mx-auto tablet:mx-0 mt-[80px] md:mt-[112px] tablet:mt-[105px] lg:mt-[115px]'>
           <h1 className='text-[48px] sm:text-[55px] md:text-[70px] font-bold lg:text-7xl lg:text-[#F5F5F5] lg:leading-[100px] xl:text-[#E2DED3] xl:text-[80px] xl:leading-[150%]'>
             {filteredData[0]?.title}
           </h1>
