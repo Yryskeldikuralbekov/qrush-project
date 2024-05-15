@@ -9,7 +9,7 @@ export const GalleryVideoSectionGalleryPage = ({ videos }) => {
           src={videos[0]?.video}
           title='YouTube video player'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        ></iframe>
+        />
       </div>
     </section>
   );

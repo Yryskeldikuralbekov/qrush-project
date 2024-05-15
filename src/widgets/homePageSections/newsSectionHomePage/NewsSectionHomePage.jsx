@@ -61,11 +61,11 @@ export const NewsSectionHomePage = () => {
       style={{ backgroundImage: `url(${studioData.background})` }}
     >
       <div className='mx-auto px-4 sm:px-10 tablet:px-0 tablet:max-w-[90%] xl:container pt-[38px] pb-[5px]'>
-        <div className='mb-[17px]  flex sm:block justify-between sm:justify-normal'>
+        <div className='mb-[30px] flex justify-between items-end'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[100px] not-italic font-medium leading-[normal]'>
             {filteredData[0]?.title}
           </h2>
-          <div className='flex justify-end mb-0 sm:mb-[40px]'>
+          <div className='flex justify-end mb-0'>
             <ViewAllLink linkAddress={'news'} text={button} />
           </div>
         </div>
@@ -73,7 +73,7 @@ export const NewsSectionHomePage = () => {
           modules={[Navigation, Pagination]}
           pagination={{ clickable: true }}
           spaceBetween={isMobile ? 20 : 40}
-          slidesPerView={isMobile ? 1.8 : isTablet ? 1.3 : 1.8}
+          slidesPerView={isMobile ? 1.2 : isTablet ? 1.3 : 1.8}
           navigation={true}
         >
           <ul className='mt-[65px] flex'>

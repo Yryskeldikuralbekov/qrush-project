@@ -6,7 +6,7 @@ import { scrollToTop } from '../../utils/scrollToTop';
 export const CardSectionGroup = ({ item }) => {
   return (
     <li className='rounded-[30px] p-[10px] border-[1px] border-[solid] border-[#F5F5F5] bg-none bg-[rgba(0,_0,_0,_0.70)] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] w-full h-full'>
-      <div className='p-0 sm:p-[5px] flex item-center h-full sm:h-[400px] md:h-[450px] lg:h-[400px] xl:h-full flex-col'>
+      <div className='p-0 sm:p-[5px] flex item-center h-full xl:h-full flex-col'>
         <img
           src={item.img}
           alt={`employer`}

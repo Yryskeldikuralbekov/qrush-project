@@ -86,7 +86,7 @@ export const ServiceLinks = () => {
             arrayLinks?.map((item, index) => (
               <div
                 key={index}
-                className='w-full h-[120px] sm:h-[268px] tablet:h-[500px] lg:h-[450px] xl:h-[700px] bg-[rgba(0,0,0,0.60)] border-[1px] border-solid border-[#7a7a7a] rounded-[6px] lg:rounded-[30px] flex justify-between tablet:block px-[10px] py-[12px] mb-[10px] sm:p-[20px] tablet:p-[20px] tablet:w-[33%]'
+                className='w-full h-full bg-[rgba(0,0,0,0.60)] border-[1px] border-solid border-[#7a7a7a] rounded-[6px] lg:rounded-[30px] flex justify-between tablet:block px-[10px] py-[12px] mb-[10px] sm:p-[25px] tablet:p-[15px] tablet:w-[33%]'
               >
                 <img
                   className='w-[175px] h-[95px] rounded-[6px] tablet:w-[550px] sm:w-[375px] sm:h-[226px] tablet:h-[320px] xl:w-[900px] lg:w-[700px] lg:h-[280px] xl:h-[490px] object-cover border-[1px] border-solid border-[#7a7a7a] lg:rounded-[30px]'
