@@ -71,14 +71,14 @@ export const ServiceLinks = () => {
     },
   ];
   return (
-    <section className='relative w-full h-[600px] sm:h-[1200px] tablet:h-[1100px] lg:h-[700px] xl:h-[1100px] text-[#F5F5F5]'>
+    <section className='relative w-full h-[600px] sm:h-[1100px] tablet:h-[850px] lg:h-[750px] xl:h-[1150px] text-[#F5F5F5]'>
       <img
         className='absolute z-[-1] w-full h-[100%] object-cover'
         src={studioData.background}
         alt='Задний-фон'
       />
-      <div className='mx-auto pt-[145px] sm:pt-[134px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[565px] tablet:w-[1000px] tablet:pt-[60px] xl:w-[1720px] lg:w-[1200px]'>
-        <h2 className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] xl:mb-[100px] lg:text-[70px]'>
+      <div className='mx-auto pt-[120px] sm:pt-[100px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[565px] tablet:w-[1000px] tablet:pt-[100px] xl:w-[1720px] lg:w-[1200px]'>
+        <h2 className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] xl:mb-[60px] lg:text-[70px] font-bold'>
           {studioData.title}
         </h2>
         <section className='tablet:flex tablet:justify-between tablet:gap-[20px]'>

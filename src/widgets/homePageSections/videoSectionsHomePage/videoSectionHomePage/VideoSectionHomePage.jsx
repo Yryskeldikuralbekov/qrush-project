@@ -20,7 +20,7 @@ export const VideoSectionHomePage = ({
       }}
     >
       <section className='mx-auto max-w-[90%] xl:container'>
-        <div className='mb-[20px]  sm:mb-[40px] pt-[50px] sm:pt-0 flex justify-between items-end'>
+        <div className='mb-[20px] sm:mb-[40px] pt-[50px] sm:pt-[60px] flex justify-between items-end'>
           <h2 className='text-[#F5F5F5] font-[Montserrat]  text-[20px] sm:text-[80px] lg:text-[70px] not-italic font-medium leading-[normal]'>
             {title}
           </h2>

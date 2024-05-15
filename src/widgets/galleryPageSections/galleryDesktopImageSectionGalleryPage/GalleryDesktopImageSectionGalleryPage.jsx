@@ -21,7 +21,7 @@ export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
   return (
     <section className='bg-center max-w-full'>
       <section className='max-w-[90%] xl:container items-center mx-auto'>
-        <section className='grid grid-rows-[38.14%_39.20%_38.14%] tablet:grid-rows-[20.14%_22.20%_20.14%] grid-column gap-1 sm:gap-4 mt-[100px]'>
+        <section className='grid grid-rows-[38.14%_39.20%_38.14%] tablet:grid-rows-[30.14%_30.20%_30.14%] grid-column gap-1 sm:gap-4 mt-[50px]'>
           <div className='col-start-1 col-end-3 row-start-1 row-end-3 rounded-lg'>
             <img
               src={galleryImages[0]?.image}

@@ -26,7 +26,7 @@ export const Galery = () => {
     14
   );
   const isMobile = useMediaQuery('(max-width: 1024px)');
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
   return (
     <section
       className='w-full bg-center bg-no-repeat bg-cover'
@@ -34,8 +34,8 @@ export const Galery = () => {
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[70px] font-medium xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px]sm:text-[16px]'>
-        <h2 className='xl:text-[100px] lg:text-[100px] tablet:text-[40px] sm:text-[42px] text-[40px] font-medium  mb-[25px]'>
+      <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[100px] tablet:mt-[120px] xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px] sm:text-[16px]'>
+        <h2 className='font-bold text-[40px] md:text-[56px] tablet:text-[60px] xl:text-[80px] lg:text-[70px]'>
           {FilteredNewsPagesData[0]?.title}
         </h2>
       </div>
@@ -45,11 +45,9 @@ export const Galery = () => {
         <GalleryVideoSectionGalleryPage />
       )}
 
-      {isMobile ? (
-        <GalleryImageSectionGalleryPage />
-      ) : (
-        <GallerySecondSectionGalleryPage />
-      )}
+      {isMobile ? <GalleryImageSectionGalleryPage /> : null}
+      <GallerySecondSectionGalleryPage />
+
       <GalleryVideoSectionGalleryPage videos={videos} />
       {isMobile ? (
         <GalleryMobileVideoSection videos={videos} />

@@ -9,7 +9,7 @@ import { Button, scrollToTop, useMediaQuery } from '../../shared';
 const locales = {
   ru: { title: 'Ru' },
   en: { title: 'En' },
-  ky: { title: 'KG' },
+  ky: { title: 'Kg' },
 };
 export const Header = () => {
   const isMobileAndTablet = useMediaQuery('( max-width: 1026px)');
@@ -55,7 +55,7 @@ export const Header = () => {
   };
   return (
     <header
-      className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[80px]  w-full flex justify-center  top-0 backdrop-blur-30 fixed `}
+      className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  w-full flex justify-center top-0 backdrop-blur-30 fixed `}
     >
       <section className='bg-cover bg-no-repeat bg-center container '>
         <nav

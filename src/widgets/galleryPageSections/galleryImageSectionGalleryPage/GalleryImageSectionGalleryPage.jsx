@@ -8,7 +8,7 @@ const GalleryImage = ({ image, onClick }) => {
       <img
         src={`${image.image}`} // Объединяем базовый URL с путем к изображению
         alt='gallery_image'
-        className='w-[100%] mb-[20px] md:mb-0 h-[400px] md:h-[250px] tablet:h-[300px] lg:h-[400px] object-cover border-[1px] border-solid border-gray-500 rounded-[60px] xl:rounded-[65px] tablet:rounded-[55px]'
+        className='w-[100%] mb-[20px] md:mb-0 h-[100px] sm:h-[200px] md:h-[220px] tablet:h-[300px] lg:h-[400px] object-cover border-[1px] border-solid border-gray-500 rounded-[15px] sm:rounded-[40px] md:rounded-[60px] xl:rounded-[65px] tablet:rounded-[55px]'
       />
     </div>
   );
@@ -42,7 +42,7 @@ export const GalleryImageSectionGalleryPage = () => {
     <section className='bg-center max-w-full'>
       <section>
         <section className='max-w-[90%] xl:container items-center mx-auto'>
-          <section className='md:grid md:grid-cols-2 xl:grid-cols-2 md:gap-5 mt-[4vh]'>
+          <section className='grid grid-cols-2 xl:grid-cols-2 gap-5 mt-[4vh]'>
             {galleryImages.map((image, index) => (
               <GalleryImageWrapper
                 key={index}
