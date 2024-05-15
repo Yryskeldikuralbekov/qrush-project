@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { t } from 'i18next';
 import { ModalWindow } from '../modalWindow/ModalWindow';
 import { Button } from '../../shared';
-export const FormFeedback = () => {
+export const FormFeedback = ({ textArr }) => {
   const {
     register,
     formState: { errors },
@@ -41,7 +41,7 @@ export const FormFeedback = () => {
   return (
     <section className='mx-[20px] sm:mx-[auto] pb-[150px] xl:max-w-[1300px] lg:max-w-[900px] text-[#FFFFFF]'>
       <h2 className='text-left w-[195px] pb-[23px] text-[20px] sm:w-full sm:text-center sm:pb-[90px] sm:text-[24px] xl:text-[50px] lg:text-[30px]'>
-        Задайте свой вопрос
+        {textArr.title}
       </h2>
 
       <form
@@ -64,7 +64,7 @@ export const FormFeedback = () => {
               className='w-[100%] mb-[27px] py-[10px] pl-[8px] sm:py-[18px] sm:pl-[30px] rounded-[10px] sm:rounded-[30px] outline-none border-solid border-[0.5px] border-[#fff] sm:border-[#6d6d6d] bg-transparent sm:bg-neutral-900/[.30] placeholder:text-[#FFFFFF]'
               type='text'
               name='name'
-              placeholder='Имя'
+              placeholder={textArr.firstInput}
             />
             <div className='text-red-600 ml-[5px] text-[14px] -mt-[15px] mb-[20px]'>
               {errors?.name && (
@@ -91,7 +91,7 @@ export const FormFeedback = () => {
               })}
               className='w-[100%] mb-[27px] py-[10px] pl-[8px] sm:py-[18px] sm:pl-[30px] rounded-[10px] sm:rounded-[30px] outline-none border-solid border-[0.5px] border-[#fff] sm:border-[#6d6d6d] bg-transparent sm:bg-neutral-900/[.30] placeholder:text-[#FFFFFF]'
               type='text'
-              placeholder='Номер whatsapp'
+              placeholder={textArr.secondInput}
             />
 
             <div className='text-red-600 ml-[5px] -mt-[15px] text-[14px]'>
@@ -132,7 +132,7 @@ export const FormFeedback = () => {
             </div>
             <label htmlFor='checkbox' className='cursor-pointer'>
               <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px]'>
-                Я согласен(-на) с условиями Политики <br /> Конфиденциальности
+                {textArr.policyPrivacy}
               </p>
             </label>
           </div>
@@ -145,7 +145,7 @@ export const FormFeedback = () => {
 
             <div className='mt-[30px] w-full text-center lg:text-left'>
               <Button type='submit' variant='serviceButton'>
-                Отправить
+                {textArr.buttonText}
               </Button>
             </div>
           </div>
@@ -165,7 +165,7 @@ export const FormFeedback = () => {
               })}
               className='w-[100%] mt-[20px] lg:mt-0 mb-[40px] sm:mb-[47px] py-[15px] px-[10px] sm:px-[28px] rounded-[10px] sm:rounded-[30px] outline-none border-solid border-[0.5px] border-[#fff] sm:border-[#6d6d6d] bg-transparent sm:bg-neutral-900/[.30] placeholder:text-[#FFFFFF] overflow-hidden'
               type='text'
-              placeholder='Задайте свой вопрос'
+              placeholder={textArr.thirdInput}
               rows={12}
             />
             <div className='text-red-600 ml-[5px] -mt-[40px] mb-[5px] text-[14px]'>

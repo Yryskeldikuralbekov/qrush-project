@@ -22,7 +22,7 @@ export const ModalNewsWindow = ({
       >
         <div className='w-[70%] md:w-[100%] tablet:w-[60%] lg:w-[30%] mx-auto'>
           <img
-            className='w-[100%] md:w-[40%] my-[40px] tablet:mt-0 tablet:pl-[20px] tablet:w-[100%] md:mx-auto h-[90%] rounded-[30px] object-cover'
+            className='w-[80%] mx-auto md:w-[40%] my-[40px] tablet:mt-0 tablet:pl-[20px] tablet:w-[100%] md:mx-auto h-[90%] rounded-[30px] object-cover'
             src={img}
             alt='News'
           />
@@ -31,13 +31,13 @@ export const ModalNewsWindow = ({
           <p className='text-left w-full md:w-[80%] px-[20px] text-[14px] md:text-[20px] tablet:text-[22px] pb-[20px]'>
             {title}
           </p>
-          <p className='w-full md:w-[100%] text-[14px] md:text-[20px] tablet:text-[18px] px-[20px] text-left pb-[20px]'>
+          <p className='w-full md:w-[100%] text-[10px] md:text-[20px] tablet:text-[18px] px-[20px] text-left pb-[20px]'>
             {description}
           </p>
-          <p className='px-[20px] text-[24px] text-left text-[#FE2A2C] mb-[70px]'>
+          <p className='px-[20px] text-[12px] tablet:text-[18px] text-left text-[#FE2A2C] mb-[70px]'>
             {warning}
           </p>
-          <p className='absolute bottom-[20px] text-[24px] right-[40px]'>
+          <p className='absolute bottom-[20px] text-[14px] right-[40px]'>
             {date}
           </p>
         </div>

@@ -34,7 +34,7 @@ export const NewsCard = ({ img, title, description, warning, date }) => {
           />
         </div>
 
-        <div className='relative h-[100px] lg:h-[220px] w-full mb-[0px] sm:mb-[50px] md:mb-[30px] tablet:mb-[0px] py-[20px]'>
+        <div className='relative h-[100px] tablet:h-[200px] lg:h-[220px] w-full mb-[0px] sm:mb-[50px] md:mb-[100px] tablet:mb-[0px] py-[20px]'>
           <ul className='px-[2px]'>
             <div className='relative'>
               <h2 className='text-[17px] text-[#fff] md:text-[38px] tablet:text-[18px] lg:text-[20px] xl:text-[24px] font-[600] tablet:mb-[20px]'>
