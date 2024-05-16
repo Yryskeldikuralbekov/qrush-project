@@ -53,6 +53,11 @@ export const Header = () => {
     i18n.changeLanguage(locale);
     windowRef.current.location.reload();
   };
+  const handleHomePageClick = () => {
+    scrollToTop();
+    setIsOpen(false);
+  };
+
   return (
     <header
       className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  w-full flex justify-center top-0 backdrop-blur-30 fixed `}
@@ -61,11 +66,7 @@ export const Header = () => {
         <nav
           className={`${isOpen ? 'bg-black' : null} mx-auto flex justify-between items-center `}
         >
-          <Link
-            to={'/'}
-            className='mr-[4vw]'
-            onClick={() => scrollToTop && setIsOpen(false)}
-          >
+          <Link to={'/'} className='mr-[4vw]' onClick={handleHomePageClick}>
             <img
               src={logo}
               className='xl:w-[203px] xl:h-[100px]  lg:w-[181px] lg:h-[80px] tablet:w-[223px]  tablet:h-[120px] md:w-[200px] md:h-[100px] sm:w-[181px] sm:h-[80px] flex align-center'
