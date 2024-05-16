@@ -44,11 +44,16 @@ export const FaqPage = () => {
     'next_text',
     30
   );
+  const filteredSeventhText = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    31
+  );
   const textArr = {
     title: filteredSecondText[0]?.text,
     firstInput: filteredThirdText[0]?.text,
     secondInput: filteredFourthText[0]?.text,
-    thirdInput: filteredSecondText[0]?.text,
+    thirdInput: filteredSeventhText[0]?.text,
     policyPrivacy: filteredFifthText[0]?.text,
     buttonText: filteredSixthText[0]?.text,
     modalWindow: filteredModalWindow[0]?.text,
