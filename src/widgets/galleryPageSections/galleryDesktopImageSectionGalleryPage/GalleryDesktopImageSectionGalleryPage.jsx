@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ImageModal } from '../../../shared/ui/imageModal/ImageModal';
 import { useZustandStore } from '../../../app/store/store';
 import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 
 export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
+  const { t } = useTranslation();
   const { getGalleryImage, galleryImages } = useZustandStore();
   useEffect(() => {
     getGalleryImage();
@@ -27,6 +29,9 @@ export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
   return (
     <section className='bg-center max-w-full'>
       <section className='max-w-[90%] xl:container items-center mx-auto'>
+        <h2 className='w-full text-[50px] lg:text-[55px] xl:text-[60px] font-bold text-center text-[#e2ded3] font-montserrat'>
+          {t('galleryPage.galleryPageItems.photo')}
+        </h2>
         <section className='grid grid-rows-[38.14%_39.20%_38.14%] tablet:grid-rows-[30.14%_30.20%_30.14%] grid-column gap-1 sm:gap-4 mt-[50px]'>
           <div className='col-start-1 col-end-3 row-start-1 row-end-3 rounded-lg'>
             <img

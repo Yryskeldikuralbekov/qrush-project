@@ -333,5 +333,11 @@
   "rehealBase":{
     "firstDescriptionBase": "Сиздин кызматыңызда",
     "secondDescriptionBase": "репетиция бөлмөлөрү бар"
+  },
+  "galleryPage": {
+    "galleryPageItems": {
+      "photo": "Сүрөттөр",
+      "video": "Видеолор"
+    }
   }
 }
