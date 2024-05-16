@@ -18,7 +18,7 @@ export const Button = ({
     moreInfoButton:
       'flex px-[24px] sm:px-[50px] py-[10px] sm:py-[20px] justify-center w-[248px] sm:w-[490px] h-[50px] sm:h-[100px] items-center gap-[10px] flex-shrink-0 rounded-[40px] text-[#E2DED3] bg-[var(--orange-600,_#FE0002)] font-[Montserrat] text-[20px] sm:text-[40px] not-italic font-medium leading-[normal]',
     serviceButton:
-      'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[10px] py-[10.5px] px-[30px] md:text-[20px] sm:text-[22px] tablet:text-[12px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[12px] xl:text-[25px] xl:w-[330px] xl:h-[50px] text-[#F5F5F5] lg:py-[5px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
+      'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[10px] py-[10.5px] px-[30px] md:text-[20px] sm:text-[22px] tablet:text-[20px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[25px] xl:w-[330px] xl:h-[50px] text-[#F5F5F5] lg:py-[5px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
     soundRecordButton:
       'sm:w-auto sm:h-auto text-center font-[300] rounded-[500px] text-[10px] py-[10.5px] px-[30px] md:text-[20px] sm:text-[22px] tablet:text-[12px] lg:rounded-[50px] bg-[#FE0002] font-normal lg:text-[12px] xl:text-[25px] xl:font-semibold xl:w-[456px] xl:h-[70px] text-[#F5F5F5] lg:py-[5px] lg:px-[37px] xl:px-[75px] transition-all duration-300 hover:opacity-80',
     listButton:
