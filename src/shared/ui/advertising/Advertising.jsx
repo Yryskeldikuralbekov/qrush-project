@@ -11,7 +11,11 @@ export const Advertising = ({ className }) => {
   }, []);
   return (
     <section
-      className={`bg-cover bg-no-repeat  bg-center h-[130px] md:h-[258px] tablet:h-[250px] xl:h-[300px]  bg-gradient-to-t from-[#160503] from-0% via-black to-[#160503] text-center ${className === 'shop' ? '-mt-[150px] sm:-mt-0' : null}`}
+      className={`bg-cover bg-no-repeat  bg-center h-[130px] sm:h-[150px] md:h-[258px] tablet:h-[270px] xl:h-[300px] text-center ${className === 'shop' ? '-mt-[150px] sm:-mt-0' : null}`}
+      style={{
+        background:
+          'linear-gradient(360deg, rgba(67, 11, 12, 1) 0%, rgba(21, 4, 4, 1) 8%, rgba(14, 0, 0, 1) 30%,  rgba(3, 1, 1, 1) 50.5%, rgba(15, 3, 3, 0.8) 75%, rgba(20, 3, 4, 0.8) 95%, rgba(53, 7, 8, 0.9) 100%)',
+      }}
     >
       <div className='min-w-[343px] max-w-[90%] mx-auto xl:container flex justify-center items-center font-montserrat text-[#e2ded3]'>
         <div className=' text-center flex justify-center flex-col md:mt-[37px] tablet:mt-0'>

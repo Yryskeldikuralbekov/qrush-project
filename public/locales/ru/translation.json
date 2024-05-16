@@ -329,5 +329,12 @@
     "input":{
       "search":"Поиск"
     }
+  },
+  "galleryPage": {
+    "galleryPageItems": {
+      "photo": "Фотографии",
+      "video": "Видеоролики"
+    }
   }
+
 }
