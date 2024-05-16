@@ -335,5 +335,12 @@
     "input":{
       "search":"Search"
     }
+  },
+  "galleryPage": {
+    "galleryPageItems": {
+      "photo": "Photos",
+      "video": "Videos"
+    }
   }
+
 }

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ImageModal } from '../../../shared';
 
 import { useZustandStore } from '../../../app/store/store';
+
 const GalleryImage = ({ image, onClick }) => {
   return (
     <div onClick={onClick} className='w-full h-full'>
@@ -15,6 +17,7 @@ const GalleryImage = ({ image, onClick }) => {
 };
 
 export const GalleryImageSectionGalleryPage = () => {
+  const { t } = useTranslation();
   const { getGalleryImage, galleryImages } = useZustandStore();
   useEffect(() => {
     getGalleryImage();
@@ -34,6 +37,9 @@ export const GalleryImageSectionGalleryPage = () => {
     <section className='bg-center max-w-full'>
       <section>
         <section className='max-w-[90%] xl:container items-center mx-auto'>
+          <h2 className='w-full text-[28px] md:text-[48px] font-bold text-center text-[#e2ded3] font-montserrat'>
+            {t('galleryPage.galleryPageItems.photo')}
+          </h2>
           <section className='grid grid-cols-2 xl:grid-cols-2 gap-5 mt-[4vh]'>
             {galleryImages.map(image => (
               <GalleryImage

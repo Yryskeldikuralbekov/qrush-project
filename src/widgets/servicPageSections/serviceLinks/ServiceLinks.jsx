@@ -71,7 +71,7 @@ export const ServiceLinks = () => {
     },
   ];
   return (
-    <section className='relative w-full h-[600px] sm:h-[1100px] tablet:h-[850px] lg:h-[750px] xl:h-[1150px] text-[#F5F5F5]'>
+    <section className='relative w-full h-[600px] sm:h-[1100px] tablet:h-[750px] lg:h-[700px] xl:h-[910px] text-[#F5F5F5]'>
       <img
         className='absolute z-[-1] w-full h-[100%] object-cover'
         src={studioData.background}
