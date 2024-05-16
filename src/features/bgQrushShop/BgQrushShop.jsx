@@ -59,7 +59,7 @@ export const BgQrushShop = () => {
   const arrayImg = Array(4).fill(qrushShop);
 
   return (
-    <section>
+    <section className=''>
       <div className='max-w-[1920px] mx-auto flex justify-center bg-[#000] '>
         <motion.div
           className={`bg-cover bg-center w-[100%] h-[50dvh] md:h-[80dvh] tablet:h-[100dvh]  bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}

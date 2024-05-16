@@ -59,9 +59,13 @@ export const Header = () => {
     >
       <section className='bg-cover bg-no-repeat bg-center container '>
         <nav
-          className={`${isOpen ? 'bg-black' : null} mx-auto flex justify-between items-center container `}
+          className={`${isOpen ? 'bg-black' : null} mx-auto flex justify-between items-center `}
         >
-          <Link to={'/'} className='mr-[4vw]' onClick={scrollToTop}>
+          <Link
+            to={'/'}
+            className='mr-[4vw]'
+            onClick={() => scrollToTop && setIsOpen(false)}
+          >
             <img
               src={logo}
               className='xl:w-[203px] xl:h-[100px]  lg:w-[181px] lg:h-[80px] tablet:w-[223px]  tablet:h-[120px] md:w-[200px] md:h-[100px] sm:w-[181px] sm:h-[80px] flex align-center'
@@ -69,7 +73,7 @@ export const Header = () => {
             />
           </Link>
           {isMobileAndTablet ? (
-            <div className='flex flex-row items-center gap-[20px]'>
+            <div className='flex flex-row items-center '>
               <ul className='uppercase text-nowrap flex gap-2 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
                 {Object.keys(locales).map(locale => (
                   <li key={locale}>
@@ -125,7 +129,7 @@ export const Header = () => {
                       onClick={() => setIsOpen(false)}
                     >
                       <Link
-                        className=''
+                        className='transition-colors duration-300 hover:text-orange-700'
                         onClick={scrollToTop}
                         to={routes.route}
                       >
@@ -138,17 +142,21 @@ export const Header = () => {
             </div>
           ) : (
             <>
-              <ul className='flex flex-row justify-around text-nowrap text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
+              <ul className='flex flex-row justify-between text-nowrap text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
                 {headerLinks.map((routes, index) => (
                   <li key={index}>
-                    <Link onClick={scrollToTop} to={routes.route}>
+                    <Link
+                      className='transition-colors duration-300 hover:text-orange-700'
+                      onClick={scrollToTop}
+                      to={routes.route}
+                    >
                       {routes.link}
                     </Link>
                   </li>
                 ))}
               </ul>
               <div className='flex items-center justify-between font-montserrat leading-normal'>
-                <ul className='uppercase flex gap-2 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
+                <ul className='uppercase flex gap-3 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
                   {Object.keys(locales).map(locale => (
                     <li key={locale}>
                       <button

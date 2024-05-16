@@ -11,6 +11,7 @@ export default {
         lg: '1300px',
         xl: '1720px',
       },
+
       fontFamily: { montserrat: ['Montserrat'] },
       backgroundImage: {
         'about-us': "url('/src/shared/img/about.png')",
@@ -18,9 +19,7 @@ export default {
         'why-q-rush': "url('/src/shared/img/Why-Q-Rush.png')",
         aboutUs: "url('src/shared/img/about/aboutUs.png)",
       },
-      container: {
-        '@apply mx-auto font-montserrat max-w-[1720px]': '',
-      },
+
       height: {
         974: '974px',
         314: '314px',

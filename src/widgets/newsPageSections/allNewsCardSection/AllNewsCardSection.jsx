@@ -21,21 +21,21 @@ export const AllNewsCardSection = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
   return (
     <section
-      className='w-full pb-0 tablet:pb-[50px] mx-auto text-[#fff] font-montserrat bg-no-repeat bg-cover'
+      className='w-full mx-auto text-[#fff] font-montserrat bg-no-repeat bg-cover'
       style={{
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='w-[90%] xl:w-[1720px] pb-0 sm:pb-[20px] tablet:pb-[50px] mx-auto text-[#fff] font-montserrat'>
-        <div className='w-full mt-[120px] mb-[30px] pt-[0px]'>
-          <h2
+      <div className='container sm:pb-[20px] tablet:pb-[50px] mx-auto text-[#fff] font-montserrat'>
+        <div className='w-full mt-[100px] mb-[30px] pt-[0px]'>
+          <h1
             onClick={() => setOpen(true)}
-            className='font-bold text-[40px] md:text-[56px] tablet:text-[60px] xl:text-[80px] lg:text-[70px]'
+            className='text-[35px] sm:text-[45px] md:text-[55px] font-bold tablet:text-[60px] lg:text-[65px] xl:[100px]'
           >
             {FilteredNewsPagesData[0]?.title}
-          </h2>
+          </h1>
         </div>
-        <div className='w-full tablet:grid tablet:grid-cols-3 tablet:gap-[20px]'>
+        <div className='w-full tablet:grid tablet:grid-cols-3 tablet:gap-[30px]'>
           {newsData &&
             newsData?.map((element, index) => (
               <div className='mb-[75px]' key={index}>

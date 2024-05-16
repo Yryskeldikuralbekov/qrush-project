@@ -18,13 +18,13 @@ export const MusicCoursesFirstSection = ({ item }) => {
   );
   return (
     <section
-      className='mx-auto font-montserrat text-[#E2DED3] md:pb-[90px] tablet:pb-[154px] bg-cover'
+      className='font-montserrat text-[#E2DED3] md:pb-[80px] tablet:pb-[100px] bg-cover'
       style={{
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='mx-auto w-none xl:w-[1920px] pt-[120px]'>
-        <h1 className='w-[280px] text-[40px] ml-[16px] sm:w-[355px] sm:text-[40px] font-[600] sm:ml-[15px] tablet:w-[835px] xl:w-[908px] tablet:text-[70px] xl:text-[80px] text-[#fff] tablet:font-[600] tablet:ml-[80px]'>
+      <div className='container pt-[100px]'>
+        <h1 className='w-[280px] text-[40px] sm:w-[355px] sm:text-[40px] font-[600] tablet:w-[835px] xl:w-[900px] tablet:text-[70px] text-[#fff] tablet:font-[600] '>
           {item.service_name}
         </h1>
       </div>

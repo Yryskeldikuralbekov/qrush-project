@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ImageModal } from '../../../shared/ui/imageModal/ImageModal';
 import { useZustandStore } from '../../../app/store/store';
+import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 
 export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
   const { getGalleryImage, galleryImages } = useZustandStore();
@@ -9,7 +10,12 @@ export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
   }, []);
 
   const [selectedImage, setSelectedImage] = useState(null);
-
+  const filteredData = useFilteredData(galleryImages, 1);
+  const secondFilteredData = useFilteredData(galleryImages, 2);
+  const thirdFilteredData = useFilteredData(galleryImages, 3);
+  const fourthFilteredData = useFilteredData(galleryImages, 4);
+  const fifthFilteredData = useFilteredData(galleryImages, 5);
+  const sixthFilteredData = useFilteredData(galleryImages, 6);
   const handleOpenModal = image => {
     setSelectedImage(image);
   };
@@ -24,50 +30,50 @@ export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
         <section className='grid grid-rows-[38.14%_39.20%_38.14%] tablet:grid-rows-[30.14%_30.20%_30.14%] grid-column gap-1 sm:gap-4 mt-[50px]'>
           <div className='col-start-1 col-end-3 row-start-1 row-end-3 rounded-lg'>
             <img
-              src={galleryImages[0]?.image}
+              src={filteredData[0]?.image}
               alt='first_gallery_image'
               className='w-full h-full rounded-3xl object-cover'
-              onClick={() => handleOpenModal(galleryImages[1]?.image)}
+              onClick={() => handleOpenModal(filteredData[0]?.image)}
             />
           </div>
           <div className='row-start-3 row-end-4 col-start-1 col-end-2 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
-              src={galleryImages[1]?.image}
+              src={secondFilteredData[0]?.image}
               alt='second_gallery_image'
               className='w-full h-full rounded-3xl object-cover'
-              onClick={() => handleOpenModal(galleryImages[2]?.image)}
+              onClick={() => handleOpenModal(secondFilteredData[0]?.image)}
             />
           </div>
           <div className='row-start-3 row-end-4 col-start-2 col-end-3 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
-              src={galleryImages[2]?.image}
+              src={thirdFilteredData[0]?.image}
               alt='third_gallery_image'
               className='w-full h-full rounded-3xl object-cover'
-              onClick={() => handleOpenModal(galleryImages[3]?.image)}
+              onClick={() => handleOpenModal(thirdFilteredData[0]?.image)}
             />
           </div>
           <div className='col-start-3 col-end-4 row-start-1 row-end-2 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
-              src={galleryImages[3]?.image}
+              src={fourthFilteredData[0]?.image}
               alt='fourth_gallery_image'
               className='w-full h-full rounded-3xl object-cover'
-              onClick={() => handleOpenModal(galleryImages[4]?.image)}
+              onClick={() => handleOpenModal(fourthFilteredData[0]?.image)}
             />
           </div>
           <div className='col-start-4 col-end-5 row-start-1 row-end-2 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
-              src={galleryImages[4]?.image}
+              src={fifthFilteredData[0]?.image}
               alt='fifth_gallery_image'
               className='w-full h-full rounded-3xl object-cover'
-              onClick={() => handleOpenModal(galleryImages[5]?.image)}
+              onClick={() => handleOpenModal(fifthFilteredData[0]?.image)}
             />
           </div>
           <div className='col-start-3 col-end-5 row-start-2 row-end-4 rounded-3xl border-[1px] border-[#606060] border-solid'>
             <img
-              src={galleryImages[5]?.image}
+              src={sixthFilteredData[0]?.image}
               alt='sixth_gallery_image'
               className='w-full h-full rounded-3xl object-cover'
-              onClick={() => handleOpenModal(galleryImages[6]?.image)}
+              onClick={() => handleOpenModal(sixthFilteredData[0]?.image)}
             />
           </div>
         </section>

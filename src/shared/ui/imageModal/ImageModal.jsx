@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+
 const portal = document.getElementById('portal');
 
 export const ImageModal = ({ imageUrl, handleCloseModal }) => {
@@ -11,21 +12,28 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
 
   const closeModal = () => {
     setShowModal(false);
-    handleCloseModal();
+    setTimeout(() => handleCloseModal(), 300);
+  };
+
+  const stopPropagation = e => {
+    e.stopPropagation();
   };
 
   return ReactDOM.createPortal(
     <>
       {showModal && (
         <div
-          className='max-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+          className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
           onClick={closeModal}
         >
-          <div className='w-[80dvw] h-[20dvh] sm:h-[30dvh] md:h-[40dvh] tablet:h-[50dvh] lg:h-[80dvh] scaleEnter'>
+          <div
+            className='h-[30dvh] lg:h-[80dvh] scaleEnter'
+            onClick={stopPropagation}
+          >
             <img
               src={imageUrl}
               alt='Modal'
-              className='w-full h-full object-cover rounded-[55px]'
+              className='w-full h-full object-contain rounded-[55px]'
             />
           </div>
         </div>

@@ -5,7 +5,7 @@ import {
   ErrorPage,
   AboutUsPage,
   ServicesPage,
-  Galery,
+  GalleryPage,
   ShopPage,
   FaqPage,
   NewsPage,
@@ -31,7 +31,7 @@ export const Routing = () => {
     },
     {
       path: '/gallery',
-      element: <Galery />,
+      element: <GalleryPage />,
     },
     {
       path: '/faq',

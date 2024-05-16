@@ -21,25 +21,25 @@ export const GallerySecondSectionGalleryPage = () => {
     getGalleryImage();
   }, []);
   return (
-    <section className='bg-center max-w-full'>
-      <section className='max-w-full xl:container items-center mx-auto mt-[80px]'>
+    <section className='bg-center max-w-[90%] mx-auto tablet:max-w-90% xl:container'>
+      <section className='items-center mx-auto mt-[80px]'>
         <Swiper
           className='gap-x-3'
-          spaceBetween={15}
-          slidesPerView={2}
+          spaceBetween={40}
+          slidesPerView={1.8}
           navigation={true}
           pagination={true}
           modules={[Pagination, Navigation]}
         >
           <div className='mt-[65px] flex gap-x-3'>
             {galleryImages &&
-              galleryImages?.map((item, index) => (
+              galleryImages?.map(item => (
                 <SwiperSlide
-                  key={index}
-                  className='bg-cover bg-no-repeat bg-center flex-col rounded-[30px] border-[2px] border-solid border-gray-500 !w-[400px] xl:!w-[860px] lg:!w-[700px] !h-[250px] xl:!h-[500px]'
+                  key={item.id}
+                  className='bg-cover bg-no-repeat bg-center flex-col rounded-[30px] border-[2px] border-solid border-gray-500 h-[100px]  sm:h-[300px] tablet:h-[250px] lg:h-[350px] xl:h-[500px]'
                   style={{ backgroundImage: `url(${item.image})` }}
                   onClick={() => handleOpenModal(item.image)}
-                ></SwiperSlide>
+                />
               ))}
           </div>
         </Swiper>
