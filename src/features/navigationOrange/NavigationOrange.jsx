@@ -1,9 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import navOrange from '../../shared/img/nav_orange.svg';
-import telegramOrange from '../../shared/img/telegram_nav.svg';
-import whatsappOrange from '../../shared/img/whatsapp_nav.svg';
-import instagramOrange from '../../shared/img/instagram_nav.svg';
 
 export const NavigationOrange = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
