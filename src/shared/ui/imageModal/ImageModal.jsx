@@ -27,7 +27,7 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
           onClick={closeModal}
         >
           <div
-            className='h-[20dvh] lg:h-[80dvh] scaleEnter'
+            className='h-[25dvh] lg:h-[80dvh] scaleEnter'
             onClick={stopPropagation}
           >
             <img
