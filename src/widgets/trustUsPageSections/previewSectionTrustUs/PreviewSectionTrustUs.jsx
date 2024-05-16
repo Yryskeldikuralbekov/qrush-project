@@ -22,11 +22,11 @@ export const PreviewSectionTrustUs = () => {
       className='bg-cover bg-no-repeat'
     >
       <section className='bg-cover bg-no-repeat bg-center -mb-[20px]'>
-        <div className='max-w-[90%]  mx-auto xl:container text-[#e2ded3] font-montserrat'>
-          <div className=' mt-[112px] tablet:mt-[105px] lg:mt-[115px]'>
-            <h2 className='font-bold text-[40px] md:text-[56px] tablet:text-[60px] xl:text-[80px] lg:text-[70px]'>
+        <div className='container text-[#e2ded3] font-montserrat'>
+          <div className='mt-[100px]'>
+            <h1 className='text-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] lg:text-[70px] font-bold'>
               {filteredData[0]?.title}
-            </h2>
+            </h1>
           </div>
         </div>
       </section>

@@ -3,8 +3,8 @@ import { Button } from '../../../shared';
 export const CardsShopCardsSection = ({ card }) => {
   const { t } = useTranslation();
   return (
-    <div
-      className={`mt-[90px] md:mt-[175px] tablet:mt-[100px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[670px] sm:h-[842px] md:h-[1313px] tablet:h-[360px] lg:h-[460px] xl:h-[860px] relative`}
+    <section
+      className={`mt-[50px] md:mt-[175px] tablet:mt-[80px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[700px] sm:h-[842px] md:h-[1313px] tablet:h-[360px] lg:h-[460px] xl:h-[860px] relative`}
       key={card.id}
     >
       <div
@@ -24,12 +24,12 @@ export const CardsShopCardsSection = ({ card }) => {
             className={`w-[278px] sm:w-[378px] sm:h-[300px] md:w-[438px] md:h-[380px] mx-auto tablet:w-[405px] tablet:h-[705px] lg:w-[550px] xl:w-[705px]`}
           >
             <h2
-              className={`w-[220px] sm:w-[350px] md:w-[440px] tablet:w-[405px] lg:w-[505px] xl:w-[645px] font-bold text-[#E2DED3] text-[14px] sm:text-[22px] md:text-[27px] tablet:text-[25px] lg:text-[30px] xl:text-[50px] `}
+              className={`w-[220px] sm:w-[350px] md:w-[440px] tablet:w-[360px] lg:w-[442px] xl:w-[645px] font-bold text-[#E2DED3] text-[14px] sm:text-[22px] md:text-[27px] tablet:text-[22px] lg:text-[27px] xl:text-[50px] `}
             >
               {card.title}
             </h2>
             <ul
-              className={`text-[12px] sm:text-[14px] md:text-[23px] list-disc font-medium mt-[8px] md:mt-[15px] tablet:text-[18px] lg:text-[24px] xl:text-[30px] tablet:mt-[10px] ml-[24px] md:ml-[30px] tablet:ml-[36px]`}
+              className={`text-[12px] sm:text-[14px] md:text-[23px] list-disc font-medium mt-[8px] md:mt-[15px] tablet:text-[17px] lg:text-[22px] xl:text-[30px] tablet:mt-[10px] ml-[24px] md:ml-[30px] tablet:ml-[36px]`}
             >
               {card.product_description &&
                 card.product_description?.map(description => (
@@ -42,7 +42,7 @@ export const CardsShopCardsSection = ({ card }) => {
               className={`w-[278px] mx-auto font-montserrat sm:w-[424px] md:w-[344px] md:h-[45px] tablet:w-[434px] lg:w-[490px] xl:w-[634px] flex justify-between flex-col tablet:flex-row items-center tablet:mt-[10px] lg:mt-[30px] xl:mt-[87px] gap-x-[3px] mt-[15px]`}
             >
               <p
-                className={`font-semibold text-[#d9d9d9] opacity-70 text-[14px] sm:text-[16px] md:text-[27px] mt-[8px] md:mt-[15px] tablet:text-[21px] lg:text-[24px] xl:text-[30px] tablet:mt-[40px]`}
+                className={`font-semibold text-[#d9d9d9] opacity-70 text-[14px] sm:text-[16px] md:text-[27px] mt-[8px] md:mt-[15px] tablet:text-[21px] lg:text-[27px] xl:text-[30px] tablet:mt-[40px]`}
               >
                 {t('shopPage.shopPageSection.price') +
                   ' ' +
@@ -67,6 +67,6 @@ export const CardsShopCardsSection = ({ card }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

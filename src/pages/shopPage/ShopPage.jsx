@@ -5,7 +5,7 @@ export const ShopPage = () => {
   return (
     <>
       <QrushShopSections />
-      <Advertising />
+      <Advertising className='shop' />
     </>
   );
 };

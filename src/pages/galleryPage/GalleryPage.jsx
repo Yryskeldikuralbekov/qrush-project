@@ -34,10 +34,10 @@ export const GalleryPage = () => {
         backgroundImage: `url(${ImageURL}${nestedBackgroundData[0]?.image})`,
       }}
     >
-      <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[100px] tablet:mt-[120px] xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px] sm:text-[16px]'>
-        <h2 className='font-bold text-[40px] md:text-[56px] tablet:text-[60px] xl:text-[80px] lg:text-[70px]'>
+      <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[100px] xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px] sm:text-[16px]'>
+        <h1 className='text-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] lg:text-[70px] font-bold'>
           {FilteredNewsPagesData[0]?.title}
-        </h2>
+        </h1>
       </div>
       {isDesktop ? (
         <GalleryDesktopImageSectionGalleryPage />

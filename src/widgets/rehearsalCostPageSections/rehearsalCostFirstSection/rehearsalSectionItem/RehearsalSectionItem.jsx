@@ -20,7 +20,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
   return (
     <>
       <div className='mx-[20px] mt-[5px] sm:mx-auto text-center'>
-        <h4 className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] pt-[30px] sm:pt-[40px] tablet:text-[20px]  tablet:pt-[60px] lg:pt-[70px] xl:pt-[80px]'>
+        <h4 className='text-[18px] font-[500] pb-[22px] sm:text-[27px] sm:pb-[20px] xl:text-[40px] lg:text-[23px] pt-[30px] sm:pt-[40px] tablet:text-[20px]  tablet:pt-[10px] lg:pt-[40px] xl:pt-[60px]'>
           {item.title}
         </h4>
         {item.id === 1 ? (
@@ -31,13 +31,10 @@ export const RehearsalSectionItem = ({ item, length }) => {
         ) : null}
       </div>
 
-      <section
-        id={item.id}
-        className='ml-[20px] text-center w-[90%] sm:mx-auto sm:w-[95%] xl:w-[1820px]'
-      >
+      <section id={item.id} className=''>
         <SwiperPhotoItem arrayImg={arrayImg} />
       </section>
-      <div className='hidden tablet:block mt-[5px] sm:mt-[30px] text-right sm:mb-[30px] sm:text-right tablet:text-center mr-[14px]'>
+      <div className='hidden tablet:block mt-[5px] sm:mt-[10px] text-right sm:mb-[30px] sm:text-right tablet:text-center mr-[14px]'>
         <Button onClick={changeList} variant='listButton'>
           <h3 className='flex items-center text-[20px] font-[600] sm:text-[30px] xl:text-[30px] lg:text-[15px] tablet:text-[22px]'>
             {item.list_tech}
@@ -55,7 +52,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
           </h3>
         </Button>
       </div>
-      <div className='flex flex-col items-center justify-center mx-auto w-[365px] sm:w-[560px] text-center md:w-[700px] tablet:w-full mt-[0px] md:mt-[10px] tablet:mt-[30px] '>
+      <div className='flex flex-col items-center justify-center mx-auto w-[365px] sm:w-[560px] text-center md:w-[700px] tablet:w-full mt-[0px]'>
         <AnimatePresence>
           {openList && (
             <motion.section
@@ -107,7 +104,10 @@ export const RehearsalSectionItem = ({ item, length }) => {
             href='https://api.whatsapp.com/send/?phone=996700763736&text&type=phone_number&app_absent=0'
             rel='noreferrer'
           >
-            <Button variant='rehearsalButton' className='mt-[20px]'>
+            <Button
+              variant='rehearsalButton'
+              className='mt-[15px] tablet:mt-[-10px]'
+            >
               {t('trustUsPage.fourthSection.buttonInner')}
             </Button>
           </a>

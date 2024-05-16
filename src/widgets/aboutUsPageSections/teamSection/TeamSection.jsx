@@ -21,8 +21,8 @@ export const Team = () => {
       }}
       className='bg-cover bg-no-repeat'
     >
-      <div className='container mx-auto'>
-        <div className='max-w-[90%] mx-auto tablet:max-w-[99%] flex flex-col justify-center tablet:justify-start text-center tablet:text-left tablet:items-start items-center gap-y-[20px] tablet:gap-y-[10px] md:gap-y-[17px]'>
+      <div className='container'>
+        <div className='flex flex-col justify-center tablet:justify-start text-center tablet:text-left tablet:items-start items-center gap-y-[20px] tablet:gap-y-[10px] md:gap-y-[17px]'>
           <h2
             className='flex tablet:w-full tablet:text-left pt-[3%] sm:text-[34px] tablet:text-[56px] sm:font-bold sm:text-[#E2DED3] xl:text-left text-[30px] md:text-[64px] xl:text-8xl text-[#F5F5F5]
                 xl:pt-16 xl:font-medium xl:leading-[122px]'

@@ -22,7 +22,7 @@ export const SwiperPhotoItem = ({ arrayImg }) => {
     setSelectedImage(null);
   };
   return (
-    <div className='max-w-[90%] mx-auto'>
+    <div className=''>
       <Swiper
         slidesPerView={mobileScreen ? 2 : tabletScreen ? 2.3 : 3.1}
         navigation={true}
@@ -35,7 +35,7 @@ export const SwiperPhotoItem = ({ arrayImg }) => {
           {arrayImg &&
             arrayImg?.map((element, index) => (
               <SwiperSlide key={index}>
-                <div className='w-[90%] h-[120px] sm:w-[95%] sm:h-[200px] md:h-[237px] xl:h-[320px] lg:h-[260px]'>
+                <div className='w-[90%] h-[120px] sm:w-[95%] sm:h-[200px] md:h-[237px] xl:h-[320px] lg:h-[260px] cursor-pointer'>
                   <img
                     className='w-[100%] h-[100%] object-cover border-solid border-[1px] rounded-[16px] border-[#E2DED3]'
                     src={`${baseUrlImg}${element.image}`}

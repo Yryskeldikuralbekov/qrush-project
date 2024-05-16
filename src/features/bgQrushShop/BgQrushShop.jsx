@@ -59,7 +59,7 @@ export const BgQrushShop = () => {
   const arrayImg = Array(4).fill(qrushShop);
 
   return (
-    <section>
+    <section className=''>
       <div className='max-w-[1920px] mx-auto flex justify-center bg-[#000] '>
         <motion.div
           className={`bg-cover bg-center w-[100%] h-[50dvh] md:h-[80dvh] tablet:h-[100dvh]  bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
@@ -100,12 +100,21 @@ export const BgQrushShop = () => {
                 />
               </div>
             ) : (
-              <div onClick={() => deleteInputValue()}>
-                <img
-                  className='w-[26px] h-[29px] lg:w-[30px] lg:h-[31px]'
-                  src={xmark}
-                  alt='array_right'
-                />
+              <div className='w-[55px] tablet:w-[60px] lg:w-[65px] xl:w-[70px] flex justify-between'>
+                <div onClick={() => deleteInputValue()}>
+                  <img
+                    className='w-[26px] h-[29px] lg:w-[30px] lg:h-[31px]'
+                    src={xmark}
+                    alt='array_right'
+                  />
+                </div>
+                <div>
+                  <img
+                    className='w-[26px] h-[29px] lg:w-[30px] lg:h-[31px]'
+                    src={searchEngine}
+                    alt='array_right'
+                  />
+                </div>
               </div>
             )}
           </div>
