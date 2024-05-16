@@ -24,7 +24,7 @@ export const PreviewSectionTrustUs = () => {
       <section className='bg-cover bg-no-repeat bg-center -mb-[20px]'>
         <div className='container text-[#e2ded3] font-montserrat'>
           <div className='mt-[100px]'>
-            <h1 className='text-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] lg:text-[70px] font-bold'>
+            <h1 className='text-[35px] sm:text-[45px] md:text-[55px] font-bold tablet:text-[60px] lg:text-[65px] xl:[100px]'>
               {filteredData[0]?.title}
             </h1>
           </div>

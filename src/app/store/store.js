@@ -24,7 +24,6 @@ export const useZustandStore = create(set => ({
     try {
       const response = await QRUSHAPI.getHomePage();
       set({ homePageData: response.data });
-      console.log(QRUSHAPI.getHomePage());
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
     }

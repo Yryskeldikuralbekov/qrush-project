@@ -78,7 +78,7 @@ export const ServiceLinks = () => {
         alt='Задний-фон'
       />
       <div className='mx-auto pt-[120px] sm:pt-[100px] w-[335px] mb-[232px] tablet:mb-[150px] sm:w-[565px] tablet:w-[1000px] tablet:pt-[100px] xl:w-[1720px] lg:w-[1200px]'>
-        <h1 className='text-[20px] mb-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] xl:mb-[60px] lg:text-[70px] font-bold'>
+        <h1 className='mb-[20px] text-[35px] sm:text-[45px] md:text-[55px] font-bold tablet:text-[60px] lg:text-[65px] xl:[100px]'>
           {studioData.title}
         </h1>
         <section className='tablet:flex tablet:justify-between tablet:gap-[20px]'>

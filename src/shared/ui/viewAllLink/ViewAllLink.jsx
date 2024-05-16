@@ -6,7 +6,7 @@ import i18n from '../../../i18n';
 
 const ViewAllLink = ({ linkAddress, text }) => {
   const locale = i18n.language;
-  console.log(locale);
+
   return (
     <Link
       className='flex justify-normal items-center'

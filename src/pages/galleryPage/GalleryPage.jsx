@@ -35,7 +35,7 @@ export const GalleryPage = () => {
       }}
     >
       <div className='container mx-auto text-[#f5f5f5] font-montserrat mt-[100px] xl:text-[25px]  lg:text-[24px] tablet:text-[24px] md:text-[16px] sm:text-[16px]'>
-        <h1 className='text-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] lg:text-[70px] font-bold'>
+        <h1 className='text-[35px] sm:text-[45px] md:text-[55px] font-bold tablet:text-[60px] lg:text-[65px] xl:[100px]'>
           {FilteredNewsPagesData[0]?.title}
         </h1>
       </div>

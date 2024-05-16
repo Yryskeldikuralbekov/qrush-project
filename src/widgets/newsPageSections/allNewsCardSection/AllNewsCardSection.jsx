@@ -30,7 +30,7 @@ export const AllNewsCardSection = () => {
         <div className='w-full mt-[100px] mb-[30px] pt-[0px]'>
           <h1
             onClick={() => setOpen(true)}
-            className='text-[20px] sm:text-[45px] tablet:text-[75px] xl:text-[100px] lg:text-[70px] font-bold'
+            className='text-[35px] sm:text-[45px] md:text-[55px] font-bold tablet:text-[60px] lg:text-[65px] xl:[100px]'
           >
             {FilteredNewsPagesData[0]?.title}
           </h1>
