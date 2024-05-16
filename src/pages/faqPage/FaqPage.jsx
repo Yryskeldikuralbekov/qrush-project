@@ -39,6 +39,11 @@ export const FaqPage = () => {
     'next_text',
     29
   );
+  const filteredModalWindow = useFilteredNestedData(
+    filteredData,
+    'next_text',
+    30
+  );
   const filteredSeventhText = useFilteredNestedData(
     filteredData,
     'next_text',
@@ -51,6 +56,7 @@ export const FaqPage = () => {
     thirdInput: filteredSeventhText[0]?.text,
     policyPrivacy: filteredFifthText[0]?.text,
     buttonText: filteredSixthText[0]?.text,
+    modalWindow: filteredModalWindow[0]?.text,
   };
   const ImageURL = import.meta.env.VITE_IMG_URL;
   const filteredBGImg = useFilteredNestedData(filteredData, 'background', 20);

@@ -39,7 +39,7 @@ export const FormFeedback = ({ textArr }) => {
     }
   };
   return (
-    <section className='mx-[20px] sm:mx-[auto] pb-[150px] xl:max-w-[1300px] lg:max-w-[900px] text-[#FFFFFF]'>
+    <section className='mx-[20px] sm:mx-[auto] pb-[70px] lg:pb-[150px] xl:max-w-[1300px] lg:max-w-[900px] text-[#FFFFFF]'>
       <h2 className='text-left w-[195px] pb-[23px] text-[20px] sm:w-full sm:text-center sm:pb-[90px] sm:text-[24px] xl:text-[50px] lg:text-[30px]'>
         {textArr.title}
       </h2>
@@ -102,7 +102,7 @@ export const FormFeedback = ({ textArr }) => {
               )}
             </div>
           </div>
-          <div className='absolute bottom-[1020px] sm:bottom-[1000px] md:bottom-[1300px] tablet:bottom-[1060px] lg:bottom-0 lg:relative flex gap-[5px] sm:gap-[27px] items-center pt-[20px]'>
+          <div className='hidden lg:visible lg:flex gap-[5px] sm:gap-[27px] items-center pt-[20px]'>
             <div>
               <div className='w-full flex gap-2'>
                 <input
@@ -136,7 +136,7 @@ export const FormFeedback = ({ textArr }) => {
               </p>
             </label>
           </div>
-          <div className='absolute w-full left-0 bottom-[940px] md:bottom-[1220px] tablet:bottom-[970px] lg:bottom-[0px] lg:relative lg:mx-auto md:right-[10%]'>
+          <div className='hidden lg:block lg:mx-auto md:right-[10%]'>
             <div className='text-red-600 ml-[5px] mt-[15px] text-[14px]'>
               {errors?.check && (
                 <p>{errors?.check?.message || t('faqPage.inputs.error')}</p>
@@ -144,7 +144,7 @@ export const FormFeedback = ({ textArr }) => {
             </div>
 
             <div className='mt-[30px] w-full text-center lg:text-left'>
-              <Button type='submit' variant='serviceButton'>
+              <Button type='submit' variant='rehearsalButton'>
                 {textArr.buttonText}
               </Button>
             </div>
@@ -176,9 +176,60 @@ export const FormFeedback = ({ textArr }) => {
               )}
             </div>
           </div>
+          <div className='visible lg:hidden flex gap-[5px] sm:gap-[27px] items-center pt-[20px]'>
+            <div>
+              <div className='w-full flex gap-2'>
+                <input
+                  {...register('check', {
+                    required: t('faqPage.inputs.formField'),
+                  })}
+                  id='checkbox'
+                  name='check'
+                  className='peer relative appearance-none shrink-0 w-[24px] h-[24px] sm:w-[20px] sm:h-[20px] border-solid border-[3px] rounded-[31px] border-[#E2DED3] bg-[#8E8E8E] cheked:border-[#F93822] checked:bg-[#E2DED3] checked:border-[#F93822] transition-all duration-300 cursor-pointer'
+                  type='checkbox'
+                />
+
+                <svg
+                  className='absolute w-[20px] h-[20px] mt-[2px] ml-[2px] sm:w-4 sm:h-4 sm:mt-[1.5px] sm:ml-[1.5px] pointer-events-none hidden peer-checked:block stroke-[#F93822] outline-none'
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth='1.5'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='m4.5 12.75 6 6 9-13.5'
+                  />
+                </svg>
+              </div>
+            </div>
+            <label htmlFor='checkbox' className='cursor-pointer'>
+              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px]'>
+                {textArr.policyPrivacy}
+              </p>
+            </label>
+          </div>
+          <div className='visible lg:hidden w-full left-0 lg:mx-auto md:right-[10%]'>
+            <div className='text-red-600 ml-[5px] mt-[15px] text-[14px]'>
+              {errors?.check && (
+                <p>{errors?.check?.message || t('faqPage.inputs.error')}</p>
+              )}
+            </div>
+
+            <div className='mt-[30px] w-full text-center lg:text-left'>
+              <Button type='submit' variant='rehearsalButton'>
+                {textArr.buttonText}
+              </Button>
+            </div>
+          </div>
         </div>
       </form>
-      <ModalWindow openModal={open} setOpenModal={setOpen} />
+      <ModalWindow
+        text={textArr.modalWindow}
+        openModal={open}
+        setOpenModal={setOpen}
+      />
     </section>
   );
 };
