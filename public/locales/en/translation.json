@@ -312,9 +312,9 @@
   "faqPage": {
     "inputs": {
       "error": "Error!",
-      "formField": "This field is required",
+      "formField": "This field is required!",
       "minLengthPrefix": "Minimum ",
-      "minLengthSuffix": " characters"
+      "minLengthSuffix": " characters!"
     }
   },
   "newsPage": {
