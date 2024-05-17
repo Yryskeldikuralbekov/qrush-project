@@ -1,31 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ImageModal } from '../../../shared';
-import firstGalleryImg from '../../../shared/img/first_gallery_home_page.png';
-import secondGalleryImg from '../../../shared/img/second_gallery_home_page.png';
-import thirdGalleryImg from '../../../shared/img/third_gallery_home_page.png';
-import fourthGalleryImg from '../../../shared/img/fourth_gallery_home_page.png';
 
-const GalleryImage = ({ image, onClick }) => (
-  <div onClick={onClick} className='w-full'>
-    <img
-      src={image}
-      alt='gallery_image'
-      className='w-full h-full border-[2px] border-solid border-gray-500 rounded-[20px] xl:rounded-[20px] tablet:rounded-[10px]'
-    />
-  </div>
-);
+import { useZustandStore } from '../../../app/store/store';
 
-const GalleryImageWrapper = ({ image, onClick }) => (
-  <GalleryImage image={image} onClick={onClick} />
-);
+const GalleryImage = ({ image, onClick }) => {
+  return (
+    <div onClick={onClick} className='w-full h-full'>
+      <img
+        src={`${image.image}`}
+        alt='gallery_image'
+        className='w-[100%] mb-[20px] md:mb-0 h-[100px] sm:h-[200px] md:h-[220px] tablet:h-[300px] lg:h-[400px] object-cover border-[1px] border-solid border-gray-500 rounded-[15px] sm:rounded-[40px] md:rounded-[60px] xl:rounded-[65px] tablet:rounded-[55px]'
+      />
+    </div>
+  );
+};
 
 export const GalleryImageSectionGalleryPage = () => {
-  const galleryImages = [
-    firstGalleryImg,
-    secondGalleryImg,
-    thirdGalleryImg,
-    fourthGalleryImg,
-  ];
+  const { t } = useTranslation();
+  const { getGalleryImage, galleryImages } = useZustandStore();
+  useEffect(() => {
+    getGalleryImage();
+  }, []);
 
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -41,12 +37,15 @@ export const GalleryImageSectionGalleryPage = () => {
     <section className='bg-center max-w-full'>
       <section>
         <section className='max-w-[90%] xl:container items-center mx-auto'>
-          <section className='grid grid-cols-2 xl:grid-cols-2 gap-4 mt-[4vh]'>
-            {galleryImages.map((image, index) => (
-              <GalleryImageWrapper
-                key={index}
+          <h2 className='w-full text-[28px] md:text-[48px] font-bold text-center text-[#e2ded3] font-montserrat'>
+            {t('galleryPage.galleryPageItems.photo')}
+          </h2>
+          <section className='grid grid-cols-2 xl:grid-cols-2 gap-5 mt-[4vh]'>
+            {galleryImages.map(image => (
+              <GalleryImage
+                key={image.id}
                 image={image}
-                onClick={() => handleOpenModal(image)}
+                onClick={() => handleOpenModal(image.image)}
               />
             ))}
           </section>

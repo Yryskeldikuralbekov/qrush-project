@@ -305,10 +305,36 @@
   },
   "faqPage": {
     "inputs": {
-      "error": "Error!",
-      "formField": "This field is required",
-      "minLengthPrefix": "Minimum ",
-      "minLengthSuffix": " characters"
+      "error": "Ошибка!",
+      "formField": "Это форма обязательно к заполнению!",
+      "minLengthPrefix": "Минимум ",
+      "minLengthSuffix": " символы!"
+    }
+  },
+  "newsPage": {
+    "title": "Все новости"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "К вашим услугам есть",
+    "secondDescriptionBase": "комнаты для репетиций"
+  },
+  "shopPage": {
+    "shopPageSection": {
+    "price":"Цена",
+    "currency":"сом",
+    "buyButton":"Купить"
+    }
+  },
+  "bgQrushInput":{
+    "input":{
+      "search":"Поиск"
+    }
+  },
+  "galleryPage": {
+    "galleryPageItems": {
+      "photo": "Фотографии",
+      "video": "Видеоролики"
     }
   }
+
 }

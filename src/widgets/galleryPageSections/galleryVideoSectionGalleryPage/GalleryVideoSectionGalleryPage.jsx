@@ -1,16 +1,21 @@
-export const GalleryVideoSectionGalleryPage = () => {
+import { useTranslation } from 'react-i18next';
+
+export const GalleryVideoSectionGalleryPage = ({ videos }) => {
+  const { t } = useTranslation();
+  if (!videos) return;
   return (
     <section className='bg-center max-w-full'>
-      <div className='max-w-full flex justify-center  mb-[-40px] p-[5%]'>
+      <h2 className='w-full mt-[20px] text-[28px] md:text-[57px] lg:text-[55px] xl:text-[60px] font-bold text-center text-[#e2ded3] font-montserrat'>
+        {t('galleryPage.galleryPageItems.video')}
+      </h2>{' '}
+      <div className='max-w-full w-full mb-[-40px] p-[5%]'>
         <iframe
-          className='rounded-[30px] border-[2px] border-solid border-gray-500 xl:w-[1430px] xl:h-[700px] lg:w-[1430px] lg:h-[700px]  tablet:w-[956px] tablet:h-[818px] md:w-[673px] md:h-[534px]  w-[480px] sm:w-[580px] h-[280px] sm:h-[380px]'
+          className='rounded-[30px] border-[2px] border-solid border-gray-500  xl:h-[700px] w-full  lg:h-[700px] tablet:h-[718px] h-[280px] sm:h-[515px]'
           loading='lazy'
-          src='https://www.youtube.com/embed/JHIAYrd4zoA?si=JPPlcYuZKmXntKIA'
+          src={videos[0]?.video}
           title='YouTube video player'
-          // frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          // allowFullScreen
-        ></iframe>
+        />
       </div>
     </section>
   );

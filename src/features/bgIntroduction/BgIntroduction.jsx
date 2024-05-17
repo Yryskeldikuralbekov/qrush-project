@@ -7,38 +7,28 @@ export const BgIntroduction = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
   const { getHomePage, homePageData } = useZustandStore();
 
-  const [selectedBackgroundId, setSelectedBackgroundId] = useState(1); // Изменено на 1
+  const [selectedBackgroundId, setSelectedBackgroundId] = useState(1);
   const filteredData = useFilteredData(homePageData, 1);
   const filteredBackgroundData = useFilteredNestedData(
     homePageData,
     'background',
     selectedBackgroundId
   );
-
   useEffect(() => {
     getHomePage();
   }, []);
+  useEffect(() => {
+    if (filteredData.length > 0) {
+      const intervalId = setInterval(() => {
+        setSelectedBackgroundId(prevId => {
+          const nextId = (prevId % filteredData[0]?.background?.length) + 1;
+          return nextId;
+        });
+      }, 4000);
 
-  const handleArrowClick = direction => {
-    if (homePageData) {
-      const totalBackgrounds = filteredData[0]?.background?.length;
-      let newId;
-
-      if (direction === 'left') {
-        newId =
-          selectedBackgroundId === 1
-            ? totalBackgrounds
-            : selectedBackgroundId - 1;
-      } else {
-        newId =
-          selectedBackgroundId === totalBackgrounds
-            ? 1
-            : selectedBackgroundId + 1;
-      }
-
-      setSelectedBackgroundId(newId);
+      return () => clearInterval(intervalId);
     }
-  };
+  }, [filteredData]);
 
   const backgroundImageUrl = ImageURL + filteredBackgroundData[0]?.background;
   return (
@@ -51,58 +41,16 @@ export const BgIntroduction = () => {
       }}
     >
       <>
-        <section className='w-[100%] max-w-[1720px] px-0 sm:px-[40px] mx-auto  relative'>
+        <section className='container relative'>
           <div className='block tablet:flex justify-center px-4 sm:px-0 items-end'>
             <h2 className='text-[#E2DED3] tablet:text-[#F5F5F5] font-[Montserrat] mt-[53px] sm:mt-0 tablet:max-w-[4000px] max-w-[336px] sm:max-w-[660px]  mb-[150px] lg:mb-0 text-start tablet:text-center text-[48px] sm:text-[70px] xl:text-[60px] tablet:text-[49px]  not-italic font-bold sm:font-bold leading-[normal]  '>
               {filteredData[0]?.title}
             </h2>
           </div>
-          <button
-            className='arrow-right absolute flex justify-center items-center left-[25px] tablet:left-[40px] xl:left-[10px] lg:left-[60px] top-[350px] sm:top-[310px] tablet:top-[150px]  xl:top-[190px] lg:top-[140px] rounded-[40px] w-[33px] sm:w-[55px] h-[33px] sm:h-[55px] backdrop-filter backdrop-blur-2xl bg-[rgba(255,255,255,0.5)] cursor-pointer transform lg:hover:scale-110 '
-            onClick={() => handleArrowClick('left')}
-          >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='w-[26px] sm:w-[42px] h-[25px] sm:h-[41px]'
-              width='45'
-              height='40'
-              viewBox='0 0 24 24'
-              fill='none'
-            >
-              <path
-                d='M15.75 4.5L8.25 12L15.75 19.5'
-                stroke='black'
-                strokeWidth='1.5'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
-          </button>
-          <button
-            className='arrow-right absolute flex justify-center items-center right-[25px] tablet:right-[40px] xl:right-[10px] lg:right-[60px] top-[350px] sm:top-[310px] tablet:top-[150px]  xl:top-[190px] lg:top-[140px] rounded-[40px] w-[33px] sm:w-[55px] h-[33px] sm:h-[55px] backdrop-filter backdrop-blur-2xl bg-[rgba(255,255,255,0.5)] cursor-pointer transform lg:hover:scale-110 '
-            onClick={() => handleArrowClick('right')}
-          >
-            <svg
-              className='w-[19px] sm:w-[35px] h-[19px] sm:h-[30px]'
-              width='35'
-              height='30'
-              viewBox='0 0 10 18'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                d='M1.25 1.5L8.75 9L1.25 16.5'
-                stroke='black'
-                strokeWidth='1.5'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
-          </button>
         </section>
         <div
           className={
-            'absolute -bottom-[5vh] sm:-bottom-[1vh] tablet:-bottom-0  lg:-bottom-[7vh] left-0   mb-[71px] pl-[20px] sm:pl-[40px] gap-x-[12px] flex mx-0 container'
+            'absolute bottom-0 sm:bottom-0 tablet:bottom-0  lg:bottom-0 left-0  mb-[20px] sm:mb-[30px] lg:mb-[45px] pl-[20px] sm:pl-[40px] gap-x-[12px] flex mx-0 container'
           }
         >
           {filteredData[0]?.background?.map(bg => (

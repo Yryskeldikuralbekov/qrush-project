@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+
+const portal = document.getElementById('portal');
 
 export const ImageModal = ({ imageUrl, handleCloseModal }) => {
   const [showModal, setShowModal] = useState(false);
@@ -9,25 +12,33 @@ export const ImageModal = ({ imageUrl, handleCloseModal }) => {
 
   const closeModal = () => {
     setShowModal(false);
-    handleCloseModal(); // Закрываем модальное окно и вызываем функцию, переданную из родительского компонента
+    setTimeout(() => handleCloseModal(), 300);
   };
 
-  return (
+  const stopPropagation = e => {
+    e.stopPropagation();
+  };
+
+  return ReactDOM.createPortal(
     <>
       {showModal && (
         <div
-          className='msx-w-full fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+          className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
           onClick={closeModal}
         >
-          <div className='w-[80vw] h-[80vh]'>
+          <div
+            className='h-[25dvh] lg:h-[80dvh] scaleEnter'
+            onClick={stopPropagation}
+          >
             <img
               src={imageUrl}
               alt='Modal'
-              className='w-full h-full object-contain'
+              className='w-full h-full object-contain rounded-[55px]'
             />
           </div>
         </div>
       )}
-    </>
+    </>,
+    portal
   );
 };

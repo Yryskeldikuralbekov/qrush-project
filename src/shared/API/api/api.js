@@ -1,9 +1,30 @@
 import axios from 'axios';
+import i18n from '../../../i18n';
 
 export const instance = axios.create({
-  baseURL: 'http://13.48.44.67/api/',
+  baseURL: 'https://qrush.pp.ua/api/',
 });
+instance.interceptors.request.use(
+  config => {
+    const locale = i18n.language;
+    config.headers['Accept-Language'] = locale;
+    return config;
+  },
+  error => {
+    console.error('Request Error:', error);
+    return Promise.reject(error);
+  }
+);
 
+instance.interceptors.response.use(
+  response => {
+    return response;
+  },
+  error => {
+    console.error('Response Error:', error);
+    return Promise.reject(error);
+  }
+);
 export const QRUSHAPI = {
   getHomePage() {
     return instance.get('v1/pages/main/');
@@ -11,7 +32,7 @@ export const QRUSHAPI = {
   getFaqPage() {
     return instance.get('v1/pages/faq/');
   },
-  getMusicCourcePage() {
+  getMusicCoursesPage() {
     return instance.get('v2/mc/music_courses/');
   },
   getRehearsalFirstBasePage() {
@@ -41,5 +62,11 @@ export const QRUSHAPI = {
 
   getVideos() {
     return instance.get('v1/content/video/');
+  },
+  getGallery() {
+    return instance.get('v1/content/gallery/');
+  },
+  getGalleryImages() {
+    return instance.get('v1/content/gallery/');
   },
 };

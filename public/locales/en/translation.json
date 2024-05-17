@@ -12,8 +12,8 @@
     "headerLink": {
       "linkTitle1": "About Us",
       "linkTitle2": "Services",
-      "linkTitle3": "News",
-      "linkTitle4": "Trust us",
+      "linkTitle3": "Trust us",
+      "linkTitle4": "News",
       "linkTitle5": "Gallery",
       "linkTitle6": "Contacts",
       "linkTitle7": "Shop"
@@ -312,9 +312,35 @@
   "faqPage": {
     "inputs": {
       "error": "Error!",
-      "formField": "This field is required",
+      "formField": "This field is required!",
       "minLengthPrefix": "Minimum ",
-      "minLengthSuffix": " characters"
+      "minLengthSuffix": " characters!"
+    }
+  },
+  "newsPage": {
+    "title": "All news"
+  },
+  "rehealBase":{
+    "firstDescriptionBase": "At your service there is",
+    "secondDescriptionBase": "rehearsal rooms"
+  },
+  "shopPage": {
+    "shopPageSection": {
+    "price":"Price",
+    "currency":"som",
+    "buyButton":"Buy"
+    }
+  },
+  "bgQrushInput":{
+    "input":{
+      "search":"Search"
+    }
+  },
+  "galleryPage": {
+    "galleryPageItems": {
+      "photo": "Photos",
+      "video": "Videos"
     }
   }
+
 }

@@ -2,8 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '../../utils/scrollToTop';
+import i18n from '../../../i18n';
 
 const ViewAllLink = ({ linkAddress, text }) => {
+  const locale = i18n.language;
+
   return (
     <Link
       className='flex justify-normal items-center'
@@ -11,8 +14,7 @@ const ViewAllLink = ({ linkAddress, text }) => {
       onClick={scrollToTop}
     >
       <button
-        className='font-[Montserrat] text-[17px] sm:text-[30px] not-italic text-#F5F5F5 font-medium leading-
-        [normal] transition-colors duration-300 hover:text-[#F93822]'
+        className={`font-[Montserrat] ${locale === 'ky' ? 'text-[15px] sm:text-[20px] lg:text-[32px]' : 'text-[17px] sm:text-[23px] lg:text-[33px]'} not-italic text-#F5F5F5 font-medium leading-[1.3] transition-colors duration-300 hover:text-[#F93822]`}
       >
         {text}
       </button>

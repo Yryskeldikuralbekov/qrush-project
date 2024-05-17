@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { t } from 'i18next';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import logo from '../../shared/img/rush1.svg';
 import { Button, scrollToTop, useMediaQuery } from '../../shared';
@@ -9,13 +9,13 @@ import { Button, scrollToTop, useMediaQuery } from '../../shared';
 const locales = {
   ru: { title: 'Ru' },
   en: { title: 'En' },
-  kg: { title: 'Kg' },
+  ky: { title: 'Kg' },
 };
 export const Header = () => {
   const isMobileAndTablet = useMediaQuery('( max-width: 1026px)');
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-
+  const windowRef = useRef(window);
   const genericHamburgerLine = `h-[2px] w-8 my-[4.9px] rounded-full bg-white transition ease transform duration-300`;
   const headerLinks = [
     {
@@ -39,24 +39,34 @@ export const Header = () => {
       link: t('header.headerLink.linkTitle5'),
     },
     {
-      route: '/faq',
-      link: t('header.headerLink.linkTitle6'),
+      route: '/shop',
+      link: t('header.headerLink.linkTitle7'),
     },
   ];
   if (isMobileAndTablet) {
     headerLinks.push({
-      route: '/shop',
-      link: t('header.headerLink.linkTitle7'),
+      route: '/faq',
+      link: t('header.headerLink.linkTitle6'),
     });
   }
+  const handleCLick = locale => {
+    i18n.changeLanguage(locale);
+    windowRef.current.location.reload();
+  };
+  const handleHomePageClick = () => {
+    scrollToTop();
+    setIsOpen(false);
+  };
 
   return (
     <header
-      className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  h-[100px]  w-full flex items-center justify-center  top-0 backdrop-blur-50 fixed `}
+      className={`${isOpen ? 'bg-black ' : 'bg-black/50 backdrop-opacity-10 backdrop-invert'} z-10  w-full flex justify-center top-0 backdrop-blur-30 fixed `}
     >
       <section className='bg-cover bg-no-repeat bg-center container '>
-        <nav className=' mx-auto flex justify-between items-center container '>
-          <Link to={'/'} className='mr-[4vw]' onClick={scrollToTop}>
+        <nav
+          className={`${isOpen ? 'bg-black' : null} mx-auto flex justify-between items-center `}
+        >
+          <Link to={'/'} className='mr-[4vw]' onClick={handleHomePageClick}>
             <img
               src={logo}
               className='xl:w-[203px] xl:h-[100px]  lg:w-[181px] lg:h-[80px] tablet:w-[223px]  tablet:h-[120px] md:w-[200px] md:h-[100px] sm:w-[181px] sm:h-[80px] flex align-center'
@@ -64,7 +74,7 @@ export const Header = () => {
             />
           </Link>
           {isMobileAndTablet ? (
-            <div className='flex flex-row items-center gap-[20px]'>
+            <div className='flex flex-row items-center '>
               <ul className='uppercase text-nowrap flex gap-2 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
                 {Object.keys(locales).map(locale => (
                   <li key={locale}>
@@ -79,7 +89,7 @@ export const Header = () => {
                           i18n.resolvedLanguage === locale ? 'bold' : 'normal',
                       }}
                       type='submit'
-                      onClick={() => i18n.changeLanguage(locale)}
+                      onClick={() => handleCLick(locale)}
                     >
                       {locales[locale].title}
                     </button>
@@ -112,7 +122,7 @@ export const Header = () => {
               <div
                 className={`${isOpen ? 'block' : 'hidden'} absolute top-[100px] w-[100%] left-0 right-0 bg-black text-[24px] font-montserrat `}
               >
-                <div className='flex flex-col  text-white p-[20px]'>
+                <ul className='flex flex-col  text-white p-[20px]'>
                   {headerLinks.map((routes, index) => (
                     <li
                       className='list-none p-[10px]'
@@ -120,7 +130,7 @@ export const Header = () => {
                       onClick={() => setIsOpen(false)}
                     >
                       <Link
-                        className=''
+                        className='transition-colors duration-300 hover:text-orange-700'
                         onClick={scrollToTop}
                         to={routes.route}
                       >
@@ -128,22 +138,26 @@ export const Header = () => {
                       </Link>
                     </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           ) : (
             <>
-              <ul className='flex flex-row justify-around text-nowrap items-center text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
+              <ul className='flex flex-row justify-between text-nowrap text-gray-100 font-montserrat leading-normal xl:text-2xl xl:gap-8 lg:text-lg lg:gap-5 tablet:text-base tablet:gap-3 md:text-xs md:gap-2 sm:text-xs sm:gap-1'>
                 {headerLinks.map((routes, index) => (
                   <li key={index}>
-                    <Link onClick={scrollToTop} to={routes.route}>
+                    <Link
+                      className='transition-colors duration-300 hover:text-orange-700'
+                      onClick={scrollToTop}
+                      to={routes.route}
+                    >
                       {routes.link}
                     </Link>
                   </li>
                 ))}
               </ul>
               <div className='flex items-center justify-between font-montserrat leading-normal'>
-                <ul className='uppercase flex gap-2 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
+                <ul className='uppercase flex gap-3 ml-4 text-gray-500 xl:text-lg text-sm lg:text-base'>
                   {Object.keys(locales).map(locale => (
                     <li key={locale}>
                       <button
@@ -153,7 +167,7 @@ export const Header = () => {
                             : 'text-gray-500'
                         }`}
                         type='submit'
-                        onClick={() => i18n.changeLanguage(locale)}
+                        onClick={() => handleCLick(locale)}
                       >
                         {locales[locale].title}
                       </button>

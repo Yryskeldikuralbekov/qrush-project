@@ -7,16 +7,19 @@ export const useZustandStore = create(set => ({
   soundRecordingData: [],
   newsData: [],
   trustUs: [],
+  pages: [],
   shopBg: [],
   celebrities: [],
   adverts: [],
   shopCards: [],
   rehearsalBaseData: [],
-  musicCourceData: [],
+  musicCoursesData: [],
   aboutUs: [],
   aboutUsArtist: [],
-  aboutUsTeam: [],
+  galleryData: [],
   videos: [],
+  aboutUsTeam: [],
+  galleryImages: [],
   getHomePage: async () => {
     try {
       const response = await QRUSHAPI.getHomePage();
@@ -33,10 +36,10 @@ export const useZustandStore = create(set => ({
       console.error('Ошибка при получении страницы', error);
     }
   },
-  getMusicCourcePage: async () => {
+  getMusicCoursesPage: async () => {
     try {
-      const response = await QRUSHAPI.getMusicCourcePage();
-      set({ musicCourceData: response.data });
+      const response = await QRUSHAPI.getMusicCoursesPage();
+      set({ musicCoursesData: response.data });
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
     }
@@ -52,6 +55,7 @@ export const useZustandStore = create(set => ({
   getNewsPage: async () => {
     try {
       const response = await QRUSHAPI.getNewsPage();
+
       set({ newsData: response.data });
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
@@ -63,6 +67,7 @@ export const useZustandStore = create(set => ({
       set({ trustUs: response.data });
       set({ shopBg: response.data });
       set({ aboutUs: response.data });
+      set({ pages: response.data });
     } catch (error) {
       console.error('Ошибка при получении страницы', error);
     }
@@ -102,27 +107,34 @@ export const useZustandStore = create(set => ({
   getAboutUsArtist: async () => {
     try {
       const response = await QRUSHAPI.getAboutUsArtist();
-      console.log(response);
       set({ aboutUsArtist: response.data });
     } catch (error) {
       console.error('Ошибка при получении артистов', error);
     }
   },
-  getAboutUsTeam: async () => {
-    try {
-      const response = await QRUSHAPI.getAboutUsTeam();
-      console.log(response);
-      set({ aboutUsTeam: response.data });
-    } catch (error) {
-      console.error('Ошибка при получении текстов', error);
-    }
-  },
+
   getVideos: async () => {
     try {
       const response = await QRUSHAPI.getVideos();
       set({ videos: response.data });
     } catch (error) {
       console.error('Ошибка при получении видео', error);
+    }
+  },
+  getGallery: async () => {
+    try {
+      const response = await QRUSHAPI.getGallery();
+      set({ galleryData: response.data });
+    } catch (error) {
+      console.error('Ошибка при получении видео', error);
+    }
+  },
+  getGalleryImage: async () => {
+    try {
+      const response = await QRUSHAPI.getGalleryImages();
+      set({ galleryImages: response.data });
+    } catch (error) {
+      console.error('Ошибка при получении галереи', error);
     }
   },
 }));

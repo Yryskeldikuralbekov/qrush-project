@@ -1,5 +1,5 @@
 export { HomePage } from './homePage/HomePage';
-export { Galery } from './galeryPage/Galery';
+export { GalleryPage } from './galleryPage/GalleryPage';
 export { ErrorPage } from './errorPage/ErrorPage';
 export { TrustUsPage } from './TrustUsPage/TrustUsPage';
 export { AboutUsPage } from './aboutUsPage/AboutUsPage';

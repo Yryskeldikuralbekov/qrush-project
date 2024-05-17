@@ -106,14 +106,9 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              <a
-                target='_blank'
-                href='https://www.google.com/intl/ru/gmail/about/'
-                className='hover:text-orange-600'
-                rel='noreferrer'
-              >
+              <p className='hover:text-orange-600 cursor-pointer'>
                 {t('footer.contacts.secondLinks.link4')}
-              </a>
+              </p>
             </li>
           </ul>
         </div>

@@ -9,12 +9,14 @@ export const VideoSectionHomePageMobile = ({
   secondSrc,
   thirdSrc,
   fourthSrc,
+  fifthSrc,
   title,
   button,
 }) => {
   const srcArr = [
     {
       src: src,
+      isMain: true,
     },
     {
       src: secondSrc,
@@ -24,6 +26,9 @@ export const VideoSectionHomePageMobile = ({
     },
     {
       src: fourthSrc,
+    },
+    {
+      src: fifthSrc,
     },
   ];
   return (
@@ -37,14 +42,14 @@ export const VideoSectionHomePageMobile = ({
             <ViewAllLink text={button} linkAddress={'news'} />
           </div>
         </div>
-        <div className='px-[18px] sm:px-0 h-[170px] sm:h-[334px] mb-[25px]'>
+        <div className='w-full h-[170px] sm:h-[334px] mb-[25px]'>
           <iframe
             className='w-full h-full rounded-[10.906px] border-[0.5px] border-solid border-[rgba(255,255,255,0.50)]'
-            src='https://www.youtube.com/embed/sgFsJuVcm18?si=RfOrOjLdPGVbfuRe&amp;start=2'
+            src={src}
             title='YouTube video player'
             frameBorder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          ></iframe>
+          />
         </div>
         <Swiper
           spaceBetween={15}
@@ -55,19 +60,21 @@ export const VideoSectionHomePageMobile = ({
           modules={[Navigation]}
         >
           <ul className='max-w-[245px]'>
-            {srcArr?.map((item, index) => (
-              <SwiperSlide key={index}>
-                <li className='w-full h-full sm:h-[250px]'>
-                  <iframe
-                    className='w-full h-full  rounded-[10.906px] border-[0.5px] border-solid border-[rgba(255,255,255,0.50)]'
-                    src={item.src}
-                    title='YouTube video player'
-                    frameBorder='0'
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                  />
-                </li>
-              </SwiperSlide>
-            ))}
+            {srcArr.map((item, index) =>
+              item.isMain ? null : (
+                <SwiperSlide key={index}>
+                  <li className='w-full h-full sm:h-[250px]'>
+                    <iframe
+                      className='w-full h-full rounded-[10.906px] border-[0.5px] border-solid border-[rgba(255,255,255,0.50)]'
+                      src={item.src}
+                      title='YouTube video player'
+                      frameBorder='0'
+                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                    />
+                  </li>
+                </SwiperSlide>
+              )
+            )}
           </ul>
         </Swiper>
       </section>
