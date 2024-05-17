@@ -7,7 +7,7 @@ import { useFilteredData } from '../../shared/hooks/useFilteredData';
 import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData';
 
 export const FaqPage = () => {
-  const { getHomePage, homePageData } = useZustandStore();
+  const { homePageData } = useZustandStore();
   const filteredData = useFilteredData(homePageData, 9);
   const filteredFirstText = useFilteredNestedData(
     filteredData,
@@ -60,9 +60,7 @@ export const FaqPage = () => {
   };
   const ImageURL = import.meta.env.VITE_IMG_URL;
   const filteredBGImg = useFilteredNestedData(filteredData, 'background', 20);
-  useEffect(() => {
-    getHomePage();
-  }, []);
+  useEffect(() => {}, []);
   return (
     <section
       className='mx-[auto] mt-[0px] font-montserrat bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#190604] via-[#190604] to-[#000000] bg-cover bg-no-repeat bg-center'

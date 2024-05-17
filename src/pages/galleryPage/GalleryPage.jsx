@@ -13,9 +13,8 @@ import { useFilteredData } from '../../shared/hooks/useFilteredData';
 import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData';
 
 export const GalleryPage = () => {
-  const { getPages, pages, getVideos, videos } = useZustandStore();
+  const { pages, getVideos, videos } = useZustandStore();
   useEffect(() => {
-    getPages();
     getVideos();
   }, []);
   const ImageURL = import.meta.env.VITE_IMG_URL;

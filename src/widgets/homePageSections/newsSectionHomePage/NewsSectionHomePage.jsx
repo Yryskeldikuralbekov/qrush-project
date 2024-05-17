@@ -14,13 +14,9 @@ import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedDa
 import { CardNewsHomePage } from './cardNewsHomePage/CardNewsHomePage.';
 
 export const NewsSectionHomePage = () => {
-  const { homePageData, getHomePage, getNewsPage, newsData } =
-    useZustandStore();
+  const { homePageData, newsData } = useZustandStore();
   const ImageURL = import.meta.env.VITE_IMG_URL;
-  useEffect(() => {
-    getHomePage();
-    getNewsPage();
-  }, []);
+  useEffect(() => {}, []);
   const filteredData = useFilteredData(homePageData, 5);
   const filteredNestedData = useFilteredNestedData(
     filteredData,

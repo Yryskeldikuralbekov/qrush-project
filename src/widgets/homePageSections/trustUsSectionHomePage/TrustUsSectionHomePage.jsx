@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { SectionGroup } from '../../../features';
 import { useZustandStore } from '../../../app/store/store';
 import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedData';
@@ -6,8 +5,7 @@ import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 
 export const TrustUsSectionHomePage = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
-  const { homePageData, getHomePage, celebrities, getTrustUsCelebrities } =
-    useZustandStore();
+  const { homePageData, celebrities } = useZustandStore();
 
   const filteredCelebrities = useFilteredData(celebrities, 1);
 
@@ -35,10 +33,7 @@ export const TrustUsSectionHomePage = () => {
     thirdSubTitle: thirdFilteredCelebrities[0]?.first_name,
     thirdDescription: thirdFilteredCelebrities[0]?.role,
   };
-  useEffect(() => {
-    getHomePage();
-    getTrustUsCelebrities();
-  }, []);
+
   return (
     <>
       <SectionGroup {...singersData} />
