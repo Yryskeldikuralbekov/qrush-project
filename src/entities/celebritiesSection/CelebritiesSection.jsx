@@ -9,7 +9,7 @@ export const CelebritiesSection = ({ celebrities }) => {
         {celebrities &&
           celebrities?.map(celeb => (
             <li
-              className={`w-[343px] h-[450px] mx-auto border-[1px] sm:w-[450px] bg-black md:bg-opacity-0 sm:h-[570px] md:w-[667px] md:h-[776px] tablet:w-[288px] tablet:h-[430px] xl:w-[560px] xl:h-[660px] lg:w-[376px] lg:h-[490px] flex justify-center md:bg-cover md:bg-no-repeat md:bg-center rounded-[16px] md:rounded-[17px] tablet:rounded-[20px] lg:rounded-[30px] ${isMobile1 ? 'w-[410px] h-[510px]' : isMobile2 ? 'w-[637px] h-[787px]' : ''}`}
+              className={`w-[343px] h-[450px] mx-auto border-[1px] sm:w-[450px] bg-black sm:h-[570px] md:w-[667px] md:h-[776px] tablet:w-[288px] tablet:h-[430px] xl:w-[560px] xl:h-[660px] lg:w-[376px] lg:h-[490px] flex justify-center md:bg-cover md:bg-no-repeat md:bg-center rounded-[16px] md:rounded-[17px] tablet:rounded-[20px] lg:rounded-[30px] ${isMobile1 ? 'w-[410px] h-[510px]' : isMobile2 ? 'w-[637px] h-[787px]' : ''}`}
               key={celeb.id}
             >
               <img
