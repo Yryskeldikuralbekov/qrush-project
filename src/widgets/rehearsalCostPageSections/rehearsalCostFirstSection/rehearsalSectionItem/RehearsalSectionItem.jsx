@@ -36,7 +36,7 @@ export const RehearsalSectionItem = ({ item, length }) => {
       </section>
       <div className='hidden tablet:block mt-[5px] sm:mt-[10px] text-right sm:mb-[30px] sm:text-right tablet:text-center mr-[14px]'>
         <Button onClick={changeList} variant='listButton'>
-          <h3 className='flex items-center text-[20px] font-[600] sm:text-[30px] xl:text-[30px] lg:text-[15px] tablet:text-[22px]'>
+          <h3 className='flex items-center text-[20px] font-[600] sm:text-[30px] lg:text-[30px] tablet:text-[22px]'>
             {item.list_tech}
             <img
               className={
