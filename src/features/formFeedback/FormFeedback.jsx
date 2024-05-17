@@ -40,7 +40,7 @@ export const FormFeedback = ({ textArr }) => {
   };
   return (
     <section className='mx-[20px] sm:mx-[auto] pb-[70px] lg:pb-[150px] xl:max-w-[1300px] lg:max-w-[900px] text-[#FFFFFF]'>
-      <h2 className='text-left w-[195px] pb-[23px] text-[20px] sm:w-full sm:text-center sm:pb-[90px] sm:text-[24px] xl:text-[50px] lg:text-[30px]'>
+      <h2 className='pb-[23px] text-[20px] sm:w-full text-center sm:pb-[24px] lg:pb-[80px] sm:text-[24px] xl:text-[50px] lg:text-[30px]'>
         {textArr.title}
       </h2>
 
@@ -131,7 +131,7 @@ export const FormFeedback = ({ textArr }) => {
               </div>
             </div>
             <label htmlFor='checkbox' className='cursor-pointer'>
-              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px]'>
+              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px] xl:w-[300px]'>
                 {textArr.policyPrivacy}
               </p>
             </label>
@@ -205,7 +205,7 @@ export const FormFeedback = ({ textArr }) => {
               </div>
             </div>
             <label htmlFor='checkbox' className='cursor-pointer'>
-              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px]'>
+              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px] w-[300px] pl-[10px] sm:pl-0'>
                 {textArr.policyPrivacy}
               </p>
             </label>
