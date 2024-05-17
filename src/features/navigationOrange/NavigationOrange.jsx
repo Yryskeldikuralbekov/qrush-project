@@ -17,7 +17,6 @@ export const NavigationOrange = () => {
       'mousedown',
       documentClickHandler
     );
-
     return () => {
       asideRef.current.ownerDocument.removeEventListener(
         'mousedown',

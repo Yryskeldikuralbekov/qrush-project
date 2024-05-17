@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ImageModal } from '../../../shared/ui/imageModal/ImageModal';
 import { useZustandStore } from '../../../app/store/store';
@@ -6,10 +6,7 @@ import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 
 export const GalleryDesktopImageSectionGalleryPage = ({ title }) => {
   const { t } = useTranslation();
-  const { getGalleryImage, galleryImages } = useZustandStore();
-  useEffect(() => {
-    getGalleryImage();
-  }, []);
+  const { galleryImages } = useZustandStore();
 
   const [selectedImage, setSelectedImage] = useState(null);
   const filteredData = useFilteredData(galleryImages, 1);

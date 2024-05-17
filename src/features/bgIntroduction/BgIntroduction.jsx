@@ -5,7 +5,7 @@ import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData'
 
 export const BgIntroduction = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
-  const { getHomePage, homePageData } = useZustandStore();
+  const { homePageData } = useZustandStore();
 
   const [selectedBackgroundId, setSelectedBackgroundId] = useState(1);
   const filteredData = useFilteredData(homePageData, 1);
@@ -14,9 +14,7 @@ export const BgIntroduction = () => {
     'background',
     selectedBackgroundId
   );
-  useEffect(() => {
-    getHomePage();
-  }, []);
+
   useEffect(() => {
     if (filteredData.length > 0) {
       const intervalId = setInterval(() => {
