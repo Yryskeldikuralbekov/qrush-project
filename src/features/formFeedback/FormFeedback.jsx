@@ -131,7 +131,7 @@ export const FormFeedback = ({ textArr }) => {
               </div>
             </div>
             <label htmlFor='checkbox' className='cursor-pointer'>
-              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px]'>
+              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px] xl:w-[300px]'>
                 {textArr.policyPrivacy}
               </p>
             </label>
@@ -205,7 +205,7 @@ export const FormFeedback = ({ textArr }) => {
               </div>
             </div>
             <label htmlFor='checkbox' className='cursor-pointer'>
-              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px] tablet:w-[300px]'>
+              <p className='text-[14px] font-[600] xl:text-[14px] md:text-[12px] w-[300px] pl-[10px] sm:pl-0'>
                 {textArr.policyPrivacy}
               </p>
             </label>
