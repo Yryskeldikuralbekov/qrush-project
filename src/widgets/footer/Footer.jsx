@@ -46,10 +46,10 @@ export const Footer = () => {
   return (
     <footer className=' bg-cover bg-no-repeat bg-center max-w-full'>
       <div className=' container w-[90%] mx-auto bg-black pt-[50px] pb-[50px] '>
-        <div className=' text-white flex flex-col tablet:flex-row justify-around items-start   font-montserrat  xl:text-[20px] xl:[&>ul>li]:mb-[30px] text-[12px] lg:text-[16px] [&>ul>li]:mb-[10px] lg:[&>ul>li]:mb-[20px]  tablet:mb-[6px] tablet:text-[14px] tablet:[&>ul>li]:mb-[10px] tablet:items-start tablet:[&>ul]:mb-[100px] md:text-[18px] md:[&>ul>li]:mb-[8px] md:items-start  '>
+        <div className=' text-[#d4d4d4] flex flex-col tablet:flex-row justify-around items-start   font-montserrat  xl:text-[20px] xl:[&>ul>li]:mb-[30px] text-[12px] lg:text-[16px] [&>ul>li]:mb-[10px] lg:[&>ul>li]:mb-[20px]  tablet:mb-[6px] tablet:text-[14px] tablet:[&>ul>li]:mb-[10px] tablet:items-start tablet:[&>ul]:mb-[100px] md:text-[18px] md:[&>ul>li]:mb-[8px] md:items-start  '>
           {footerLinks.map((section, index) => (
             <ul key={index}>
-              <li className='font-bold text-orange-600 hover:text-white'>
+              <li className='font-bold text-white hover:text-orange-600'>
                 <Link to={section.title.route} onClick={scrollToTop}>
                   {section.title.title}
                 </Link>
@@ -69,7 +69,7 @@ export const Footer = () => {
           ))}
 
           <ul>
-            <li className='  font-bold text-orange-600 hover:text-white'>
+            <li className='  font-bold text-white hover:text-orange-600'>
               <Link to={'faq'}>{t('footer.contacts.mainLink')}</Link>
             </li>
             <li>
@@ -82,7 +82,7 @@ export const Footer = () => {
                 {t('footer.contacts.secondLinks.link1')}
               </a>
             </li>
-            <li>
+            <li className='md:flex md:items-center'>
               <a
                 target='_blank'
                 href='https://go.2gis.com/9do9b'
@@ -90,10 +90,10 @@ export const Footer = () => {
                 rel='noreferrer'
               >
                 {t('footer.contacts.secondLinks.link2')}
-                <span className='text-orange-500 xl:text-[30px] lg:text-[22px] tablet:text-[16px] md:text-[14px] sm:text-[12px]'>
-                  →
-                </span>
               </a>
+              <span className='text-[#fff] xl:text-[30px] lg:text-[22px] tablet:text-[16px] md:text-[14px] sm:text-[12px] pl-[10px]'>
+                →
+              </span>
             </li>
             <li>
               <a
