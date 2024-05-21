@@ -4,7 +4,7 @@ export const CardsShopCardsSection = ({ card }) => {
   const { t } = useTranslation();
   return (
     <section
-      className={`mt-[50px] md:mt-[175px] tablet:mt-[80px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[700px] sm:h-[842px] md:h-[1313px] tablet:h-[360px] lg:h-[460px] xl:h-[860px] relative`}
+      className={`mt-[50px] md:mt-[100px] tablet:mt-[80px] flex justify-center tablet:flex-none tablet:justify-between mx-auto h-[700px] sm:h-[842px] md:h-[1313px] tablet:h-[360px] lg:h-[460px] xl:h-[860px] relative`}
       key={card.id}
     >
       <div

@@ -62,7 +62,7 @@ export const BgQrushShop = () => {
     <section className=''>
       <div className='max-w-[1920px] mx-auto flex justify-center bg-[#000] '>
         <motion.div
-          className={`bg-cover bg-center w-[100%] h-[764px] md:h-[768px] lg:h-[800px] xl:h-[960px] bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
+          className={`bg-cover bg-center w-[100%] h-[764px] md:h-[768px] tablet:h-[100dvh] bg-[#000] bg-animation ${isMobile ? 'h-[560px]' : ''}`}
           style={{
             backgroundImage: `url(${bgImages1[indexQrushShop]})`,
             transition: 'background-image 1s ease-in-out',
@@ -83,7 +83,7 @@ export const BgQrushShop = () => {
             </div>
           </Marquee>
         </div>
-        <div className=' mx-auto flex justify-center absolute mt-[457px] md:mt-[585px] tablet:mt-[500px] lg:mt-[594px] xl:mt-[694px] '>
+        <div className=' mx-auto flex justify-center absolute mt-[457px] md:mt-[585px] tablet:mt-[300px] lg:mt-[304px] xl:mt-[504px] '>
           <Input
             value={searchTerm}
             onChange={handleSearchChange}
