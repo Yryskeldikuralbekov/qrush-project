@@ -7,10 +7,9 @@ import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedDa
 
 export const AllNewsCardSection = () => {
   const [open, setOpen] = useState(false);
-  const { getNewsPage, newsData, getPages, pages } = useZustandStore();
+  const { getNewsPage, newsData, pages } = useZustandStore();
   useEffect(() => {
     getNewsPage();
-    getPages();
   }, []);
   const FilteredNewsPagesData = useFilteredData(pages, 4);
   const nestedBackgroundData = useFilteredNestedData(

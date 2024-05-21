@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useZustandStore } from '../../../app/store/store';
 import { DigitalInformationSection } from '../../../features';
 import { useFilteredData } from '../../../shared/hooks/useFilteredData';
@@ -6,7 +5,7 @@ import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedDa
 
 export const AboutUsSectionHomePage = () => {
   const ImageURL = import.meta.env.VITE_IMG_URL;
-  const { getHomePage, homePageData } = useZustandStore();
+  const { homePageData } = useZustandStore();
   const filteredData = useFilteredData(homePageData, 2);
   const filteredText = useFilteredNestedData(filteredData, 'next_text', 4);
   const secondFilteredText = useFilteredNestedData(
@@ -14,9 +13,7 @@ export const AboutUsSectionHomePage = () => {
     'next_text',
     3
   );
-  useEffect(() => {
-    getHomePage();
-  }, []);
+
   const backgroundUrl = ImageURL + filteredData[0]?.background[0].background;
 
   return (

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { SectionGroup } from '../../../features';
 
 import { useMediaQuery } from '../../../shared';
@@ -8,11 +7,9 @@ import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 import { useFilteredNestedData } from '../../../shared/hooks/useFilteredNestedData';
 
 export const ServicesSectionHomePage = () => {
-  const { homePageData, getHomePage } = useZustandStore();
+  const { homePageData } = useZustandStore();
   const ImageURL = import.meta.env.VITE_IMG_URL;
-  useEffect(() => {
-    getHomePage();
-  }, []);
+
   const filteredData = useFilteredData(homePageData, 4);
   const filteredNestedData = useFilteredNestedData(
     filteredData,

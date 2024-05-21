@@ -36,7 +36,6 @@ export const TrustUsSectionHomePage = () => {
     thirdDescription: thirdFilteredCelebrities[0]?.role,
   };
   useEffect(() => {
-    getHomePage();
     getTrustUsCelebrities();
   }, []);
   return (

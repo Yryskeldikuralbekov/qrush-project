@@ -5,7 +5,7 @@ import { useFilteredData } from '../../shared/hooks/useFilteredData';
 import { useFilteredNestedData } from '../../shared/hooks/useFilteredNestedData';
 
 export const DigitalInformationSection = () => {
-  const { homePageData, getHomePage } = useZustandStore();
+  const { homePageData } = useZustandStore();
   const [hasAppeared, setHasAppeared] = useState(false);
   const ref = useRef(null);
   const filteredData = useFilteredData(homePageData, 3);
@@ -61,9 +61,7 @@ export const DigitalInformationSection = () => {
       clearTimeout(timeoutId);
     };
   }, [delayedHandleScroll, timeoutId]);
-  useEffect(() => {
-    getHomePage();
-  }, []);
+
   return (
     <section className='pt-[28px] sm:pt-[70px] pb-[16px] sm:pb-[126px] xl:pt-[126px] flex justify-center items-center'>
       <section

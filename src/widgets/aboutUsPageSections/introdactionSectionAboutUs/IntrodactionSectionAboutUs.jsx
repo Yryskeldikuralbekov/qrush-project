@@ -1,14 +1,11 @@
-import { useEffect } from 'react';
 import { useZustandStore } from '../../../app/store/store';
 import { useFilteredData } from '../../../shared/hooks/useFilteredData';
 
 export const IntrodactionSectionAboutUs = () => {
-  const { getPages, aboutUs } = useZustandStore();
+  const { aboutUs } = useZustandStore();
   const urlForImg = import.meta.env.VITE_IMG_URL;
   const filteredData = useFilteredData(aboutUs, 1);
-  useEffect(() => {
-    getPages();
-  }, []);
+
   return (
     <section
       style={{

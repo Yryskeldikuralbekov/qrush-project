@@ -10,7 +10,7 @@ export const PreviewSectionTrustUs = () => {
     getTrustUsCelebrities();
     getPages();
   }, []);
-
+  console.log(getPages);
   const filteredData = useFilteredData(trustUs, 5);
   const urlForImg = import.meta.env.VITE_IMG_URL;
   const urlBg = urlForImg + filteredData[0]?.background[0]?.image;

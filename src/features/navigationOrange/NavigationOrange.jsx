@@ -1,12 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 export const NavigationOrange = () => {
   const [isAsideOpen, setIsAsideOpen] = useState(false);
+  const asideRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = event => {
+      if (asideRef.current && !asideRef.current.contains(event.target)) {
+        setIsAsideOpen(false);
+      }
+    };
+
+    const documentClickHandler = handleOutsideClick;
+    asideRef.current.ownerDocument.addEventListener(
+      'mousedown',
+      documentClickHandler
+    );
+    return () => {
+      asideRef.current.ownerDocument.removeEventListener(
+        'mousedown',
+        documentClickHandler
+      );
+    };
+  }, []);
 
   return (
     <>
-      <aside className='fixed bottom-[7vh] xl:bottom-[7vh] right-7 xl:right-[125px] bg-[#FE0002]   cursor-pointer z-50  rounded-[766.667px]'>
+      <aside
+        ref={asideRef}
+        className='fixed bottom-[7vh] xl:bottom-[7vh] right-7 xl:right-[125px] bg-[#FE0002] cursor-pointer z-50 rounded-[766.667px]'
+      >
         <ul className={isAsideOpen ? 'block' : 'hidden'}>
           <li className='mb-[10px] mt-[7px]'>
             <a
@@ -15,7 +39,6 @@ export const NavigationOrange = () => {
               target='_blank'
               rel='noreferrer'
             >
-              {' '}
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='30'
@@ -88,7 +111,7 @@ export const NavigationOrange = () => {
           </li>
         </ul>
         <motion.button
-          className='flex border-[#FE0002] p-[10px]  border-solid border-[5px] justify-center items-center rounded-[766.667px] bg-[#FE0002]'
+          className='flex border-[#FE0002] p-[10px] border-solid border-[5px] justify-center items-center rounded-[766.667px] bg-[#FE0002]'
           onClick={() => setIsAsideOpen(!isAsideOpen)}
           whileHover={{ scale: 1.1 }}
           animate={{ rotate: isAsideOpen ? 90 : 0 }}
